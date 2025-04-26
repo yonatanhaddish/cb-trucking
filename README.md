@@ -1,6 +1,6 @@
 ## Device | Width (w) × Height (h) | Notes
 
-# Small Mobile (e.g., old iPhones) | 320 × 568 | iPhone SE
+- Small Mobile (e.g., old iPhones) | 320 × 568 | iPhone SE
 
 # Regular Mobile (e.g., newer phones) | 375 × 667 | iPhone 8
 
