@@ -94,9 +94,12 @@ function HomeSection() {
       justifyContent: "center",
     },
     parent_landing_smaller: {
-      //   border: "solid green 2px",
-      height: "86vh",
+      // border: "solid green 2px",
+      height: "88vh",
       backgroundColor: "#424242",
+      display: "flex",
+      flexDirection: "column",
+      gap: screenGreaterThan768LessThan1024 ? "30px" : "20px",
     },
     parent_landingpage_small: {
       backgroundImage: `url("/images/landingpage_cb.jpg")`,
@@ -105,13 +108,21 @@ function HomeSection() {
       height: "50%",
     },
     content_landingpage_smaller: {
-      //   border: "solid red 2px",
+      // border: "solid red 2px",
       display: "flex",
       flexDirection: "column",
-      gap: "30px",
+      gap: screenGreaterThan768LessThan1024 ? "35px" : "30px",
+      width: screenLessThan430
+        ? "96%"
+        : screenGreaterThan430LessThan768
+        ? "70%"
+        : screenGreaterThan768LessThan1024
+        ? "60%"
+        : "100%",
+      alignSelf: "center",
     },
     typo_heading_smaller: {
-      fontSize: "34px",
+      fontSize: screenGreaterThan768LessThan1024 ? "40px" : "34px",
       color: "#fff",
       //   border: "solid white 1px",
       textAlign: "center",
@@ -119,13 +130,14 @@ function HomeSection() {
     typo_desc_smaller: {
       color: "#fff",
       textAlign: "center",
+      fontSize: screenGreaterThan768LessThan1024 ? "18px" : "",
     },
     button_parent_smaller: {
       //   border: "solid white 2px",
       display: "flex",
       flexDirection: "row",
       alignSelf: "center",
-      gap: "30px",
+      gap: screenGreaterThan768LessThan1024 ? "40px" : "30px",
     },
     button_services_smaller: {
       backgroundColor: "#c23237",
@@ -140,7 +152,9 @@ function HomeSection() {
   };
   return (
     <>
-      {screenLessThan430 ? (
+      {screenLessThan430 ||
+      screenGreaterThan430LessThan768 ||
+      screenGreaterThan768LessThan1024 ? (
         <Box sx={styles.parent_landing_smaller}>
           <Box sx={styles.parent_landingpage_small}></Box>
           <Box sx={styles.content_landingpage_smaller}>

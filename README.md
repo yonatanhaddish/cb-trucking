@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Device | Width (w) × Height (h) | Notes
 
-## Getting Started
+# Small Mobile (e.g., old iPhones) | 320 × 568 | iPhone SE
 
-First, run the development server:
+# Regular Mobile (e.g., newer phones) | 375 × 667 | iPhone 8
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Large Mobile | 414 × 896 | iPhone 11 Pro Max, Pixel 4 XL
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Device | Width (w) × Height (h) | Notes
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# Small Tablet | 600 × 960 | Small Android tablets
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# iPad (portrait) | 768 × 1024 | iPad Mini, iPad Air
 
-## Learn More
+# iPad (landscape) | 1024 × 768 | iPad Mini, iPad Air landscape mode
 
-To learn more about Next.js, take a look at the following resources:
+## Device | Width (w) × Height (h) | Notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Small Laptop | 1280 × 800 | MacBook Air 11", small laptops
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Typical Laptop | 1366 × 768 | Most common laptop resolution
 
-## Deploy on Vercel
+## Device | Width (w) × Height (h) | Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Standard Desktop | 1440 × 900 | Medium desktops
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Large Desktop | 1920 × 1080 | Full HD monitors (most common)
+
+# Extra Large Desktop | 2560 × 1440 | QHD monitors
+
+# Ultra-Wide Screens | 3440 × 1440 | Ultrawide monitors
