@@ -96,6 +96,7 @@ function Navbar() {
           : screenGreaterThan1440LessThan1920
           ? "40px"
           : "50px",
+      cursor: "pointer",
     },
     navlist_box: {
       //   border: "solid black 2px",
@@ -125,6 +126,7 @@ function Navbar() {
     typo_nav_item: {
       fontSize: screenGreaterThan1920LessThan3840 ? "25px" : "20px",
       color: "#fff",
+      cursor: "pointer",
       //   border: "solid green 1px",
     },
   };
