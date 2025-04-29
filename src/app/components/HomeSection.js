@@ -28,11 +28,17 @@ function HomeSection() {
   );
   const styles = {
     parent_landingpage: {
-      //   border: "solid red 2px",
+      // border: "solid red 2px",
       backgroundImage: `url("/images/landingpage_cb.jpg")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
-      height: "86vh",
+      height:
+        screenGreaterThan1024LessThan1280 ||
+        screenGreaterThan1280LessThan1440 ||
+        screenGreaterThan1440LessThan1920 ||
+        screenGreaterThan1920LessThan3840
+          ? "90vh"
+          : "86vh",
       position: "relative",
       display: "flex",
       width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
@@ -49,16 +55,20 @@ function HomeSection() {
     content_landingpage: {
       position: "relative",
       zIndex: 1,
-      //   border: "solid green 1px",
+      // border: "solid green 1px",
       width: screenLessThan430 ? "90%" : "40%",
       display: "flex",
       flexDirection: "column",
-      gap: "30px",
+      gap: screenGreaterThan1920LessThan3840 ? "50px" : "30px",
       alignSelf: "center",
     },
     typo_heading: {
       color: "#fff",
-      fontSize: "36px",
+      fontSize: screenGreaterThan1440LessThan1920
+        ? "48px"
+        : screenGreaterThan1920LessThan3840
+        ? "52px"
+        : "36px",
       //   border: "solid white 1px",
       width: "80%",
       alignSelf: "center",
@@ -70,36 +80,62 @@ function HomeSection() {
       width: "80%",
       alignSelf: "center",
       textAlign: "center",
+      fontSize: screenGreaterThan1440LessThan1920
+        ? "20px"
+        : screenGreaterThan1920LessThan3840
+        ? "22px"
+        : "",
     },
     button_contact: {
       border: "solid 1px #c23237",
       color: "#c23237",
-      width: "150px",
+      width:
+        screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
+          ? "200px"
+          : "150px",
       //   fontWeight: "bold",
       backgroundColor: "rgba(0, 0, 0, 0.7)",
+      fontSize:
+        screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
+          ? "18px"
+          : "",
     },
     button_services: {
       //   border: "solid 1px white",
       backgroundColor: "#c23237",
       color: "#fff",
-      width: "150px",
+      width:
+        screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
+          ? "200px"
+          : "150px",
+      fontSize:
+        screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
+          ? "18px"
+          : "",
     },
     button_parent: {
       width: "80%",
       alignSelf: "center",
       display: "flex",
       flexDirection: "row",
-      gap: "40px",
+      gap: screenGreaterThan1920LessThan3840 ? "80px" : "40px",
       //   border: "solid 1px white",
       justifyContent: "center",
     },
     parent_landing_smaller: {
       // border: "solid green 2px",
-      height: "88vh",
+      height:
+        screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
+          ? "93vh"
+          : "88vh",
       backgroundColor: "#424242",
       display: "flex",
       flexDirection: "column",
-      gap: screenGreaterThan768LessThan1024 ? "30px" : "20px",
+      gap: screenGreaterThan768LessThan1024
+        ? "8%"
+        : screenGreaterThan430LessThan768
+        ? "60px"
+        : "20px",
     },
     parent_landingpage_small: {
       backgroundImage: `url("/images/landingpage_cb.jpg")`,
@@ -111,7 +147,11 @@ function HomeSection() {
       // border: "solid red 2px",
       display: "flex",
       flexDirection: "column",
-      gap: screenGreaterThan768LessThan1024 ? "35px" : "30px",
+      gap: screenGreaterThan768LessThan1024
+        ? "35px"
+        : screenGreaterThan430LessThan768
+        ? "40px"
+        : "30px",
       width: screenLessThan430
         ? "96%"
         : screenGreaterThan430LessThan768
@@ -130,14 +170,14 @@ function HomeSection() {
     typo_desc_smaller: {
       color: "#fff",
       textAlign: "center",
-      fontSize: screenGreaterThan768LessThan1024 ? "18px" : "",
+      fontSize: screenLessThan430 ? "16px" : "18px",
     },
     button_parent_smaller: {
       //   border: "solid white 2px",
       display: "flex",
       flexDirection: "row",
       alignSelf: "center",
-      gap: screenGreaterThan768LessThan1024 ? "40px" : "30px",
+      gap: screenGreaterThan768LessThan1024 ? "60px" : "30px",
     },
     button_services_smaller: {
       backgroundColor: "#c23237",

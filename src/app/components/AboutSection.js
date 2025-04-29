@@ -27,8 +27,7 @@ function AboutSection() {
   );
   const styles = {
     parent_aboutsection: {
-      //   border: "solid green 2px",
-      width: "100%",
+      // border: "solid green 2px",
       display: "flex",
       flexDirection:
         screenLessThan430 ||
@@ -36,7 +35,7 @@ function AboutSection() {
         screenGreaterThan768LessThan1024
           ? "column"
           : "row",
-      gap: "20px",
+      gap: screenGreaterThan1920LessThan3840 ? "10%" : "20px",
       alignItems: "center",
       justifyContent: "center",
     },
@@ -48,26 +47,36 @@ function AboutSection() {
           : screenGreaterThan1024LessThan1280 ||
             screenGreaterThan768LessThan1024
           ? "32px"
-          : "100px",
+          : screenGreaterThan1280LessThan1440
+          ? "36px"
+          : screenGreaterThan1440LessThan1920
+          ? "38px"
+          : "50px",
       borderBottom: "solid #c23237 2px",
       width: screenLessThan430
         ? "50%"
         : screenGreaterThan1024LessThan1280 ||
           screenGreaterThan430LessThan768 ||
-          screenGreaterThan768LessThan1024
+          screenGreaterThan768LessThan1024 ||
+          screenGreaterThan1280LessThan1440
         ? "20%"
-        : "100%",
+        : screenGreaterThan1440LessThan1920
+        ? "15%"
+        : "15%",
       textAlign: "center",
       marginLeft: "5%",
       marginBottom: "30px",
     },
     aboutsection_image_box: {
-      //   border: "solid #000 2px",
+      // border: "solid #000 2px",
       height:
         screenLessThan430 || screenGreaterThan1024LessThan1280
           ? "300px"
           : screenGreaterThan430LessThan768
           ? "350px"
+          : screenGreaterThan1440LessThan1920 ||
+            screenGreaterThan1920LessThan3840
+          ? "400px"
           : "300px",
       position: "relative",
       width: screenLessThan430
@@ -78,7 +87,9 @@ function AboutSection() {
         ? "70%"
         : screenGreaterThan768LessThan1024
         ? "55%"
-        : "100%",
+        : screenGreaterThan1280LessThan1440 || screenGreaterThan1440LessThan1920
+        ? "30%"
+        : "30%",
     },
     aboutsection_img1: {
       backgroundImage: `url("/images/aboutus.jpg")`,
@@ -92,13 +103,23 @@ function AboutSection() {
       backgroundImage: `url("/images/aboutus2.jpg")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
-      height: "160px",
-      width: "160px",
+      height: screenGreaterThan1920LessThan3840 ? "200px" : "160px",
+      width: screenGreaterThan1920LessThan3840 ? "200px" : "160px",
       position: "absolute",
       top: "end",
       left: "end",
-      right: 0,
-      bottom: 0,
+      right:
+        screenGreaterThan1280LessThan1440 || screenGreaterThan1440LessThan1920
+          ? 40
+          : screenGreaterThan1920LessThan3840
+          ? 50
+          : 0,
+      bottom:
+        screenGreaterThan1280LessThan1440 || screenGreaterThan1440LessThan1920
+          ? 20
+          : screenGreaterThan1920LessThan3840
+          ? 30
+          : 0,
       borderRadius: "360px",
       border: "solid #c23237 2px",
       boxShadow: `
@@ -109,7 +130,7 @@ function AboutSection() {
   `,
     },
     aboutsection_desc_box: {
-      //   border: "solid blue 2px",
+      // border: "solid blue 2px",
       //   height: "300px",
       width: screenLessThan430
         ? "85%"
@@ -119,7 +140,9 @@ function AboutSection() {
         ? "70%"
         : screenGreaterThan768LessThan1024
         ? "65%"
-        : "100%",
+        : screenGreaterThan1280LessThan1440 || screenGreaterThan1440LessThan1920
+        ? "40%"
+        : "30%",
       display: "flex",
       flexDirection: "column",
       //   gap: "20px",
@@ -134,10 +157,21 @@ function AboutSection() {
         : "100%",
       paddingTop: "20px",
       paddingBottom: "20px",
+      fontSize:
+        screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
+          ? "1.2rem"
+          : "1.0rem",
     },
   };
   return (
-    <Box sx={{ backgroundColor: "#D9D9D9", paddingTop: "30px" }}>
+    <Box
+      sx={{
+        backgroundColor: "#D9D9D9",
+        paddingTop: "30px",
+        width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
+        margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
+      }}
+    >
       <Typography sx={styles.heading_aboutus}>About Us</Typography>
       <Box sx={styles.parent_aboutsection}>
         <Box sx={styles.aboutsection_image_box}>
