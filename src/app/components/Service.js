@@ -69,7 +69,7 @@ function Service() {
           screenGreaterThan1280LessThan1440 ||
           screenGreaterThan1440LessThan1920
         ? "420px"
-        : "500px",
+        : "550px",
     },
     heading_service: {
       fontSize: screenLessThan430
@@ -148,12 +148,13 @@ function Service() {
       //   border: "solid red 2px",
       width: screenLessThan430
         ? "90%"
-        : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
+        : screenGreaterThan430LessThan768 ||
+          screenGreaterThan768LessThan1024 ||
+          screenGreaterThan1920LessThan3840
         ? "80%"
         : screenGreaterThan1024LessThan1280 ||
           screenGreaterThan1280LessThan1440 ||
-          screenGreaterThan1440LessThan1920 ||
-          screenGreaterThan1920LessThan3840
+          screenGreaterThan1440LessThan1920
         ? "85%"
         : "100%",
       fontSize: screenLessThan430
