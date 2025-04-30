@@ -41,17 +41,20 @@ function AboutSection() {
     },
 
     heading_aboutus: {
-      fontSize:
-        screenLessThan430 || screenGreaterThan430LessThan768
-          ? "28px"
-          : screenGreaterThan1024LessThan1280 ||
-            screenGreaterThan768LessThan1024
-          ? "32px"
-          : screenGreaterThan1280LessThan1440
-          ? "36px"
-          : screenGreaterThan1440LessThan1920
-          ? "38px"
-          : "50px",
+      fontSize: screenLessThan430
+        ? "24px"
+        : screenGreaterThan430LessThan768
+        ? "28px"
+        : screenGreaterThan768LessThan1024
+        ? "32px"
+        : screenGreaterThan1024LessThan1280
+        ? "36px"
+        : screenGreaterThan1280LessThan1440
+        ? "40px"
+        : screenGreaterThan1440LessThan1920
+        ? "44px"
+        : "52px",
+
       borderBottom: "solid #c23237 2px",
       width: screenLessThan430
         ? "50%"
@@ -157,10 +160,19 @@ function AboutSection() {
         : "100%",
       paddingTop: "20px",
       paddingBottom: "20px",
-      fontSize:
-        screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
-          ? "1.2rem"
-          : "1.0rem",
+      fontSize: screenLessThan430
+        ? "0.9rem"
+        : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
+        ? "1.0rem"
+        : screenGreaterThan1024LessThan1280
+        ? "1.05rem"
+        : screenGreaterThan1280LessThan1440
+        ? "1.1rem"
+        : screenGreaterThan1440LessThan1920
+        ? "1.2rem"
+        : screenGreaterThan1920LessThan3840
+        ? "1.3rem"
+        : "1rem",
     },
   };
   return (

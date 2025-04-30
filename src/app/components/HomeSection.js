@@ -60,15 +60,24 @@ function HomeSection() {
       display: "flex",
       flexDirection: "column",
       gap: screenGreaterThan1920LessThan3840 ? "50px" : "30px",
-      alignSelf: "center",
+      alignSelf: screenGreaterThan1024LessThan1280 ? "center" : "center",
+      marginTop: screenGreaterThan1024LessThan1280 ? "-60px" : "",
     },
     typo_heading: {
       color: "#fff",
-      fontSize: screenGreaterThan1440LessThan1920
+      fontWeight: 700,
+      fontSize: screenGreaterThan1920LessThan3840
+        ? "56px"
+        : screenGreaterThan1440LessThan1920
         ? "48px"
-        : screenGreaterThan1920LessThan3840
-        ? "52px"
-        : "36px",
+        : screenGreaterThan1024LessThan1280
+        ? "42px"
+        : screenGreaterThan768LessThan1024
+        ? "36px"
+        : screenGreaterThan430LessThan768
+        ? "32px"
+        : "28px",
+
       //   border: "solid white 1px",
       width: "80%",
       alignSelf: "center",
@@ -76,15 +85,21 @@ function HomeSection() {
     },
     typo_desc: {
       color: "#fff",
-      //   border: "solid red 1px",
+      // border: "solid red 1px",
       width: "80%",
       alignSelf: "center",
       textAlign: "center",
-      fontSize: screenGreaterThan1440LessThan1920
+      fontWeight: 400,
+      fontSize: screenGreaterThan1920LessThan3840
+        ? "24px"
+        : screenGreaterThan1440LessThan1920
         ? "20px"
-        : screenGreaterThan1920LessThan3840
-        ? "22px"
-        : "",
+        : screenGreaterThan768LessThan1024
+        ? "18px"
+        : screenGreaterThan430LessThan768
+        ? "16px"
+        : "14px",
+      fontFamily: '"OCR A Std, monospace',
     },
     button_contact: {
       border: "solid 1px #c23237",
@@ -95,10 +110,16 @@ function HomeSection() {
           : "150px",
       //   fontWeight: "bold",
       backgroundColor: "rgba(0, 0, 0, 0.7)",
-      fontSize:
-        screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
-          ? "18px"
-          : "",
+      fontWeight: 500,
+      fontSize: screenGreaterThan1920LessThan3840
+        ? "20px"
+        : screenGreaterThan1440LessThan1920
+        ? "18px"
+        : screenGreaterThan1024LessThan1280
+        ? "16px"
+        : screenGreaterThan768LessThan1024
+        ? "15px"
+        : "14px",
     },
     button_services: {
       //   border: "solid 1px white",
@@ -108,10 +129,16 @@ function HomeSection() {
         screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
           ? "200px"
           : "150px",
-      fontSize:
-        screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
-          ? "18px"
-          : "",
+      fontWeight: 500,
+      fontSize: screenGreaterThan1920LessThan3840
+        ? "20px"
+        : screenGreaterThan1440LessThan1920
+        ? "18px"
+        : screenGreaterThan1024LessThan1280
+        ? "16px"
+        : screenGreaterThan768LessThan1024
+        ? "15px"
+        : "14px",
     },
     button_parent: {
       width: "80%",
