@@ -197,6 +197,7 @@ function CertificateRequest() {
         ? "75%"
         : "100%",
       margin: "0 auto",
+      fontWeight: "bold",
     },
     typo_desc: {
       fontSize: screenLessThan430

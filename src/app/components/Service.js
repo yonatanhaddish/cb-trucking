@@ -34,16 +34,42 @@ function Service() {
       flexWrap: "wrap",
       justifyContent: "center",
       marginTop: "50px",
-      gap: screenLessThan430 ? "80px" : "",
+      gap:
+        screenLessThan430 ||
+        screenGreaterThan430LessThan768 ||
+        screenGreaterThan1440LessThan1920 ||
+        screenGreaterThan1920LessThan3840
+          ? "80px"
+          : screenGreaterThan768LessThan1024 ||
+            screenGreaterThan1024LessThan1280 ||
+            screenGreaterThan1280LessThan1440
+          ? "60px"
+          : "",
     },
     service_box: {
       border: "solid #000 1px",
       boxShadow: "0 0 10px #000",
-      width: screenLessThan430 ? "80%" : "100%",
+      width: screenLessThan430
+        ? "80%"
+        : screenGreaterThan430LessThan768
+        ? "60%"
+        : screenGreaterThan768LessThan1024
+        ? "40%"
+        : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
+        ? "28%"
+        : screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
+        ? "22%"
+        : "100%",
       display: "flex",
       flexDirection: "column",
-      gap: "40px",
-      height: screenLessThan430 ? "420px" : "500px",
+      gap: "20px",
+      height: screenLessThan430
+        ? "420px"
+        : screenGreaterThan1024LessThan1280 ||
+          screenGreaterThan1280LessThan1440 ||
+          screenGreaterThan1440LessThan1920
+        ? "420px"
+        : "500px",
     },
     heading_service: {
       fontSize: screenLessThan430
@@ -63,13 +89,13 @@ function Service() {
       width: screenLessThan430
         ? "50%"
         : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
-        ? "40%"
+        ? "20%"
         : screenGreaterThan1440LessThan1920
-        ? "30%"
+        ? "15%"
         : screenGreaterThan768LessThan1024
         ? "30%"
         : screenGreaterThan1920LessThan3840
-        ? "20%"
+        ? "15%"
         : "15%",
       textAlign: "center",
       marginLeft: "5%",
@@ -96,13 +122,16 @@ function Service() {
         ? "85%"
         : screenGreaterThan430LessThan768 ||
           screenGreaterThan768LessThan1024 ||
+          screenGreaterThan1280LessThan1440
+        ? "70%"
+        : screenGreaterThan1024LessThan1280 ||
+          screenGreaterThan1440LessThan1920 ||
           screenGreaterThan1280LessThan1440 ||
           screenGreaterThan1920LessThan3840
-        ? "70%"
-        : screenGreaterThan1024LessThan1280 || screenGreaterThan1440LessThan1920
-        ? "75%"
+        ? "60%"
         : "100%",
       margin: "0 auto",
+      fontWeight: "bold",
     },
     typo_service_heading: {
       //   border: "solid green 2px",
@@ -117,19 +146,28 @@ function Service() {
     },
     typo_service_desc: {
       //   border: "solid red 2px",
-      width: screenLessThan430 ? "90%" : "100%",
-      fontSize: screenLessThan430
-        ? "1rem"
+      width: screenLessThan430
+        ? "90%"
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
-        ? "1.05rem"
+        ? "80%"
+        : screenGreaterThan1024LessThan1280 ||
+          screenGreaterThan1280LessThan1440 ||
+          screenGreaterThan1440LessThan1920 ||
+          screenGreaterThan1920LessThan3840
+        ? "85%"
+        : "100%",
+      fontSize: screenLessThan430
+        ? "0.9rem"
+        : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
+        ? "1.0rem"
         : screenGreaterThan1024LessThan1280
-        ? "1.1rem"
+        ? "1.05rem"
         : screenGreaterThan1280LessThan1440
-        ? "1.2rem"
+        ? "1.1rem"
         : screenGreaterThan1440LessThan1920
-        ? "1.3rem"
+        ? "1.2rem"
         : screenGreaterThan1920LessThan3840
-        ? "1.4rem"
+        ? "1.3rem"
         : "1rem",
       alignSelf: "center",
     },
