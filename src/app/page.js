@@ -6,6 +6,7 @@ import AboutSection from "./components/AboutSection";
 import CertificateRequest from "./components/CertificateRequest";
 import Service from "./components/Service";
 import WeWorkWith from "./components/WeWorkWith";
+import WhyChooseUs from "./components/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Service />
         <WeWorkWith />
         <CertificateRequest />
+        <WhyChooseUs />
       </>
     </>
   );
