@@ -168,6 +168,29 @@ function ContactUs() {
         : "14px",
       alignSelf: "center",
     },
+    input_text: {
+      "& .MuiInputBase-root": {
+        backgroundColor: "#fff",
+        "&:hover": {
+          backgroundColor: "#fff",
+        },
+        "&.Mui-focused": {
+          backgroundColor: "#fff",
+        },
+      },
+      "& .MuiOutlinedInput-notchedOutline": {
+        // borderColor: "#000",
+      },
+      "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
+        borderColor: "#c23237",
+      },
+      "& .MuiInputLabel-root": {
+        color: "#000",
+      },
+      "& .MuiInputLabel-root.Mui-focused": {
+        color: "#c23237",
+      },
+    },
   };
   return (
     <Box sx={styles.parent_contactus_box}>
@@ -224,12 +247,14 @@ function ContactUs() {
               label="Full Name"
               variant="outlined"
               size="small"
+              sx={styles.input_text}
             />
             <TextField
               id="outlined-basic"
               label="Email Address"
               variant="outlined"
               size="small"
+              sx={styles.input_text}
             />
             <TextField
               id="outlined-basic"
@@ -239,6 +264,7 @@ function ContactUs() {
               multiline
               minRows={8}
               maxRows={10}
+              sx={styles.input_text}
             />
             <Button sx={styles.button}>Send</Button>
           </Box>
