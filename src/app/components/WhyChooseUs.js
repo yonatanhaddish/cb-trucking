@@ -93,7 +93,7 @@ function WhyChooseUs() {
       fontWeight: "bold",
     },
     child_whychooseus_box: {
-      //   border: "solid green 2px",
+      // border: "solid green 2px",
       display: "flex",
       flexDirection: "row",
       flexWrap: "wrap",
@@ -125,7 +125,7 @@ function WhyChooseUs() {
       marginTop: "50px",
     },
     single_whychooseus_box: {
-      //   border: "solid blue 2px",
+      // border: "solid blue 2px",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -153,7 +153,7 @@ function WhyChooseUs() {
           : "100%",
     },
     typo_heading: {
-      //   border: "solid red 1px",
+      // border: "solid red 1px",
       width:
         screenLessThan430 ||
         screenGreaterThan430LessThan768 ||
@@ -189,8 +189,7 @@ function WhyChooseUs() {
           ? "65%"
           : screenGreaterThan1024LessThan1280 ||
             screenGreaterThan1280LessThan1440 ||
-            screenGreaterThan1440LessThan1920 ||
-            screenGreaterThan1920LessThan3840
+            screenGreaterThan1440LessThan1920
           ? "60%"
           : "100%",
       fontSize: screenLessThan430

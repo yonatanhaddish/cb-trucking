@@ -71,15 +71,16 @@ function AboutSection() {
       border:
         screenLessThan430 ||
         screenGreaterThan430LessThan768 ||
-        screenGreaterThan768LessThan1024
+        screenGreaterThan768LessThan1024 ||
+        screenGreaterThan1280LessThan1440
           ? ""
-          : "solid black 1px",
+          : "",
       boxShadow:
         screenLessThan430 ||
         screenGreaterThan430LessThan768 ||
         screenGreaterThan768LessThan1024
           ? ""
-          : "0 0 10px black",
+          : "",
       height: screenLessThan430
         ? "300px"
         : screenGreaterThan430LessThan768
@@ -250,7 +251,7 @@ function AboutSection() {
   return (
     <Box
       sx={{
-        backgroundColor: "#D9D9D9",
+        backgroundColor: "#d9d9d9",
         paddingTop: "30px",
         width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
         margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",

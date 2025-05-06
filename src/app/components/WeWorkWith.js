@@ -112,7 +112,7 @@ function WeWorkWith() {
         overflow: "hidden",
         width: "100%",
         py: 4,
-        bgcolor: "#D9D9D9",
+        bgcolor: "#d9d9d9",
         paddingTop: "30px",
         width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
         margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
@@ -148,7 +148,7 @@ function WeWorkWith() {
                 fontFamily: partner.fontFamily,
                 fontWeight: "bold",
                 whiteSpace: "nowrap",
-                color: "#D9D9D9",
+                color: "#d9d9d9",
                 fontSize: screenLessThan430
                   ? "1.2rem"
                   : screenGreaterThan430LessThan768

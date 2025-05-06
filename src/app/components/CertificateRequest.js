@@ -236,7 +236,7 @@ function CertificateRequest() {
   return (
     <Box
       sx={{
-        backgroundColor: "#D9D9D9",
+        backgroundColor: "#d9d9d9",
         paddingTop: "30px",
         width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
         margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
