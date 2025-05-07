@@ -8,6 +8,7 @@ import Service from "./components/Service";
 import WeWorkWith from "./components/WeWorkWith";
 import WhyChooseUs from "./components/WhyChooseUs";
 import ContactUs from "./components/ContactUs";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <CertificateRequest />
         <WhyChooseUs />
         <ContactUs />
+        <Footer />
       </>
     </>
   );

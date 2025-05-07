@@ -76,31 +76,77 @@ function ContactUs() {
     contactus_box: {
       // border: "solid blue 2px",
       display: "flex",
-      flexDirection: screenLessThan430 ? "column" : "row",
-      gap: screenLessThan430 ? "30px" : "",
+      flexDirection:
+        screenLessThan430 ||
+        screenGreaterThan430LessThan768 ||
+        screenGreaterThan768LessThan1024
+          ? "column"
+          : "row",
+      gap:
+        screenLessThan430 ||
+        screenGreaterThan430LessThan768 ||
+        screenGreaterThan768LessThan1024
+          ? "30px"
+          : screenGreaterThan1440LessThan1920 ||
+            screenGreaterThan1920LessThan3840
+          ? "100px"
+          : "",
+
+      justifyContent:
+        screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
+          ? "space-evenly"
+          : screenGreaterThan1440LessThan1920 ||
+            screenGreaterThan1920LessThan3840
+          ? "center"
+          : "",
     },
     contact_info_box: {
       // border: "solid green 1px",
-      width: screenLessThan430 ? "85%" : "100%",
+      width: screenLessThan430
+        ? "85%"
+        : screenGreaterThan430LessThan768
+        ? "60%"
+        : screenGreaterThan768LessThan1024
+        ? "65%"
+        : screenGreaterThan1024LessThan1280 ||
+          screenGreaterThan1280LessThan1440 ||
+          screenGreaterThan1920LessThan3840
+        ? "35%"
+        : screenGreaterThan1440LessThan1920
+        ? "30%"
+        : "100%",
       display: "flex",
       flexDirection: "column",
       gap: "10px",
       alignSelf: "center",
     },
     contact_input_box: {
-      // border: "solid #000 1px",
+      // border: "solid red 2px",
       // boxShadow: "0 0 2px #000",
       display: "flex",
       flexDirection: "column",
       gap: "10px",
-      width: screenLessThan430 ? "85%" : "100%",
+      width: screenLessThan430
+        ? "85%"
+        : screenGreaterThan430LessThan768
+        ? "60%"
+        : screenGreaterThan768LessThan1024
+        ? "65%"
+        : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
+        ? "45%"
+        : screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
+        ? "35%"
+        : "100%",
       alignSelf: "center",
       backgroundColor: "#fff",
       paddingTop: "20px",
       borderRadius: "2px",
     },
     typo_getintouch_heading: {
-      fontSize: screenLessThan430 ? "1.2rem" : "1.3rem",
+      fontSize:
+        screenLessThan430 || screenGreaterThan430LessThan768
+          ? "1.2rem"
+          : "1.3rem",
     },
     typo_getintouch_desc: {
       fontSize: screenLessThan430
@@ -121,16 +167,24 @@ function ContactUs() {
       // border: "solid green 2px",
       display: "flex",
       flexDirection: "row",
-      gap: "15px",
+      gap: screenGreaterThan1440LessThan1920 ? "10px" : "15px",
     },
     input_box: {
       // border: "solid green 2px",
       display: "flex",
       flexDirection: "column",
       gap: "20px",
-      width: screenLessThan430 ? "85%" : "100%",
+      width:
+        screenLessThan430 || screenGreaterThan430LessThan768
+          ? "85%"
+          : screenGreaterThan768LessThan1024 ||
+            screenGreaterThan1024LessThan1280 ||
+            screenGreaterThan1280LessThan1440 ||
+            screenGreaterThan1440LessThan1920 ||
+            screenGreaterThan1920LessThan3840
+          ? "80%"
+          : "100%",
       alignSelf: "center",
-      paddingTop: "15px",
     },
     button: {
       // border: "solid blue 1px",
@@ -182,7 +236,7 @@ function ContactUs() {
         // borderColor: "#000",
       },
       "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
-        borderColor: "#c23237",
+        borderColor: "#000",
       },
       "& .MuiInputLabel-root": {
         color: "#000",
@@ -197,9 +251,15 @@ function ContactUs() {
       <Typography sx={styles.heading_contactus}>Contact Us</Typography>
       <Box sx={styles.contactus_box}>
         <Box sx={styles.contact_info_box}>
-          <Typography sx={styles.typo_getintouch_heading}>
-            Get In Touch
-          </Typography>
+          {screenLessThan430 ||
+          screenGreaterThan430LessThan768 ||
+          screenGreaterThan768LessThan1024 ? (
+            <></>
+          ) : (
+            <Typography sx={styles.typo_getintouch_heading}>
+              Get In Touch
+            </Typography>
+          )}
           <Typography sx={styles.typo_getintouch_desc}>
             Have questions or need a quote? Get in touch with Reliable Trucking
             and Transportation Services. We're here to provide prompt and
@@ -262,7 +322,7 @@ function ContactUs() {
               variant="outlined"
               size="small"
               multiline
-              minRows={8}
+              minRows={6}
               maxRows={10}
               sx={styles.input_text}
             />

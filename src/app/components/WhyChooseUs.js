@@ -63,7 +63,7 @@ function WhyChooseUs() {
       marginBottom: "30px",
     },
     desc_whychooseus: {
-      //   border: "solid green 2px",
+      // border: "solid green 2px",
       fontSize: screenLessThan430
         ? "0.9rem"
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
@@ -83,10 +83,11 @@ function WhyChooseUs() {
         ? "85%"
         : screenGreaterThan430LessThan768 ||
           screenGreaterThan768LessThan1024 ||
-          screenGreaterThan1280LessThan1440 ||
-          screenGreaterThan1920LessThan3840
+          screenGreaterThan1280LessThan1440
         ? "70%"
-        : screenGreaterThan1024LessThan1280 || screenGreaterThan1440LessThan1920
+        : screenGreaterThan1024LessThan1280 ||
+          screenGreaterThan1440LessThan1920 ||
+          screenGreaterThan1920LessThan3840
         ? "60%"
         : "100%",
       margin: "0 auto",
@@ -189,7 +190,8 @@ function WhyChooseUs() {
           ? "65%"
           : screenGreaterThan1024LessThan1280 ||
             screenGreaterThan1280LessThan1440 ||
-            screenGreaterThan1440LessThan1920
+            screenGreaterThan1440LessThan1920 ||
+            screenGreaterThan1920LessThan3840
           ? "60%"
           : "100%",
       fontSize: screenLessThan430

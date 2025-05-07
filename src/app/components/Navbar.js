@@ -181,7 +181,6 @@ function Navbar() {
                 </MenuItem>
                 <MenuItem onClick={handleClose}>Our Partners</MenuItem>
                 <MenuItem onClick={handleClose}>Why Choose Us?</MenuItem>
-                <MenuItem onClick={handleClose}>Testimonials</MenuItem>
               </Menu>
             </div>
             <Typography sx={styles.typo_nav_item}>Contact</Typography>
