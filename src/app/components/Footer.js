@@ -34,6 +34,8 @@ function Footer() {
       flexDirection: screenLessThan430 ? "column" : "row",
       gap: screenLessThan430 ? "50px" : "",
       justifyContent: "space-evenly",
+      width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
+      margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
     },
     logoname_box: {
       //   border: "solid red 2px",
@@ -88,6 +90,7 @@ function Footer() {
       color: "#d9d9d9",
     },
     boxOne: {
+      paddingTop: "20px",
       display: "flex",
       flexDirection:
         screenLessThan430 ||

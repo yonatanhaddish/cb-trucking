@@ -9,6 +9,7 @@ import WeWorkWith from "./components/WeWorkWith";
 import WhyChooseUs from "./components/WhyChooseUs";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
+import FooterTwo from "./components/FooterTwo";
 
 export default function Home() {
   return (
@@ -21,8 +22,9 @@ export default function Home() {
         <WeWorkWith />
         <CertificateRequest />
         <WhyChooseUs />
-        <ContactUs />
+        {/* <ContactUs /> */}
         <Footer />
+        <FooterTwo />
       </>
     </>
   );

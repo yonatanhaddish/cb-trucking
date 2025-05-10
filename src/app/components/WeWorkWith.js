@@ -92,12 +92,13 @@ function WeWorkWith() {
       width: screenLessThan430
         ? "50%"
         : screenGreaterThan1024LessThan1280 ||
-          screenGreaterThan430LessThan768 ||
           screenGreaterThan768LessThan1024 ||
           screenGreaterThan1280LessThan1440
         ? "20%"
         : screenGreaterThan1440LessThan1920
         ? "15%"
+        : screenGreaterThan430LessThan768
+        ? "25%"
         : "15%",
       textAlign: "center",
       marginLeft: "5%",
@@ -113,9 +114,9 @@ function WeWorkWith() {
         width: "100%",
         py: 4,
         bgcolor: "#d9d9d9",
-        paddingTop: "30px",
         width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
         margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
+        paddingTop: "100px",
       }}
     >
       <Typography sx={styles.heading_our_partners}>We Work With</Typography>
@@ -137,7 +138,7 @@ function WeWorkWith() {
               justifyContent: "center",
               alignItems: "center",
               px: 1,
-              height: "200px",
+              height: "250px",
               bgcolor: "#c23237",
               border: "solid #c23237 2px",
             }}

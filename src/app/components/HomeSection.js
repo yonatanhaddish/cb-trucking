@@ -28,7 +28,7 @@ function HomeSection() {
   );
   const styles = {
     parent_landingpage: {
-      // border: "solid red 2px",
+      // border: "solid green 2px",
       backgroundImage: `url("/images/landingpage_cb.jpg")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
@@ -154,7 +154,7 @@ function HomeSection() {
       height:
         screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
           ? "93vh"
-          : "88vh",
+          : "90vh",
       backgroundColor: "#424242",
       display: "flex",
       flexDirection: "column",
@@ -191,7 +191,7 @@ function HomeSection() {
     typo_heading_smaller: {
       fontSize: screenGreaterThan768LessThan1024 ? "40px" : "34px",
       color: "#fff",
-      //   border: "solid white 1px",
+      // border: "solid white 1px",
       textAlign: "center",
     },
     typo_desc_smaller: {
@@ -200,11 +200,17 @@ function HomeSection() {
       fontSize: screenLessThan430 ? "16px" : "18px",
     },
     button_parent_smaller: {
-      //   border: "solid white 2px",
+      // border: "solid white 2px",
       display: "flex",
       flexDirection: "row",
       alignSelf: "center",
-      gap: screenGreaterThan768LessThan1024 ? "60px" : "30px",
+      // gap: screenGreaterThan768LessThan1024 ? "60px" : "30px",
+      width: screenLessThan430
+        ? "85%"
+        : screenGreaterThan430LessThan768
+        ? "70%"
+        : "100%",
+      justifyContent: "space-between",
     },
     button_services_smaller: {
       backgroundColor: "#c23237",

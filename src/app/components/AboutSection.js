@@ -182,7 +182,7 @@ function AboutSection() {
   `,
     },
     aboutsection_desc_box: {
-      border: screenLessThan430 ? "" : "solid black 1px",
+      // border: "solid black 1px",
       boxShadow:
         screenLessThan430 ||
         screenGreaterThan430LessThan768 ||
@@ -198,41 +198,40 @@ function AboutSection() {
           : "100%",
       display: "flex",
       flexDirection: "column",
-      gap: screenLessThan430 ? "20px" : "10px",
       backgroundColor: "#c23237",
       justifyContent: "space-evenly",
       alignItems: "center",
       height: screenLessThan430
-        ? "400px"
+        ? "450px"
         : screenGreaterThan1024LessThan1280 ||
           screenGreaterThan1280LessThan1440 ||
           screenGreaterThan1440LessThan1920 ||
           screenGreaterThan1920LessThan3840
         ? "full"
         : screenGreaterThan430LessThan768
-        ? "400px"
+        ? "450px"
         : screenGreaterThan768LessThan1024
         ? "350px"
         : "",
-      paddingBottom: screenLessThan430
-        ? "40px"
-        : screenGreaterThan768LessThan1024
-        ? "100px"
-        : "",
+      // paddingBottom: screenLessThan430
+      //   ? "40px"
+      //   : screenGreaterThan768LessThan1024
+      //   ? "100px"
+      //   : "",
     },
     typo_desc: {
-      // border: "solid blue 2px",
-      width:
-        screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
-          ? "90%"
-          : screenLessThan430 ||
-            screenGreaterThan1440LessThan1920 ||
-            screenGreaterThan1920LessThan3840
-          ? "85%"
-          : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
-          ? "70%"
-          : "100%",
-      fontWeight: "bold",
+      // border: "solid black 1px",
+      boxShadow: "0 0 10px black",
+      width: screenLessThan430
+        ? "80%"
+        : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
+        ? "90%"
+        : screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
+        ? "85%"
+        : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
+        ? "70%"
+        : "100%",
+      fontWeight: 500,
       fontSize: screenLessThan430
         ? "0.9rem"
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
@@ -246,15 +245,19 @@ function AboutSection() {
         : screenGreaterThan1920LessThan3840
         ? "1.3rem"
         : "1rem",
+      color: "#000",
+      backgroundColor: "#d9d9d9",
+      padding: screenLessThan430 ? "10px 20px 10px 20px" : "",
+      borderRadius: "6px",
     },
   };
   return (
     <Box
       sx={{
         backgroundColor: "#d9d9d9",
-        paddingTop: "30px",
         width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
         margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
+        paddingTop: "50px",
       }}
     >
       <Typography sx={styles.heading_aboutus}>About Us</Typography>
@@ -275,22 +278,17 @@ function AboutSection() {
             </span>{" "}
             is one of Canada's most exciting third-party logistics providers. We
             take pride in our commitment to service, competitiveness, and
-            reliability. At <span style={{ color: "#000" }}>CB Trucking</span>{" "}
-            we strive to serve not only our customers but also our carriers with
-            the same level of dedication.
+            reliability. At CB Trucking we strive to serve not only our
+            customers but also our carriers with the same level of dedication.
           </Typography>
           <Typography sx={styles.typo_desc}>
             We are well-equipped to meet your needs with our vast experience in
-            the <span style={{ color: "#000" }}>transportation industry</span>{" "}
-            and a deep understanding of the{" "}
-            <span style={{ color: "#000" }}>produce sector</span> and{" "}
-            <span style={{ color: "#000" }}>refrigerated logistics</span>.
+            the transportation industry and a deep understanding of the produce
+            sector and refrigerated logistics.
           </Typography>
           <Typography sx={styles.typo_desc}>
-            Just a phone call away, we offer both{" "}
-            <span style={{ color: "#00" }}>competitive</span> and{" "}
-            <span style={{ color: "#000" }}>fixed pricing</span>. Our
-            reliability is unmatched.
+            Just a phone call away, we offer both competitive and fixed pricing.
+            Our reliability is unmatched.
           </Typography>
         </Box>
       </Box>

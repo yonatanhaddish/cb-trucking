@@ -70,6 +70,8 @@ function CertificateRequest() {
         ? "30%"
         : screenGreaterThan1920LessThan3840
         ? "20%"
+        : screenGreaterThan430LessThan768
+        ? "30%"
         : "15%",
       textAlign: "center",
       marginLeft: "5%",
@@ -77,9 +79,9 @@ function CertificateRequest() {
     },
     license_box: {
       width: screenLessThan430
-        ? "80%"
+        ? "70%"
         : screenGreaterThan430LessThan768
-        ? "50%"
+        ? "40%"
         : screenGreaterThan768LessThan1024
         ? "35%"
         : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
@@ -97,18 +99,20 @@ function CertificateRequest() {
       justifySelf: "center",
       justifyContent: "space-around",
       backgroundColor: "#fff",
-      height: screenLessThan430
-        ? "450px"
-        : screenGreaterThan430LessThan768 ||
-          screenGreaterThan1440LessThan1920 ||
-          screenGreaterThan1920LessThan3840
-        ? "450px"
-        : screenGreaterThan768LessThan1024 || screenGreaterThan1280LessThan1440
-        ? "400px"
-        : screenGreaterThan1024LessThan1280
-        ? "350px"
-        : "300px",
+      height:
+        screenLessThan430 || screenGreaterThan430LessThan768
+          ? "400px"
+          : screenGreaterThan1440LessThan1920 ||
+            screenGreaterThan1920LessThan3840
+          ? "450px"
+          : screenGreaterThan768LessThan1024 ||
+            screenGreaterThan1280LessThan1440
+          ? "400px"
+          : screenGreaterThan1024LessThan1280
+          ? "350px"
+          : "300px",
       borderRadius: "5px",
+      paddingBottom: "20px",
     },
     license_logo_icc: {
       backgroundImage: `url("/images/icc_license.png")`,
@@ -237,7 +241,7 @@ function CertificateRequest() {
     <Box
       sx={{
         backgroundColor: "#d9d9d9",
-        paddingTop: "30px",
+        paddingTop: "50px",
         width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
         margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
       }}

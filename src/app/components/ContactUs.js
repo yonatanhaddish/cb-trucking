@@ -39,7 +39,7 @@ function ContactUs() {
     parent_contactus_box: {
       // border: "solid green 2px",
       backgroundColor: "#D9D9D9",
-      paddingTop: "30px",
+      paddingTop: "100px",
       width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
       margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
     },
@@ -99,6 +99,7 @@ function ContactUs() {
             screenGreaterThan1920LessThan3840
           ? "center"
           : "",
+      paddingBottom: "100px",
     },
     contact_info_box: {
       // border: "solid green 1px",
@@ -162,6 +163,7 @@ function ContactUs() {
         : screenGreaterThan1920LessThan3840
         ? "1.3rem"
         : "1rem",
+      fontWeight: "bold",
     },
     single_contact_info: {
       // border: "solid green 2px",
@@ -185,6 +187,7 @@ function ContactUs() {
           ? "80%"
           : "100%",
       alignSelf: "center",
+      paddingBottom: "30px",
     },
     button: {
       // border: "solid blue 1px",

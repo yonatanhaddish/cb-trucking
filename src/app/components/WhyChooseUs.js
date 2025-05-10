@@ -28,7 +28,7 @@ function WhyChooseUs() {
   const styles = {
     parent_why_whoose_us_box: {
       backgroundColor: "#D9D9D9",
-      paddingTop: "30px",
+      paddingTop: "100px",
       width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
       margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
     },
@@ -80,7 +80,7 @@ function WhyChooseUs() {
       textAlign: "center",
       justifySelf: "center",
       width: screenLessThan430
-        ? "85%"
+        ? "80%"
         : screenGreaterThan430LessThan768 ||
           screenGreaterThan768LessThan1024 ||
           screenGreaterThan1280LessThan1440
@@ -185,7 +185,7 @@ function WhyChooseUs() {
       //   border: "solid purple 2px",
       width:
         screenLessThan430 || screenGreaterThan768LessThan1024
-          ? "80%"
+          ? "70%"
           : screenGreaterThan430LessThan768
           ? "65%"
           : screenGreaterThan1024LessThan1280 ||
