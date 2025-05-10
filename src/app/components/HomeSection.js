@@ -209,6 +209,8 @@ function HomeSection() {
         ? "85%"
         : screenGreaterThan430LessThan768
         ? "70%"
+        : screenGreaterThan768LessThan1024
+        ? "80%"
         : "100%",
       justifyContent: "space-between",
     },

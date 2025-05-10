@@ -182,18 +182,17 @@ function WhyChooseUs() {
       fontWeight: "bold",
     },
     typo_desc: {
-      //   border: "solid purple 2px",
-      width:
-        screenLessThan430 || screenGreaterThan768LessThan1024
-          ? "70%"
-          : screenGreaterThan430LessThan768
-          ? "65%"
-          : screenGreaterThan1024LessThan1280 ||
-            screenGreaterThan1280LessThan1440 ||
-            screenGreaterThan1440LessThan1920 ||
-            screenGreaterThan1920LessThan3840
-          ? "60%"
-          : "100%",
+      // border: "solid purple 2px",
+      width: screenLessThan430
+        ? "70%"
+        : screenGreaterThan430LessThan768
+        ? "60%"
+        : screenGreaterThan1024LessThan1280 ||
+          screenGreaterThan1280LessThan1440 ||
+          screenGreaterThan1440LessThan1920 ||
+          screenGreaterThan1920LessThan3840
+        ? "60%"
+        : "100%",
       fontSize: screenLessThan430
         ? "0.9rem"
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024

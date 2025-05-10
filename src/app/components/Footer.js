@@ -28,7 +28,7 @@ function Footer() {
 
   const styles = {
     parent_box: {
-      //   border: "solid green 2px",
+      // border: "solid green 2px",
       backgroundColor: "#000",
       display: "flex",
       flexDirection: screenLessThan430 ? "column" : "row",
@@ -38,7 +38,7 @@ function Footer() {
       margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
     },
     logoname_box: {
-      //   border: "solid red 2px",
+      // border: "solid red 2px",
       width:
         screenLessThan430 || screenGreaterThan430LessThan768
           ? "80%"
@@ -113,7 +113,7 @@ function Footer() {
           ? "20px"
           : "100px",
       alignItems: "center",
-      //   border: "solid blue 1px",
+      // border: "solid blue 1px",
       width:
         screenGreaterThan430LessThan768 ||
         screenGreaterThan768LessThan1024 ||
@@ -141,7 +141,7 @@ function Footer() {
           : "100%",
     },
     nav_links: {
-      //   border: "solid green 2px",
+      // border: "solid blue 2px",
       display: "flex",
       flexDirection: screenLessThan430 ? "row" : "column",
       flexWrap: "wrap",
@@ -157,6 +157,7 @@ function Footer() {
           ? "30%"
           : "100%",
     },
+
     button_single: {
       color: "#d9d9d9",
     },

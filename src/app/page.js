@@ -22,7 +22,7 @@ export default function Home() {
         <WeWorkWith />
         <CertificateRequest />
         <WhyChooseUs />
-        {/* <ContactUs /> */}
+        <ContactUs />
         <Footer />
         <FooterTwo />
       </>
