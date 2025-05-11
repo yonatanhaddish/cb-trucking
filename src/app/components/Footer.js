@@ -156,6 +156,14 @@ function Footer() {
             screenGreaterThan1920LessThan3840
           ? "30%"
           : "100%",
+      marginTop:
+        screenGreaterThan768LessThan1024 ||
+        screenGreaterThan1024LessThan1280 ||
+        screenGreaterThan1280LessThan1440 ||
+        screenGreaterThan1440LessThan1920 ||
+        screenGreaterThan1920LessThan3840
+          ? "30px"
+          : "",
     },
 
     button_single: {

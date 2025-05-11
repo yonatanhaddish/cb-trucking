@@ -192,6 +192,8 @@ function WhyChooseUs() {
           screenGreaterThan1440LessThan1920 ||
           screenGreaterThan1920LessThan3840
         ? "60%"
+        : screenGreaterThan768LessThan1024
+        ? "70%"
         : "100%",
       fontSize: screenLessThan430
         ? "0.9rem"

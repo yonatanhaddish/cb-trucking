@@ -65,7 +65,6 @@ function AboutSection() {
         : "15%",
       textAlign: "center",
       marginLeft: "5%",
-      marginBottom: "30px",
     },
     aboutsection_image_box: {
       border:
@@ -90,7 +89,7 @@ function AboutSection() {
         : screenGreaterThan1024LessThan1280
         ? "400px"
         : screenGreaterThan768LessThan1024
-        ? "400px"
+        ? "450px"
         : screenGreaterThan1280LessThan1440
         ? "500px"
         : screenGreaterThan1440LessThan1920
@@ -104,7 +103,7 @@ function AboutSection() {
         : screenGreaterThan430LessThan768
         ? "70%"
         : screenGreaterThan768LessThan1024
-        ? "60%"
+        ? "70%"
         : screenGreaterThan1280LessThan1440
         ? "45%"
         : screenGreaterThan1440LessThan1920
@@ -115,15 +114,27 @@ function AboutSection() {
       alignContent: "center",
       justifyItems: "center",
       alignSelf: "center",
+      // border: "solid green 2px",
     },
     aboutsection_img1: {
       backgroundImage: `url("/images/aboutus.jpg")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
-      height: screenGreaterThan768LessThan1024 ? "80%" : "70%",
-      width: screenGreaterThan768LessThan1024 ? "80%" : "70%",
-      border: "solid black 1px",
+      height:
+        screenGreaterThan768LessThan1024 || screenGreaterThan1920LessThan3840
+          ? "80%"
+          : screenGreaterThan430LessThan768
+          ? "85%"
+          : "70%",
+      width:
+        screenGreaterThan768LessThan1024 || screenGreaterThan1920LessThan3840
+          ? "80%"
+          : screenGreaterThan430LessThan768
+          ? "80%"
+          : "70%",
+      // border: "solid black 1px",
       boxShadow: "0 0 10px black",
+      margin: screenGreaterThan768LessThan1024 ? "0 auto" : "",
     },
     aboutsection_img2: {
       backgroundImage: `url("/images/aboutus2.jpg")`,
@@ -158,6 +169,8 @@ function AboutSection() {
         ? 40
         : screenGreaterThan1440LessThan1920
         ? 70
+        : screenGreaterThan430LessThan768
+        ? -40
         : 0,
       bottom: screenGreaterThan1280LessThan1440
         ? 20
@@ -166,11 +179,13 @@ function AboutSection() {
         : screenGreaterThan1024LessThan1280
         ? 10
         : screenLessThan430
-        ? 20
+        ? -10
         : screenGreaterThan768LessThan1024
-        ? 10
+        ? -10
         : screenGreaterThan1440LessThan1920
         ? 50
+        : screenGreaterThan430LessThan768
+        ? -60
         : 0,
       borderRadius: "360px",
       border: "solid #000 3px",
@@ -183,71 +198,72 @@ function AboutSection() {
     },
     aboutsection_desc_box: {
       // border: "solid black 1px",
-      boxShadow:
-        screenLessThan430 ||
-        screenGreaterThan430LessThan768 ||
-        screenGreaterThan768LessThan1024
-          ? ""
-          : "0 0 10px black",
+      boxShadow: "0 0 10px black",
       width:
         screenGreaterThan1024LessThan1280 ||
         screenGreaterThan1280LessThan1440 ||
         screenGreaterThan1440LessThan1920 ||
         screenGreaterThan1920LessThan3840
           ? "45%"
+          : screenLessThan430
+          ? "90%"
+          : screenGreaterThan430LessThan768
+          ? "70%"
+          : screenGreaterThan768LessThan1024
+          ? "70%"
           : "100%",
       display: "flex",
       flexDirection: "column",
       backgroundColor: "#c23237",
-      justifyContent: "space-evenly",
+      justifyContent: "center",
       alignItems: "center",
       height: screenLessThan430
-        ? "450px"
+        ? "520px"
         : screenGreaterThan1024LessThan1280 ||
           screenGreaterThan1280LessThan1440 ||
           screenGreaterThan1440LessThan1920 ||
           screenGreaterThan1920LessThan3840
         ? "full"
         : screenGreaterThan430LessThan768
-        ? "450px"
+        ? "500px"
         : screenGreaterThan768LessThan1024
-        ? "350px"
+        ? "480px"
         : "",
-      // paddingBottom: screenLessThan430
-      //   ? "40px"
-      //   : screenGreaterThan768LessThan1024
-      //   ? "100px"
-      //   : "",
+      gap: "30px",
+      margin:
+        screenLessThan430 ||
+        screenGreaterThan430LessThan768 ||
+        screenGreaterThan768LessThan1024
+          ? "0 auto"
+          : "",
     },
     typo_desc: {
       // border: "solid black 1px",
-      boxShadow: "0 0 10px black",
+      // boxShadow: "0 0 10px black",
       width: screenLessThan430
         ? "80%"
         : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
         ? "90%"
         : screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
-        ? "85%"
+        ? "75%"
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
         ? "70%"
         : "100%",
       fontWeight: 500,
       fontSize: screenLessThan430
-        ? "0.9rem"
+        ? "1.05rem"
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
         ? "1.0rem"
         : screenGreaterThan1024LessThan1280
-        ? "1.05rem"
-        : screenGreaterThan1280LessThan1440
         ? "1.1rem"
-        : screenGreaterThan1440LessThan1920
+        : screenGreaterThan1280LessThan1440
         ? "1.2rem"
-        : screenGreaterThan1920LessThan3840
+        : screenGreaterThan1440LessThan1920
         ? "1.3rem"
-        : "1rem",
+        : screenGreaterThan1920LessThan3840
+        ? "1.4rem"
+        : "1.6rem",
       color: "#000",
-      backgroundColor: "#d9d9d9",
-      padding: screenLessThan430 ? "10px 20px 10px 20px" : "",
       borderRadius: "6px",
     },
   };
@@ -257,7 +273,7 @@ function AboutSection() {
         backgroundColor: "#d9d9d9",
         width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
         margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
-        paddingTop: "50px",
+        paddingTop: "100px",
       }}
     >
       <Typography sx={styles.heading_aboutus}>About Us</Typography>

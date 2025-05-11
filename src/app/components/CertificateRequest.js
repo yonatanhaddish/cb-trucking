@@ -198,7 +198,7 @@ function CertificateRequest() {
           screenGreaterThan1920LessThan3840
         ? "70%"
         : screenGreaterThan1024LessThan1280 || screenGreaterThan1440LessThan1920
-        ? "75%"
+        ? "60%"
         : "100%",
       margin: "0 auto",
       fontWeight: "bold",

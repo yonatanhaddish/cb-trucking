@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   Box,
@@ -14,6 +14,11 @@ import LocationPinIcon from "@mui/icons-material/LocationPin";
 import EmailIcon from "@mui/icons-material/Email";
 
 function ContactUs() {
+  const [loading, setLoading] = useState(undefined);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
   );
@@ -135,8 +140,10 @@ function ContactUs() {
         ? "65%"
         : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
         ? "45%"
-        : screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
+        : screenGreaterThan1440LessThan1920
         ? "35%"
+        : screenGreaterThan1920LessThan3840
+        ? "30%"
         : "100%",
       alignSelf: "center",
       backgroundColor: "#fff",
@@ -148,6 +155,7 @@ function ContactUs() {
         screenLessThan430 || screenGreaterThan430LessThan768
           ? "1.2rem"
           : "1.3rem",
+      color: "#c23237",
     },
     typo_getintouch_desc: {
       fontSize: screenLessThan430
@@ -249,6 +257,10 @@ function ContactUs() {
       },
     },
   };
+
+  if (loading === undefined) {
+    return <div>Loading...</div>;
+  }
   return (
     <Box sx={styles.parent_contactus_box}>
       <Typography sx={styles.heading_contactus}>Contact Us</Typography>
@@ -321,7 +333,7 @@ function ContactUs() {
             />
             <TextField
               id="outlined-basic"
-              label="message ..."
+              label="Message"
               variant="outlined"
               size="small"
               multiline

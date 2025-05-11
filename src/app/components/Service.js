@@ -28,11 +28,11 @@ function Service() {
 
   const styles = {
     parent_service: {
-      //   border: "solid red 2px",
+      // border: "solid red 2px",
       display: "flex",
       flexDirection: "row",
       flexWrap: "wrap",
-      justifyContent: "center",
+      justifyContent: "space-evenly",
       marginTop: "50px",
       gap:
         screenLessThan430 ||
@@ -56,21 +56,23 @@ function Service() {
         : screenGreaterThan768LessThan1024
         ? "40%"
         : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
-        ? "28%"
+        ? "26%"
         : screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
-        ? "22%"
+        ? "24%"
         : "100%",
       display: "flex",
       flexDirection: "column",
       gap: "20px",
       height: screenLessThan430
         ? "400px"
-        : screenGreaterThan1024LessThan1280 ||
-          screenGreaterThan1280LessThan1440 ||
-          screenGreaterThan1440LessThan1920
-        ? "420px"
+        : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
+        ? "440px"
         : screenGreaterThan430LessThan768
         ? "400px"
+        : screenGreaterThan768LessThan1024
+        ? "450px"
+        : screenGreaterThan1440LessThan1920
+        ? "450px"
         : "550px",
     },
     heading_service: {
@@ -137,13 +139,13 @@ function Service() {
     },
     typo_service_heading: {
       //   border: "solid green 2px",
-      fontSize: screenLessThan430 ? "1.4rem" : "1.3rem",
+      fontSize: screenLessThan430 ? "1.4rem" : "1.2rem",
       fontWeight: "bold",
       color: "#fff",
       backgroundColor: "#c23237",
       textAlign: "center",
       width: "100%",
-      height: screenLessThan430 ? "15%" : "10%",
+      height: screenLessThan430 ? "15%" : "12%",
       alignContent: "center",
     },
     typo_service_desc: {
@@ -155,7 +157,7 @@ function Service() {
         : screenGreaterThan1024LessThan1280 ||
           screenGreaterThan1280LessThan1440 ||
           screenGreaterThan1440LessThan1920
-        ? "85%"
+        ? "80%"
         : screenGreaterThan430LessThan768
         ? "75%"
         : "100%",
@@ -180,7 +182,7 @@ function Service() {
     <Box
       sx={{
         backgroundColor: "#D9D9D9",
-        paddingTop: "50px",
+        paddingTop: "100px",
         width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
         margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
       }}

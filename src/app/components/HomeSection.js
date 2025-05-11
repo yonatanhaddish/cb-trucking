@@ -26,9 +26,10 @@ function HomeSection() {
   const screenGreaterThan1920LessThan3840 = useMediaQuery(
     "(min-width: 1921px) and (max-width: 3840px)"
   );
+
   const styles = {
     parent_landingpage: {
-      // border: "solid green 2px",
+      // border: screenGreaterThan3840 ? "solid green 2px" : "solid red 5px",
       backgroundImage: `url("/images/landingpage_cb.jpg")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
