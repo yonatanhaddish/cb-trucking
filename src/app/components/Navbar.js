@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-scroll";
 import {
   Box,
   Typography,
@@ -12,11 +12,14 @@ import {
   MenuItem,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function Navbar() {
   const [loading, setLoading] = useState(undefined);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [openSideNavBar, setOpenSideNavBar] = useState(false);
+
   useEffect(() => {
     setLoading(false);
   }, []);
@@ -62,9 +65,12 @@ function Navbar() {
       alignItems: "center",
       width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
       margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
+      position: "sticky",
+      top: 0,
+      zIndex: 1100,
     },
     logo_img: {
-      //   border: "solid blue 2px",
+      // border: "solid blue 2px",
       backgroundImage: `url("/images/logo.PNG")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
@@ -97,6 +103,8 @@ function Navbar() {
           ? "40px"
           : "50px",
       cursor: "pointer",
+      height: openSideNavBar ? "40px" : "60px",
+      width: openSideNavBar ? "40px" : "60px",
     },
     navlist_box: {
       //   border: "solid black 2px",
@@ -116,18 +124,47 @@ function Navbar() {
           : "",
     },
     humburgur_icon: {
-      //   border: "solid green 2px",
+      // border: "solid green 2px",
       height:
         screenLessThan430 || screenGreaterThan430LessThan768 ? "40px" : "30px",
       width:
         screenLessThan430 || screenGreaterThan430LessThan768 ? "40px" : "30px",
       marginRight: "10px",
     },
+    humburgur_icon_close: {
+      // border: "solid red 2px",
+      height:
+        screenLessThan430 || screenGreaterThan430LessThan768 ? "40px" : "30px",
+      width:
+        screenLessThan430 || screenGreaterThan430LessThan768 ? "40px" : "30px",
+      // marginRight: "10px",
+      // width: "50%",
+      marginLeft: "60%",
+    },
     typo_nav_item: {
       fontSize: screenGreaterThan1920LessThan3840 ? "25px" : "20px",
       color: "#fff",
       cursor: "pointer",
       //   border: "solid green 1px",
+    },
+    logo_box_parent: {
+      display: "flex",
+      // border: "solid white 1px",
+      alignItems: "center",
+      gap: "8px",
+    },
+    typo_logo: {
+      fontSize: screenLessThan430 ? "1.3rem" : "1.4rem",
+      fontSize: openSideNavBar ? "14px" : "20px",
+      color: "#fff",
+      fontWeight: 600,
+    },
+    side_navbar_box: {
+      // border: "solid green 2px",
+      // width: "200px",
+      marginTop: "346px",
+      marginLeft: "80px",
+      backgroundColor: "#c23237",
     },
   };
   if (loading === undefined) {
@@ -141,10 +178,26 @@ function Navbar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const handleOpenHumberger = () => {
+    setOpenSideNavBar(!openSideNavBar);
+  };
+  const handleCloseHumberger = () => {
+    setOpenSideNavBar(!openSideNavBar);
+  };
+  const handleCloseSideBar = () => {
+    setOpenSideNavBar(false);
+  };
+
   return (
     <>
       <Box sx={styles.parent_navbar_box}>
-        <Box sx={styles.logo_img}></Box>
+        <Link to="home_page" duration={500} smooth={true}>
+          <Box sx={styles.logo_box_parent}>
+            <Box sx={styles.logo_img}></Box>
+            <Typography sx={styles.typo_logo}>CB Trucking</Typography>
+          </Box>
+        </Link>
         {screenLessThan430 || screenGreaterThan430LessThan768 ? (
           <IconButton
             size="large"
@@ -152,13 +205,65 @@ function Navbar() {
             color="inherit"
             aria-label="open drawer"
           >
-            <MenuIcon sx={styles.humburgur_icon} />
+            {!openSideNavBar ? (
+              <MenuIcon
+                sx={styles.humburgur_icon}
+                onClick={handleOpenHumberger}
+              />
+            ) : (
+              <Box sx={styles.side_navbar_box}>
+                <CloseIcon
+                  sx={styles.humburgur_icon_close}
+                  onClick={handleCloseHumberger}
+                />
+                <Box>
+                  <Link to="home_page" duration={500} smooth={true}>
+                    <MenuItem onClick={handleCloseSideBar}>Home</MenuItem>
+                  </Link>
+                  <Link to="about_us_page" duration={500} smooth={true}>
+                    <MenuItem onClick={handleCloseSideBar}>About</MenuItem>
+                  </Link>
+                  <Link to="service_page" duration={500} smooth={true}>
+                    <MenuItem onClick={handleCloseSideBar}> Service</MenuItem>
+                  </Link>
+                  <Link
+                    to="certificate_and_accrediation_page"
+                    duration={500}
+                    smooth={true}
+                  >
+                    <MenuItem onClick={handleCloseSideBar}>
+                      Certificate & Accrediations
+                    </MenuItem>
+                  </Link>
+                  <Link to="our_partner_page" duration={500} smooth={true}>
+                    <MenuItem onClick={handleCloseSideBar}>
+                      Our Partners
+                    </MenuItem>
+                  </Link>
+                  <Link to="why_choose_us_page" duration={500} smooth={true}>
+                    <MenuItem onClick={handleCloseSideBar}>
+                      Why Choose Us?
+                    </MenuItem>
+                  </Link>
+                  <Link to="contact_us_page" duration={500} smooth={true}>
+                    <MenuItem onClick={handleCloseSideBar}>Contact</MenuItem>
+                  </Link>
+                </Box>
+              </Box>
+            )}
           </IconButton>
         ) : (
           <Box sx={styles.navlist_box}>
-            <Typography sx={styles.typo_nav_item}>Home</Typography>
-            <Typography sx={styles.typo_nav_item}>About</Typography>
-            <Typography sx={styles.typo_nav_item}>Service</Typography>
+            <Link to="home_page" duration={500} smooth={true}>
+              <Typography sx={styles.typo_nav_item}>Home</Typography>
+            </Link>
+            <Link to="about_us_page" duration={500} smooth={true}>
+              <Typography sx={styles.typo_nav_item}>About</Typography>
+            </Link>
+
+            <Link to="service_page" duration={500} smooth={true}>
+              <Typography sx={styles.typo_nav_item}>Service</Typography>
+            </Link>
             <div>
               <Typography
                 id="basic-button"
@@ -176,14 +281,25 @@ function Navbar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>
-                  Certificates & Accreditation
-                </MenuItem>
-                <MenuItem onClick={handleClose}>Our Partners</MenuItem>
-                <MenuItem onClick={handleClose}>Why Choose Us?</MenuItem>
+                <Link
+                  to="certificate_and_accrediation_page"
+                  duration={500}
+                  smooth={true}
+                >
+                  <MenuItem>Certificates & Accreditation</MenuItem>
+                </Link>
+                <Link to="our_partner_page" duration={500} smooth={true}>
+                  <MenuItem>Our Partners</MenuItem>
+                </Link>
+                <Link to="why_choose_us_page" duration={500} smooth={true}>
+                  {" "}
+                  <MenuItem>Why Choose Us?</MenuItem>
+                </Link>
               </Menu>
             </div>
-            <Typography sx={styles.typo_nav_item}>Contact</Typography>
+            <Link to="contact_us_page" duration={500} smooth={true}>
+              <Typography sx={styles.typo_nav_item}>Contact</Typography>
+            </Link>
           </Box>
         )}
       </Box>

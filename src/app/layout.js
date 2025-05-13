@@ -1,5 +1,7 @@
 import "./globals.css";
 
+import "@fontsource/oswald";
+
 export const metadata = {
   title: "CB Trucking",
   description: "CB Trucking and Logistic",

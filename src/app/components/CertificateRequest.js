@@ -238,51 +238,53 @@ function CertificateRequest() {
     },
   };
   return (
-    <Box
-      sx={{
-        backgroundColor: "#d9d9d9",
-        paddingTop: "50px",
-        width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
-        margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
-      }}
-    >
-      <Typography sx={styles.heading_certification}>
-        Certificate & Accrediations
-      </Typography>
-      <Typography sx={styles.desc_certification}>
-        Our certifications and accreditations demonstrate our ongoing commitment
-        to quality, safety, and compliance. From recognized industry standards
-        to government-authorized validations, each credential reflects our
-        dedication to delivering trusted, high-standard services that meet
-        regulatory and customer expectations.
-      </Typography>
-      <Box sx={styles.parent_certificate}>
-        <Box sx={styles.license_box}>
-          <Box sx={styles.license_logo_icc}></Box>
-          <Typography sx={styles.typo_heading}>ICC LICENSE</Typography>
-          <Typography sx={styles.typo_desc}>
-            Canadian Produce Marketing Association
-          </Typography>
-          <Button sx={styles.button_request}>Request</Button>
-        </Box>
-        <Box sx={styles.license_box}>
-          <Box sx={styles.license_logo_cpma_license}></Box>
-          <Typography sx={styles.typo_heading}>CPMA</Typography>
-          <Typography sx={styles.typo_desc}>
-            Interstate Commerce Commission License
-          </Typography>
-          <Button sx={styles.button_request}>Request</Button>
-        </Box>
-        <Box sx={styles.license_box}>
-          <Box sx={styles.wsib_license_logo}></Box>
-          <Typography sx={styles.typo_heading}>WSIB CLEARANCE</Typography>
-          <Typography sx={styles.typo_desc}>
-            Workplace Safety and Insurance Board Clearance
-          </Typography>
-          <Button sx={styles.button_request}>Request</Button>
+    <div id="certificate_and_accrediation_page">
+      <Box
+        sx={{
+          backgroundColor: "#d9d9d9",
+          paddingTop: "50px",
+          width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
+          margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
+        }}
+      >
+        <Typography sx={styles.heading_certification}>
+          Certificate & Accrediations
+        </Typography>
+        <Typography sx={styles.desc_certification}>
+          Our certifications and accreditations demonstrate our ongoing
+          commitment to quality, safety, and compliance. From recognized
+          industry standards to government-authorized validations, each
+          credential reflects our dedication to delivering trusted,
+          high-standard services that meet regulatory and customer expectations.
+        </Typography>
+        <Box sx={styles.parent_certificate}>
+          <Box sx={styles.license_box}>
+            <Box sx={styles.license_logo_icc}></Box>
+            <Typography sx={styles.typo_heading}>ICC LICENSE</Typography>
+            <Typography sx={styles.typo_desc}>
+              Canadian Produce Marketing Association
+            </Typography>
+            <Button sx={styles.button_request}>Request</Button>
+          </Box>
+          <Box sx={styles.license_box}>
+            <Box sx={styles.license_logo_cpma_license}></Box>
+            <Typography sx={styles.typo_heading}>CPMA</Typography>
+            <Typography sx={styles.typo_desc}>
+              Interstate Commerce Commission License
+            </Typography>
+            <Button sx={styles.button_request}>Request</Button>
+          </Box>
+          <Box sx={styles.license_box}>
+            <Box sx={styles.wsib_license_logo}></Box>
+            <Typography sx={styles.typo_heading}>WSIB CLEARANCE</Typography>
+            <Typography sx={styles.typo_desc}>
+              Workplace Safety and Insurance Board Clearance
+            </Typography>
+            <Button sx={styles.button_request}>Request</Button>
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </div>
   );
 }
 

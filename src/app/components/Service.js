@@ -179,90 +179,93 @@ function Service() {
     },
   };
   return (
-    <Box
-      sx={{
-        backgroundColor: "#D9D9D9",
-        paddingTop: "100px",
-        width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
-        margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
-      }}
-    >
-      <Typography sx={styles.heading_service}>Services</Typography>
-      <Typography sx={styles.desc_service}>
-        We provide reliable, professional, and customer-focused services
-        designed to meet your unique needs. With a strong commitment to quality,
-        efficiency, and integrity, our team ensures that every job is handled
-        with care—from the first interaction to final delivery. Your
-        satisfaction is our priority
-      </Typography>
-      <Box sx={styles.parent_service}>
-        <Box sx={styles.service_box}>
-          <Typography sx={styles.typo_service_heading}>
-            Full Truck Load
-          </Typography>
-          <Typography sx={styles.typo_service_desc}>
-            With our Full Truckload (FTL) service, we take complete control of
-            your freight's journey. We provide extensive FTL coverage across
-            hundreds of lanes throughout Ontario. Whether managing single
-            pick-and-drop locations or navigating complex multi-stop shipments
-            for both dry and refrigerated cargo, our operations team’s vast
-            expertise ensures you receive a reliable and cost-effective solution
-            on short notice.
-          </Typography>
-        </Box>
-        <Box sx={styles.service_box}>
-          <Typography sx={styles.typo_service_heading}>
-            Less Truck Load
-          </Typography>
-          <Typography sx={styles.typo_service_desc}>
-            LTL shipping is a cost-effective solution for small to medium-sized
-            orders where the pickup or delivery locations do not align well with
-            your existing orders. If you have occasional pallet-sized orders
-            that need to be loaded promptly, our LTL service is straightforward
-            and efficient. You won’t have to deal with complex calculations, we
-            provide a flat per-pallet rate for shipments of up to 12 pallets
-            across numerous Ontario routes.
-          </Typography>
-        </Box>
-        <Box sx={styles.service_box}>
-          <Typography sx={styles.typo_service_heading}>
-            Renting a storage trailer
-          </Typography>
-          <Typography sx={styles.typo_service_desc}>
-            Our storage trailer rental services in Toronto provide exceptional
-            flexibility, enabling customers to rent our trailers for any length
-            of time without restrictions on minimum or maximum rental periods.
-            You have the option to keep the storage trailer on your premises for
-            added convenience.
-          </Typography>
-        </Box>
-        <Box sx={styles.service_box}>
-          <Typography sx={styles.typo_service_heading}>
-            Temperature Controlled Trailers
-          </Typography>
-          <Typography sx={styles.typo_service_desc}>
-            Ensure the protection of your fresh or frozen perishable items with
-            our temperature- controlled trailers (reefers) designed for FTL and
-            LTL shipments. By communicating your requirements to us, our teams
-            leverage their in-depth commodity knowledge and regional expertise
-            to maintain the cold chain at optimal temperatures throughout
-            transit, while also sourcing the most suitable trucks at competitive
-            prices.
-          </Typography>
-        </Box>
-        <Box sx={styles.service_box}>
-          <Typography sx={styles.typo_service_heading}>
-            Truckload Freight Claims
-          </Typography>
-          <Typography sx={styles.typo_service_desc}>
-            While not as common, truckload carrier claims can happen. Our
-            expertise in trucking regulations ensures companies can navigate the
-            claims process easier. Plus, all …. carriers carry industry-standard
-            $100,000 cargo insurance for added peace of mind.
-          </Typography>
+    <div id="service_page">
+      <Box
+        sx={{
+          backgroundColor: "#D9D9D9",
+          paddingTop: "100px",
+          width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
+          margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
+        }}
+      >
+        <Typography sx={styles.heading_service}>Services</Typography>
+        <Typography sx={styles.desc_service}>
+          We provide reliable, professional, and customer-focused services
+          designed to meet your unique needs. With a strong commitment to
+          quality, efficiency, and integrity, our team ensures that every job is
+          handled with care—from the first interaction to final delivery. Your
+          satisfaction is our priority
+        </Typography>
+        <Box sx={styles.parent_service}>
+          <Box sx={styles.service_box}>
+            <Typography sx={styles.typo_service_heading}>
+              Full Truck Load
+            </Typography>
+            <Typography sx={styles.typo_service_desc}>
+              With our Full Truckload (FTL) service, we take complete control of
+              your freight's journey. We provide extensive FTL coverage across
+              hundreds of lanes throughout Ontario. Whether managing single
+              pick-and-drop locations or navigating complex multi-stop shipments
+              for both dry and refrigerated cargo, our operations team’s vast
+              expertise ensures you receive a reliable and cost-effective
+              solution on short notice.
+            </Typography>
+          </Box>
+          <Box sx={styles.service_box}>
+            <Typography sx={styles.typo_service_heading}>
+              Less Truck Load
+            </Typography>
+            <Typography sx={styles.typo_service_desc}>
+              LTL shipping is a cost-effective solution for small to
+              medium-sized orders where the pickup or delivery locations do not
+              align well with your existing orders. If you have occasional
+              pallet-sized orders that need to be loaded promptly, our LTL
+              service is straightforward and efficient. You won’t have to deal
+              with complex calculations, we provide a flat per-pallet rate for
+              shipments of up to 12 pallets across numerous Ontario routes.
+            </Typography>
+          </Box>
+          <Box sx={styles.service_box}>
+            <Typography sx={styles.typo_service_heading}>
+              Renting a storage trailer
+            </Typography>
+            <Typography sx={styles.typo_service_desc}>
+              Our storage trailer rental services in Toronto provide exceptional
+              flexibility, enabling customers to rent our trailers for any
+              length of time without restrictions on minimum or maximum rental
+              periods. You have the option to keep the storage trailer on your
+              premises for added convenience.
+            </Typography>
+          </Box>
+          <Box sx={styles.service_box}>
+            <Typography sx={styles.typo_service_heading}>
+              Temperature Controlled Trailers
+            </Typography>
+            <Typography sx={styles.typo_service_desc}>
+              Ensure the protection of your fresh or frozen perishable items
+              with our temperature- controlled trailers (reefers) designed for
+              FTL and LTL shipments. By communicating your requirements to us,
+              our teams leverage their in-depth commodity knowledge and regional
+              expertise to maintain the cold chain at optimal temperatures
+              throughout transit, while also sourcing the most suitable trucks
+              at competitive prices.
+            </Typography>
+          </Box>
+          <Box sx={styles.service_box}>
+            <Typography sx={styles.typo_service_heading}>
+              Truckload Freight Claims
+            </Typography>
+            <Typography sx={styles.typo_service_desc}>
+              While not as common, truckload carrier claims can happen. Our
+              expertise in trucking regulations ensures companies can navigate
+              the claims process easier. Plus, all …. carriers carry
+              industry-standard $100,000 cargo insurance for added peace of
+              mind.
+            </Typography>
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </div>
   );
 }
 

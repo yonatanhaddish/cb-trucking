@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-
+import { Link } from "react-scroll";
 import { Box, Typography, useMediaQuery, Button } from "@mui/material";
 
 function HomeSection() {
@@ -227,7 +227,7 @@ function HomeSection() {
     },
   };
   return (
-    <>
+    <div id="home_page">
       {screenLessThan430 ||
       screenGreaterThan430LessThan768 ||
       screenGreaterThan768LessThan1024 ? (
@@ -244,8 +244,14 @@ function HomeSection() {
               individuals.
             </Typography>
             <Box sx={styles.button_parent_smaller}>
-              <Button sx={styles.button_services_smaller}>Our Services</Button>
-              <Button sx={styles.button_contact_smaller}>Contact Us</Button>
+              <Link to="service_page" duration={500} smooth={true}>
+                <Button sx={styles.button_services_smaller}>
+                  Our Services
+                </Button>
+              </Link>
+              <Link to="contact_us_page" duration={500} smooth={true}>
+                <Button sx={styles.button_contact_smaller}>Contact Us</Button>
+              </Link>
             </Box>
           </Box>
         </Box>
@@ -263,13 +269,17 @@ function HomeSection() {
               individuals.
             </Typography>
             <Box sx={styles.button_parent}>
-              <Button sx={styles.button_services}>Our Services</Button>
-              <Button sx={styles.button_contact}>Contact Us</Button>
+              <Link to="service_page" duration={500} smooth={true}>
+                <Button sx={styles.button_services}>Our Services</Button>
+              </Link>
+              <Link to="contact_us_page" duration={500} smooth={true}>
+                <Button sx={styles.button_contact}>Contact Us</Button>
+              </Link>
             </Box>
           </Box>
         </Box>
       )}
-    </>
+    </div>
   );
 }
 

@@ -108,7 +108,7 @@ function WeWorkWith() {
 
   return (
     <Box
-      id="partners"
+      id="our_partner_page"
       sx={{
         overflow: "hidden",
         width: "100%",

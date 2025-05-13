@@ -211,60 +211,64 @@ function WhyChooseUs() {
     },
   };
   return (
-    <Box sx={styles.parent_why_whoose_us_box}>
-      <Typography sx={styles.heading_whychooseus}>Why Choose Us</Typography>
-      <Typography sx={styles.desc_whychooseus}>
-        At CB Trucking, we don't just move cargo - we move your business foward.
-        With a passion precision and a commitment to excellence, here's why
-        customers across the region trust us
-      </Typography>
-      <Box sx={styles.child_whychooseus_box}>
-        <Box sx={styles.single_whychooseus_box}>
-          <Typography sx={styles.typo_heading}>
-            Reliable & On-Time Delivery
-          </Typography>
-          <Typography sx={styles.typo_desc}>
-            We understand time is money. Our logistics network is optimized to
-            ensure your freight reaches its destination safely and on schedule —
-            every time
-          </Typography>
-        </Box>
-        <Box sx={styles.single_whychooseus_box}>
-          <Typography sx={styles.typo_heading}>
-            Customer-First Approach
-          </Typography>
-          <Typography sx={styles.typo_desc}>
-            We build relationships, not just routes. Our team is available
-            around the clock, providing personalized support tailored to your
-            needs
-          </Typography>
-        </Box>
-        <Box sx={styles.single_whychooseus_box}>
-          <Typography sx={styles.typo_heading}>
-            Trusted by Industry Leaders
-          </Typography>
-          <Typography sx={styles.typo_desc}>
-            Our partners include some of the most recognized names in logistics
-            and retail. Our reputation is built on trust, transparency, and
-            results
-          </Typography>
-        </Box>
-        <Box sx={styles.single_whychooseus_box}>
-          <Typography sx={styles.typo_heading}>Competitive Pricing</Typography>
-          <Typography sx={styles.typo_desc}>
-            Top-tier service shouldn’t come with top-tier pricing. Our
-            transparent and fair rates ensure you get value at every mile
-          </Typography>
-        </Box>
-        <Box sx={styles.single_whychooseus_box}>
-          <Typography sx={styles.typo_heading}>Flexible Solutions</Typography>
-          <Typography sx={styles.typo_desc}>
-            From same-day shipments to long-haul freight — vans, pallets, or
-            boxes — we adapt to meet your business demands
-          </Typography>
+    <div id="why_choose_us_page">
+      <Box sx={styles.parent_why_whoose_us_box}>
+        <Typography sx={styles.heading_whychooseus}>Why Choose Us</Typography>
+        <Typography sx={styles.desc_whychooseus}>
+          At CB Trucking, we don't just move cargo - we move your business
+          foward. With a passion precision and a commitment to excellence,
+          here's why customers across the region trust us
+        </Typography>
+        <Box sx={styles.child_whychooseus_box}>
+          <Box sx={styles.single_whychooseus_box}>
+            <Typography sx={styles.typo_heading}>
+              Reliable & On-Time Delivery
+            </Typography>
+            <Typography sx={styles.typo_desc}>
+              We understand time is money. Our logistics network is optimized to
+              ensure your freight reaches its destination safely and on schedule
+              — every time
+            </Typography>
+          </Box>
+          <Box sx={styles.single_whychooseus_box}>
+            <Typography sx={styles.typo_heading}>
+              Customer-First Approach
+            </Typography>
+            <Typography sx={styles.typo_desc}>
+              We build relationships, not just routes. Our team is available
+              around the clock, providing personalized support tailored to your
+              needs
+            </Typography>
+          </Box>
+          <Box sx={styles.single_whychooseus_box}>
+            <Typography sx={styles.typo_heading}>
+              Trusted by Industry Leaders
+            </Typography>
+            <Typography sx={styles.typo_desc}>
+              Our partners include some of the most recognized names in
+              logistics and retail. Our reputation is built on trust,
+              transparency, and results
+            </Typography>
+          </Box>
+          <Box sx={styles.single_whychooseus_box}>
+            <Typography sx={styles.typo_heading}>
+              Competitive Pricing
+            </Typography>
+            <Typography sx={styles.typo_desc}>
+              Top-tier service shouldn’t come with top-tier pricing. Our
+              transparent and fair rates ensure you get value at every mile
+            </Typography>
+          </Box>
+          <Box sx={styles.single_whychooseus_box}>
+            <Typography sx={styles.typo_heading}>Flexible Solutions</Typography>
+            <Typography sx={styles.typo_desc}>
+              From same-day shipments to long-haul freight — vans, pallets, or
+              boxes — we adapt to meet your business demands
+            </Typography>
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </div>
   );
 }
 

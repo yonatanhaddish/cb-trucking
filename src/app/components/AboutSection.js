@@ -268,47 +268,49 @@ function AboutSection() {
     },
   };
   return (
-    <Box
-      sx={{
-        backgroundColor: "#d9d9d9",
-        width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
-        margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
-        paddingTop: "100px",
-      }}
-    >
-      <Typography sx={styles.heading_aboutus}>About Us</Typography>
-      <Box sx={styles.parent_aboutsection}>
-        <Box sx={styles.aboutsection_image_box}>
-          <Box sx={styles.aboutsection_img1}></Box>
-          <Box sx={styles.aboutsection_img2}></Box>
-        </Box>
-        <Box sx={styles.aboutsection_desc_box}>
-          <Typography sx={styles.typo_desc}>
-            <span
-              style={{
-                color: "#000",
-                // fontWeight: "bold",
-              }}
-            >
-              CB Trucking
-            </span>{" "}
-            is one of Canada's most exciting third-party logistics providers. We
-            take pride in our commitment to service, competitiveness, and
-            reliability. At CB Trucking we strive to serve not only our
-            customers but also our carriers with the same level of dedication.
-          </Typography>
-          <Typography sx={styles.typo_desc}>
-            We are well-equipped to meet your needs with our vast experience in
-            the transportation industry and a deep understanding of the produce
-            sector and refrigerated logistics.
-          </Typography>
-          <Typography sx={styles.typo_desc}>
-            Just a phone call away, we offer both competitive and fixed pricing.
-            Our reliability is unmatched.
-          </Typography>
+    <div id="about_us_page">
+      <Box
+        sx={{
+          backgroundColor: "#d9d9d9",
+          width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
+          margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
+          paddingTop: "100px",
+        }}
+      >
+        <Typography sx={styles.heading_aboutus}>About Us</Typography>
+        <Box sx={styles.parent_aboutsection}>
+          <Box sx={styles.aboutsection_image_box}>
+            <Box sx={styles.aboutsection_img1}></Box>
+            <Box sx={styles.aboutsection_img2}></Box>
+          </Box>
+          <Box sx={styles.aboutsection_desc_box}>
+            <Typography sx={styles.typo_desc}>
+              <span
+                style={{
+                  color: "#000",
+                  // fontWeight: "bold",
+                }}
+              >
+                CB Trucking
+              </span>{" "}
+              is one of Canada's most exciting third-party logistics providers.
+              We take pride in our commitment to service, competitiveness, and
+              reliability. At CB Trucking we strive to serve not only our
+              customers but also our carriers with the same level of dedication.
+            </Typography>
+            <Typography sx={styles.typo_desc}>
+              We are well-equipped to meet your needs with our vast experience
+              in the transportation industry and a deep understanding of the
+              produce sector and refrigerated logistics.
+            </Typography>
+            <Typography sx={styles.typo_desc}>
+              Just a phone call away, we offer both competitive and fixed
+              pricing. Our reliability is unmatched.
+            </Typography>
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </div>
   );
 }
 

@@ -262,90 +262,92 @@ function ContactUs() {
     return <div>Loading...</div>;
   }
   return (
-    <Box sx={styles.parent_contactus_box}>
-      <Typography sx={styles.heading_contactus}>Contact Us</Typography>
-      <Box sx={styles.contactus_box}>
-        <Box sx={styles.contact_info_box}>
-          {screenLessThan430 ||
-          screenGreaterThan430LessThan768 ||
-          screenGreaterThan768LessThan1024 ? (
-            <></>
-          ) : (
-            <Typography sx={styles.typo_getintouch_heading}>
-              Get In Touch
-            </Typography>
-          )}
-          <Typography sx={styles.typo_getintouch_desc}>
-            Have questions or need a quote? Get in touch with Reliable Trucking
-            and Transportation Services. We're here to provide prompt and
-            dependable support for all your transportation needs.
-          </Typography>
-          <Box sx={styles.single_contact_info}>
-            <LocationPinIcon
-              sx={{
-                color: "#c23237",
-                // marginRight: "8px",
-                // border: "solid red 1px",
-              }}
-            />
-            <Typography>123 Wellington Ave. E</Typography>
-          </Box>
-          <Box sx={styles.single_contact_info}>
-            <PhoneIcon
-              sx={{
-                color: "#c23237",
-                // marginRight: "8px",
-                // border: "solid red 1px",
-              }}
-            />
-            <Typography>(123) 456-7890</Typography>
-          </Box>
-          <Box sx={styles.single_contact_info}>
-            <EmailIcon
-              sx={{
-                color: "#c23237",
-                // marginRight: "8px",
-                // border: "solid red 1px",
-              }}
-            />
-            <Typography>cb-trucking@email.com</Typography>
-          </Box>
-        </Box>
-        <Box sx={styles.contact_input_box}>
-          <Box sx={styles.input_box}>
+    <div id="contact_us_page">
+      <Box sx={styles.parent_contactus_box}>
+        <Typography sx={styles.heading_contactus}>Contact Us</Typography>
+        <Box sx={styles.contactus_box}>
+          <Box sx={styles.contact_info_box}>
+            {screenLessThan430 ||
+            screenGreaterThan430LessThan768 ||
+            screenGreaterThan768LessThan1024 ? (
+              <></>
+            ) : (
+              <Typography sx={styles.typo_getintouch_heading}>
+                Get In Touch
+              </Typography>
+            )}
             <Typography sx={styles.typo_getintouch_desc}>
-              Feel free to leave us message anytime. We will get back to your as
-              soon as we can!
+              Have questions or need a quote? Get in touch with Reliable
+              Trucking and Transportation Services. We're here to provide prompt
+              and dependable support for all your transportation needs.
             </Typography>
-            <TextField
-              id="outlined-basic"
-              label="Full Name"
-              variant="outlined"
-              size="small"
-              sx={styles.input_text}
-            />
-            <TextField
-              id="outlined-basic"
-              label="Email Address"
-              variant="outlined"
-              size="small"
-              sx={styles.input_text}
-            />
-            <TextField
-              id="outlined-basic"
-              label="Message"
-              variant="outlined"
-              size="small"
-              multiline
-              minRows={6}
-              maxRows={10}
-              sx={styles.input_text}
-            />
-            <Button sx={styles.button}>Send</Button>
+            <Box sx={styles.single_contact_info}>
+              <LocationPinIcon
+                sx={{
+                  color: "#c23237",
+                  // marginRight: "8px",
+                  // border: "solid red 1px",
+                }}
+              />
+              <Typography>123 Wellington Ave. E</Typography>
+            </Box>
+            <Box sx={styles.single_contact_info}>
+              <PhoneIcon
+                sx={{
+                  color: "#c23237",
+                  // marginRight: "8px",
+                  // border: "solid red 1px",
+                }}
+              />
+              <Typography>(123) 456-7890</Typography>
+            </Box>
+            <Box sx={styles.single_contact_info}>
+              <EmailIcon
+                sx={{
+                  color: "#c23237",
+                  // marginRight: "8px",
+                  // border: "solid red 1px",
+                }}
+              />
+              <Typography>cb-trucking@email.com</Typography>
+            </Box>
+          </Box>
+          <Box sx={styles.contact_input_box}>
+            <Box sx={styles.input_box}>
+              <Typography sx={styles.typo_getintouch_desc}>
+                Feel free to leave us message anytime. We will get back to your
+                as soon as we can!
+              </Typography>
+              <TextField
+                id="outlined-basic"
+                label="Full Name"
+                variant="outlined"
+                size="small"
+                sx={styles.input_text}
+              />
+              <TextField
+                id="outlined-basic"
+                label="Email Address"
+                variant="outlined"
+                size="small"
+                sx={styles.input_text}
+              />
+              <TextField
+                id="outlined-basic"
+                label="Message"
+                variant="outlined"
+                size="small"
+                multiline
+                minRows={6}
+                maxRows={10}
+                sx={styles.input_text}
+              />
+              <Button sx={styles.button}>Send</Button>
+            </Box>
           </Box>
         </Box>
       </Box>
-    </Box>
+    </div>
   );
 }
 
