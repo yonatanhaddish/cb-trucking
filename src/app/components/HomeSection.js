@@ -3,6 +3,7 @@
 import React from "react";
 import { Link } from "react-scroll";
 import { Box, Typography, useMediaQuery, Button } from "@mui/material";
+import { motion } from "framer-motion";
 
 function HomeSection() {
   const screenLessThan430 = useMediaQuery(
@@ -244,14 +245,18 @@ function HomeSection() {
               individuals.
             </Typography>
             <Box sx={styles.button_parent_smaller}>
-              <Link to="service_page" duration={500} smooth={true}>
-                <Button sx={styles.button_services_smaller}>
-                  Our Services
-                </Button>
-              </Link>
-              <Link to="contact_us_page" duration={500} smooth={true}>
-                <Button sx={styles.button_contact_smaller}>Contact Us</Button>
-              </Link>
+              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
+                <Link to="service_page" duration={500} smooth={true}>
+                  <Button sx={styles.button_services_smaller}>
+                    Our Services
+                  </Button>
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
+                <Link to="contact_us_page" duration={500} smooth={true}>
+                  <Button sx={styles.button_contact_smaller}>Contact Us</Button>
+                </Link>
+              </motion.div>
             </Box>
           </Box>
         </Box>
@@ -269,12 +274,16 @@ function HomeSection() {
               individuals.
             </Typography>
             <Box sx={styles.button_parent}>
-              <Link to="service_page" duration={500} smooth={true}>
-                <Button sx={styles.button_services}>Our Services</Button>
-              </Link>
-              <Link to="contact_us_page" duration={500} smooth={true}>
-                <Button sx={styles.button_contact}>Contact Us</Button>
-              </Link>
+              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
+                <Link to="service_page" duration={500} smooth={true}>
+                  <Button sx={styles.button_services}>Our Services</Button>
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
+                <Link to="contact_us_page" duration={500} smooth={true}>
+                  <Button sx={styles.button_contact}>Contact Us</Button>
+                </Link>
+              </motion.div>
             </Box>
           </Box>
         </Box>

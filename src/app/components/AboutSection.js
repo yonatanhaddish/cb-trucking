@@ -51,7 +51,6 @@ function AboutSection() {
         : screenGreaterThan1440LessThan1920
         ? "44px"
         : "52px",
-
       borderBottom: "solid #c23237 2px",
       width: screenLessThan430
         ? "50%"
