@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const partners_array = [
   { name: "Atlantis Freight Solutions", fontFamily: "'Roboto', sans-serif" },
@@ -37,14 +37,15 @@ const partners_array = [
   { name: "Polaris Freight Network", fontFamily: "'Vollkorn', serif" },
 ];
 
-function WeWorkWith() {
+const WeWorkWith = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [animateHeading, setAnimateHeading] = useState(false);
+
   const total = partners_array.length;
   const visibleItems = 8;
 
-  const screenLessThan430 = useMediaQuery(
-    "(min-width: 100px) and (max-width: 430px)"
-  );
+  // Media queries for responsive design
+  const screenLessThan430 = useMediaQuery("(max-width: 430px)");
   const screenGreaterThan430LessThan768 = useMediaQuery(
     "(min-width: 431px) and (max-width: 768px)"
   );
@@ -64,11 +65,19 @@ function WeWorkWith() {
     "(min-width: 1921px) and (max-width: 3840px)"
   );
 
+  const headingRef = useRef(null);
+  const isInView = useInView(headingRef, { once: true });
+
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % total);
+    setAnimateHeading(true);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % total);
     }, 2000);
-    return () => clearInterval(intervalId);
+
+    return () => clearInterval(interval);
   }, [total]);
 
   const translateX = `-${(currentIndex % total) * (100 / visibleItems)}%`;
@@ -78,9 +87,9 @@ function WeWorkWith() {
       fontSize: screenLessThan430
         ? "32px"
         : screenGreaterThan430LessThan768
-        ? "28px"
+        ? "34px"
         : screenGreaterThan768LessThan1024
-        ? "32px"
+        ? "36px"
         : screenGreaterThan1024LessThan1280
         ? "36px"
         : screenGreaterThan1280LessThan1440
@@ -88,22 +97,22 @@ function WeWorkWith() {
         : screenGreaterThan1440LessThan1920
         ? "44px"
         : "52px",
-
-      borderBottom: "solid #c23237 2px",
+      borderBottom: "2px solid #c23237",
       width: screenLessThan430
         ? "60%"
-        : screenGreaterThan1024LessThan1280 ||
-          screenGreaterThan768LessThan1024 ||
-          screenGreaterThan1280LessThan1440
+        : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
         ? "20%"
         : screenGreaterThan1440LessThan1920
         ? "15%"
+        : screenGreaterThan768LessThan1024
+        ? "30%"
+        : screenGreaterThan1920LessThan3840
+        ? "15%"
         : screenGreaterThan430LessThan768
-        ? "25%"
+        ? "30%"
         : "15%",
       textAlign: "center",
-      marginBottom: "80px",
-      justifySelf: "center",
+      margin: "0 auto 50px",
     },
   };
 
@@ -112,7 +121,6 @@ function WeWorkWith() {
       id="our_partner_page"
       sx={{
         overflow: "hidden",
-        width: "100%",
         py: 4,
         bgcolor: "#d9d9d9",
         width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
@@ -121,19 +129,21 @@ function WeWorkWith() {
       }}
     >
       <motion.div
-        initial={{ transform: "translateY(-100px)" }}
-        whileInView={{ transform: "translateY(10%)" }}
-        transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+        ref={headingRef}
+        initial={{ y: -100 }}
+        whileInView={isInView ? { y: 0 } : {}}
+        transition={{ type: "spring", bounce: 0.25, duration: 1 }}
       >
         <Typography sx={styles.heading_our_partners}>We Work With</Typography>
       </motion.div>
+
       <Box
         sx={{
           display: "flex",
           width: `${(total / visibleItems) * 100}%`,
           transform: `translateX(${translateX})`,
           transition: "transform 0.8s ease-in-out",
-          bgcolor: "#c23237",
+          marginTop: "80px",
         }}
       >
         {partners_array.map((partner, index) => (
@@ -172,7 +182,6 @@ function WeWorkWith() {
                   : screenGreaterThan1920LessThan3840
                   ? "2.4rem"
                   : "1.2rem",
-                bgcolor: "#c23237",
               }}
             >
               {partner.name}
@@ -182,6 +191,6 @@ function WeWorkWith() {
       </Box>
     </Box>
   );
-}
+};
 
 export default WeWorkWith;

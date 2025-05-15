@@ -37,7 +37,6 @@ function Service() {
       flexDirection: "row",
       flexWrap: "wrap",
       justifyContent: "space-evenly",
-      marginTop: "60px",
       gap:
         screenLessThan430 ||
         screenGreaterThan430LessThan768 ||
@@ -49,6 +48,13 @@ function Service() {
             screenGreaterThan1440LessThan1920
           ? "60px"
           : "",
+      paddingBottom:
+        screenGreaterThan1024LessThan1280 ||
+        screenGreaterThan1280LessThan1440 ||
+        screenGreaterThan1440LessThan1920
+          ? "80px"
+          : "50px",
+      marginTop: "50px",
     },
     service_box: {
       border: "solid #000 1px",
@@ -117,7 +123,6 @@ function Service() {
       margin: "0 auto",
     },
     desc_service: {
-      //   border: "solid green 2px",
       fontSize: screenLessThan430
         ? "0.9rem"
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
@@ -208,7 +213,6 @@ function Service() {
         >
           Services
         </MotionTypography>
-
         <MotionTypography
           sx={styles.desc_service}
           initial={{ transform: "translateY(40px)" }}
