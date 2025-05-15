@@ -33,13 +33,13 @@ export default function Home() {
         <Navbar />
         <HomeSection />
         <AboutSection />
-        <Service />
-        <WeWorkWith />
-        <CertificateRequest />
-        <WhyChooseUs />
-        <ContactUs />
-        <Footer />
-        <FooterTwo />
+        {/* <Service /> */}
+        {/* <WeWorkWith /> */}
+        {/* <CertificateRequest /> */}
+        {/* <WhyChooseUs /> */}
+        {/* <ContactUs /> */}
+        {/* <Footer /> */}
+        {/* <FooterTwo /> */}
       </>
     </>
   );

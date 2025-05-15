@@ -81,9 +81,8 @@ function HomeSection() {
         : screenGreaterThan430LessThan768
         ? "32px"
         : "28px",
-
       // border: "solid white 1px",
-      width: "80%",
+      width: screenGreaterThan1024LessThan1280 ? "90%" : "80%",
       alignSelf: "center",
       textAlign: "center",
       justifySelf: "center",
@@ -91,7 +90,7 @@ function HomeSection() {
     typo_desc: {
       color: "#fff",
       // border: "solid red 1px",
-      width: "80%",
+      width: screenGreaterThan1440LessThan1920 ? "60%" : "80%",
       alignSelf: "center",
       textAlign: "center",
       fontWeight: 400,
@@ -154,13 +153,14 @@ function HomeSection() {
       // border: "solid 1px white",
       justifyContent: "center",
       justifySelf: "center",
+      marginTop: "30px",
     },
     parent_landing_smaller: {
-      // border: "solid green 6px",
+      // border: "solid green 5px",
       height:
         screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
           ? "93vh"
-          : "90vh",
+          : "94vh",
       backgroundColor: "#424242",
       display: "flex",
       flexDirection: "column",
@@ -168,6 +168,8 @@ function HomeSection() {
         ? "8%"
         : screenGreaterThan430LessThan768
         ? "60px"
+        : screenLessThan430
+        ? ""
         : "20px",
     },
     parent_landingpage_small: {
@@ -175,6 +177,7 @@ function HomeSection() {
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: "50%",
+      // border: "solid green 5px",
     },
     content_landingpage_smaller: {
       // border: "solid red 2px",
@@ -250,8 +253,8 @@ function HomeSection() {
             </MotionTypography>
             <MotionTypography
               sx={styles.typo_desc_smaller}
-              initial={{ transform: "translateX(-100px)" }}
-              whileInView={{ transform: "translateX(0)" }}
+              initial={{ transform: "translateX(-50px)" }}
+              whileInView={{ transform: "translateX(0px)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
             >
               We provide services in the field of road transportation,ensuring
@@ -261,7 +264,7 @@ function HomeSection() {
             <MotionBox
               sx={styles.button_parent_smaller}
               initial={{ transform: "translateY(50px)" }}
-              whileInView={{ transform: "translateY(0)" }}
+              whileInView={{ transform: "translateY(0px)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
             >
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
@@ -286,7 +289,7 @@ function HomeSection() {
             <MotionTypography
               sx={styles.typo_heading}
               initial={{ transform: "translateY(-100px)" }}
-              whileInView={{ transform: "translateY(0)" }}
+              whileInView={{ transform: "translateY(0px)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
             >
               Reliable <span style={{ color: "#c23237" }}>Trucking</span> and{" "}
@@ -295,7 +298,7 @@ function HomeSection() {
             <MotionTypography
               sx={styles.typo_desc}
               initial={{ transform: "translateX(-100px)" }}
-              whileInView={{ transform: "translateX(0)" }}
+              whileInView={{ transform: "translateX(0px)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
             >
               We provide services in the field of road transportation,ensuring
@@ -305,7 +308,7 @@ function HomeSection() {
             <MotionBox
               sx={styles.button_parent}
               initial={{ transform: "translateY(100px)" }}
-              whileInView={{ transform: "translateY(0)" }}
+              whileInView={{ transform: "translateY(-20px)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
             >
               <Link to="service_page" duration={500} smooth={true}>

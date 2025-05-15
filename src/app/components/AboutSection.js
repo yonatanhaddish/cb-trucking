@@ -26,6 +26,9 @@ function AboutSection() {
   const screenGreaterThan1920LessThan3840 = useMediaQuery(
     "(min-width: 1921px) and (max-width: 3840px)"
   );
+
+  const MotionTypography = motion(Typography);
+
   const styles = {
     parent_aboutsection: {
       // border: "solid blue 2px",
@@ -278,13 +281,15 @@ function AboutSection() {
           paddingTop: "100px",
         }}
       >
-        <motion.div
-          initial={{ transform: "translateY(-100px)" }}
-          whileInView={{ transform: "translateY(10%)" }}
-          transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+        <MotionTypography
+          sx={styles.heading_aboutus}
+          // initial={{ transform: "translateY(-100px)" }}
+          // whileInView={{ transform: "translateY(10%)" }}
+          // transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
         >
-          <Typography sx={styles.heading_aboutus}>About Us</Typography>
-        </motion.div>
+          About Us
+        </MotionTypography>
+
         <Box sx={styles.parent_aboutsection}>
           <Box sx={styles.aboutsection_image_box}>
             <Box sx={styles.aboutsection_img1}></Box>
