@@ -28,6 +28,7 @@ function AboutSection() {
   );
 
   const MotionTypography = motion(Typography);
+  const MotionImg = motion(Box);
 
   const styles = {
     parent_aboutsection: {
@@ -40,14 +41,21 @@ function AboutSection() {
           ? "column"
           : "row",
       justifyContent: "center",
+      paddingBottom:
+        screenGreaterThan1024LessThan1280 ||
+        screenGreaterThan1280LessThan1440 ||
+        screenGreaterThan1440LessThan1920
+          ? "80px"
+          : "50px",
+      marginTop: "50px",
     },
     heading_aboutus: {
       fontSize: screenLessThan430
         ? "32px"
         : screenGreaterThan430LessThan768
-        ? "28px"
+        ? "34px"
         : screenGreaterThan768LessThan1024
-        ? "32px"
+        ? "36px"
         : screenGreaterThan1024LessThan1280
         ? "36px"
         : screenGreaterThan1280LessThan1440
@@ -60,15 +68,17 @@ function AboutSection() {
         ? "60%"
         : screenGreaterThan1024LessThan1280 ||
           screenGreaterThan430LessThan768 ||
-          screenGreaterThan768LessThan1024 ||
           screenGreaterThan1280LessThan1440
         ? "20%"
         : screenGreaterThan1440LessThan1920
         ? "15%"
+        : screenGreaterThan768LessThan1024
+        ? "35%"
         : "15%",
       textAlign: "center",
       marginBottom: "50px",
       justifySelf: "center",
+      margin: "0 auto",
     },
     aboutsection_image_box: {
       border:
@@ -206,8 +216,7 @@ function AboutSection() {
       width:
         screenGreaterThan1024LessThan1280 ||
         screenGreaterThan1280LessThan1440 ||
-        screenGreaterThan1440LessThan1920 ||
-        screenGreaterThan1920LessThan3840
+        screenGreaterThan1440LessThan1920
           ? "45%"
           : screenLessThan430
           ? "90%"
@@ -215,6 +224,8 @@ function AboutSection() {
           ? "70%"
           : screenGreaterThan768LessThan1024
           ? "70%"
+          : screenGreaterThan1920LessThan3840
+          ? "35%"
           : "100%",
       display: "flex",
       flexDirection: "column",
@@ -253,7 +264,7 @@ function AboutSection() {
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
         ? "70%"
         : "100%",
-      fontWeight: 500,
+      fontWeight: "semi-bold",
       fontSize: screenLessThan430
         ? "1.05rem"
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
@@ -283,9 +294,9 @@ function AboutSection() {
       >
         <MotionTypography
           sx={styles.heading_aboutus}
-          // initial={{ transform: "translateY(-100px)" }}
-          // whileInView={{ transform: "translateY(10%)" }}
-          // transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+          initial={{ transform: "translateY(-100px)" }}
+          whileInView={{ transform: "translateY(10%)" }}
+          transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
         >
           About Us
         </MotionTypography>
@@ -293,10 +304,23 @@ function AboutSection() {
         <Box sx={styles.parent_aboutsection}>
           <Box sx={styles.aboutsection_image_box}>
             <Box sx={styles.aboutsection_img1}></Box>
-            <Box sx={styles.aboutsection_img2}></Box>
+            <MotionImg
+              sx={styles.aboutsection_img2}
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.4,
+                scale: { type: "spring", visualDuration: 1, bounce: 0.5 },
+              }}
+            ></MotionImg>
           </Box>
           <Box sx={styles.aboutsection_desc_box}>
-            <Typography sx={styles.typo_desc}>
+            <MotionTypography
+              sx={styles.typo_desc}
+              initial={{ transform: "translateX(-10px)" }}
+              whileInView={{ transform: "translateX(0px)" }}
+              transition={{ type: "spring", bounce: 0.7, visualDuration: 0.5 }}
+            >
               <span
                 style={{
                   color: "#000",
@@ -309,16 +333,26 @@ function AboutSection() {
               We take pride in our commitment to service, competitiveness, and
               reliability. At CB Trucking we strive to serve not only our
               customers but also our carriers with the same level of dedication.
-            </Typography>
-            <Typography sx={styles.typo_desc}>
+            </MotionTypography>
+            <MotionTypography
+              sx={styles.typo_desc}
+              initial={{ transform: "translateX(-10px)" }}
+              whileInView={{ transform: "translateX(0px)" }}
+              transition={{ type: "spring", bounce: 0.7, visualDuration: 0.5 }}
+            >
               We are well-equipped to meet your needs with our vast experience
               in the transportation industry and a deep understanding of the
               produce sector and refrigerated logistics.
-            </Typography>
-            <Typography sx={styles.typo_desc}>
+            </MotionTypography>
+            <MotionTypography
+              sx={styles.typo_desc}
+              initial={{ transform: "translateX(-10px)" }}
+              whileInView={{ transform: "translateX(0px)" }}
+              transition={{ type: "spring", bounce: 0.7, visualDuration: 0.5 }}
+            >
               Just a phone call away, we offer both competitive and fixed
               pricing. Our reliability is unmatched.
-            </Typography>
+            </MotionTypography>
           </Box>
         </Box>
       </Box>

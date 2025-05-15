@@ -27,6 +27,9 @@ function Service() {
     "(min-width: 1921px) and (max-width: 3840px)"
   );
 
+  const MotionTypography = motion(Typography);
+  const MotionBox = motion(Box);
+
   const styles = {
     parent_service: {
       // border: "solid red 2px",
@@ -34,16 +37,16 @@ function Service() {
       flexDirection: "row",
       flexWrap: "wrap",
       justifyContent: "space-evenly",
-      marginTop: "50px",
+      marginTop: "60px",
       gap:
         screenLessThan430 ||
         screenGreaterThan430LessThan768 ||
-        screenGreaterThan1440LessThan1920 ||
         screenGreaterThan1920LessThan3840
           ? "40px"
           : screenGreaterThan768LessThan1024 ||
             screenGreaterThan1024LessThan1280 ||
-            screenGreaterThan1280LessThan1440
+            screenGreaterThan1280LessThan1440 ||
+            screenGreaterThan1440LessThan1920
           ? "60px"
           : "",
     },
@@ -56,33 +59,39 @@ function Service() {
         ? "50%"
         : screenGreaterThan768LessThan1024
         ? "40%"
-        : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
-        ? "26%"
-        : screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
+        : screenGreaterThan1024LessThan1280
         ? "24%"
+        : screenGreaterThan1920LessThan3840
+        ? "24%"
+        : screenGreaterThan1280LessThan1440
+        ? "22%"
+        : screenGreaterThan1440LessThan1920
+        ? "18%"
         : "100%",
       display: "flex",
       flexDirection: "column",
       gap: "20px",
       height: screenLessThan430
         ? "400px"
-        : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
-        ? "400px"
+        : screenGreaterThan1024LessThan1280
+        ? "380px"
         : screenGreaterThan430LessThan768
         ? "400px"
         : screenGreaterThan768LessThan1024
         ? "450px"
         : screenGreaterThan1440LessThan1920
-        ? "450px"
+        ? "400px"
+        : screenGreaterThan1280LessThan1440
+        ? "360px"
         : "550px",
     },
     heading_service: {
       fontSize: screenLessThan430
         ? "32px"
         : screenGreaterThan430LessThan768
-        ? "28px"
+        ? "34px"
         : screenGreaterThan768LessThan1024
-        ? "32px"
+        ? "36px"
         : screenGreaterThan1024LessThan1280
         ? "36px"
         : screenGreaterThan1280LessThan1440
@@ -105,6 +114,7 @@ function Service() {
       textAlign: "center",
       marginBottom: "50px",
       justifySelf: "center",
+      margin: "0 auto",
     },
     desc_service: {
       //   border: "solid green 2px",
@@ -137,6 +147,7 @@ function Service() {
         : "100%",
       margin: "0 auto",
       fontWeight: "bold",
+      marginTop: "50px",
     },
     typo_service_heading: {
       //   border: "solid green 2px",
@@ -167,11 +178,11 @@ function Service() {
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
         ? "1.0rem"
         : screenGreaterThan1024LessThan1280
-        ? "1.0rem"
+        ? "0.9rem"
         : screenGreaterThan1280LessThan1440
-        ? "1.1rem"
+        ? "0.9rem"
         : screenGreaterThan1440LessThan1920
-        ? "1.2rem"
+        ? "1rem"
         : screenGreaterThan1920LessThan3840
         ? "1.3rem"
         : "1rem",
@@ -189,33 +200,42 @@ function Service() {
           margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
         }}
       >
-        <motion.div
+        <MotionTypography
+          sx={styles.heading_service}
           initial={{ transform: "translateY(-100px)" }}
           whileInView={{ transform: "translateY(10%)" }}
           transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
         >
-          <Typography sx={styles.heading_service}>Services</Typography>
-        </motion.div>
+          Services
+        </MotionTypography>
 
-        <motion.div
-          initial={{ transform: "translateX(-100px)" }}
-          whileInView={{ transform: "translateX(0)" }}
+        <MotionTypography
+          sx={styles.desc_service}
+          initial={{ transform: "translateY(40px)" }}
+          whileInView={{ transform: "translateY(0px)" }}
           transition={{
             type: "spring",
-            bounce: 0.25,
-            visualDuration: 1.2,
+            bounce: 0.5,
+            visualDuration: 1,
           }}
         >
-          <Typography sx={styles.desc_service}>
-            We provide reliable, professional, and customer-focused services
-            designed to meet your unique needs. With a strong commitment to
-            quality, efficiency, and integrity, our team ensures that every job
-            is handled with care—from the first interaction to final delivery.
-            Your satisfaction is our priority
-          </Typography>
-        </motion.div>
+          We provide reliable, professional, and customer-focused services
+          designed to meet your unique needs. With a strong commitment to
+          quality, efficiency, and integrity, our team ensures that every job is
+          handled with care—from the first interaction to final delivery. Your
+          satisfaction is our priority
+        </MotionTypography>
+
         <Box sx={styles.parent_service}>
-          <Box sx={styles.service_box}>
+          <MotionBox
+            sx={styles.service_box}
+            initial={{ transform: "translateX(40px)" }}
+            whileInView={{ transform: "translateX(0px)" }}
+            transition={{
+              type: "spring",
+              visualDuration: 1,
+            }}
+          >
             <Typography sx={styles.typo_service_heading}>
               Full Truck Load
             </Typography>
@@ -228,8 +248,16 @@ function Service() {
               expertise ensures you receive a reliable and cost-effective
               solution on short notice.
             </Typography>
-          </Box>
-          <Box sx={styles.service_box}>
+          </MotionBox>
+          <MotionBox
+            sx={styles.service_box}
+            initial={{ transform: "translateX(40px)" }}
+            whileInView={{ transform: "translateX(0px)" }}
+            transition={{
+              type: "spring",
+              visualDuration: 1,
+            }}
+          >
             <Typography sx={styles.typo_service_heading}>
               Less Truck Load
             </Typography>
@@ -242,8 +270,16 @@ function Service() {
               with complex calculations, we provide a flat per-pallet rate for
               shipments of up to 12 pallets across numerous Ontario routes.
             </Typography>
-          </Box>
-          <Box sx={styles.service_box}>
+          </MotionBox>
+          <MotionBox
+            sx={styles.service_box}
+            initial={{ transform: "translateX(40px)" }}
+            whileInView={{ transform: "translateX(0px)" }}
+            transition={{
+              type: "spring",
+              visualDuration: 1,
+            }}
+          >
             <Typography sx={styles.typo_service_heading}>
               Renting a storage trailer
             </Typography>
@@ -254,8 +290,16 @@ function Service() {
               periods. You have the option to keep the storage trailer on your
               premises for added convenience.
             </Typography>
-          </Box>
-          <Box sx={styles.service_box}>
+          </MotionBox>
+          <MotionBox
+            sx={styles.service_box}
+            initial={{ transform: "translateX(40px)" }}
+            whileInView={{ transform: "translateX(0px)" }}
+            transition={{
+              type: "spring",
+              visualDuration: 1,
+            }}
+          >
             <Typography sx={styles.typo_service_heading}>
               Temperature Controlled Trailers
             </Typography>
@@ -268,8 +312,16 @@ function Service() {
               throughout transit, while also sourcing the most suitable trucks
               at competitive prices.
             </Typography>
-          </Box>
-          <Box sx={styles.service_box}>
+          </MotionBox>
+          <MotionBox
+            sx={styles.service_box}
+            initial={{ transform: "translateX(40px)" }}
+            whileInView={{ transform: "translateX(0px)" }}
+            transition={{
+              type: "spring",
+              visualDuration: 1,
+            }}
+          >
             <Typography sx={styles.typo_service_heading}>
               Truckload Freight Claims
             </Typography>
@@ -280,7 +332,7 @@ function Service() {
               industry-standard $100,000 cargo insurance for added peace of
               mind.
             </Typography>
-          </Box>
+          </MotionBox>
         </Box>
       </Box>
     </div>
