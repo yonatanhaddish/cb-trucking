@@ -35,7 +35,7 @@ export default function Home() {
         <AboutSection />
         <Service />
         <WeWorkWith />
-        {/* <CertificateRequest /> */}
+        <CertificateRequest />
         {/* <WhyChooseUs /> */}
         {/* <ContactUs /> */}
         {/* <Footer /> */}

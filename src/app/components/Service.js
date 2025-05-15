@@ -219,8 +219,8 @@ function Service() {
           whileInView={{ transform: "translateY(0px)" }}
           transition={{
             type: "spring",
-            bounce: 0.5,
             visualDuration: 1,
+            bounce: 0.5,
           }}
         >
           We provide reliable, professional, and customer-focused services
@@ -231,19 +231,20 @@ function Service() {
         </MotionTypography>
 
         <Box sx={styles.parent_service}>
-          <MotionBox
-            sx={styles.service_box}
-            initial={{ transform: "translateX(40px)" }}
-            whileInView={{ transform: "translateX(0px)" }}
-            transition={{
-              type: "spring",
-              visualDuration: 1,
-            }}
-          >
+          <Box sx={styles.service_box}>
             <Typography sx={styles.typo_service_heading}>
               Full Truck Load
             </Typography>
-            <Typography sx={styles.typo_service_desc}>
+            <MotionTypography
+              sx={styles.typo_service_desc}
+              initial={{ transform: "translateY(40px)" }}
+              whileInView={{ transform: "translateY(0px)" }}
+              transition={{
+                type: "spring",
+                visualDuration: 1,
+                bounce: 0.5,
+              }}
+            >
               With our Full Truckload (FTL) service, we take complete control of
               your freight's journey. We provide extensive FTL coverage across
               hundreds of lanes throughout Ontario. Whether managing single
@@ -251,21 +252,22 @@ function Service() {
               for both dry and refrigerated cargo, our operations team’s vast
               expertise ensures you receive a reliable and cost-effective
               solution on short notice.
-            </Typography>
-          </MotionBox>
-          <MotionBox
-            sx={styles.service_box}
-            initial={{ transform: "translateX(40px)" }}
-            whileInView={{ transform: "translateX(0px)" }}
-            transition={{
-              type: "spring",
-              visualDuration: 1,
-            }}
-          >
+            </MotionTypography>
+          </Box>
+          <Box sx={styles.service_box}>
             <Typography sx={styles.typo_service_heading}>
               Less Truck Load
             </Typography>
-            <Typography sx={styles.typo_service_desc}>
+            <MotionTypography
+              sx={styles.typo_service_desc}
+              initial={{ transform: "translateY(40px)" }}
+              whileInView={{ transform: "translateY(0px)" }}
+              transition={{
+                type: "spring",
+                visualDuration: 1,
+                bounce: 0.5,
+              }}
+            >
               LTL shipping is a cost-effective solution for small to
               medium-sized orders where the pickup or delivery locations do not
               align well with your existing orders. If you have occasional
@@ -273,41 +275,43 @@ function Service() {
               service is straightforward and efficient. You won’t have to deal
               with complex calculations, we provide a flat per-pallet rate for
               shipments of up to 12 pallets across numerous Ontario routes.
-            </Typography>
-          </MotionBox>
-          <MotionBox
-            sx={styles.service_box}
-            initial={{ transform: "translateX(40px)" }}
-            whileInView={{ transform: "translateX(0px)" }}
-            transition={{
-              type: "spring",
-              visualDuration: 1,
-            }}
-          >
+            </MotionTypography>
+          </Box>
+          <Box sx={styles.service_box}>
             <Typography sx={styles.typo_service_heading}>
               Renting a storage trailer
             </Typography>
-            <Typography sx={styles.typo_service_desc}>
+            <MotionTypography
+              sx={styles.typo_service_desc}
+              initial={{ transform: "translateY(40px)" }}
+              whileInView={{ transform: "translateY(0px)" }}
+              transition={{
+                type: "spring",
+                visualDuration: 1,
+                bounce: 0.5,
+              }}
+            >
               Our storage trailer rental services in Toronto provide exceptional
               flexibility, enabling customers to rent our trailers for any
               length of time without restrictions on minimum or maximum rental
               periods. You have the option to keep the storage trailer on your
               premises for added convenience.
-            </Typography>
-          </MotionBox>
-          <MotionBox
-            sx={styles.service_box}
-            initial={{ transform: "translateX(40px)" }}
-            whileInView={{ transform: "translateX(0px)" }}
-            transition={{
-              type: "spring",
-              visualDuration: 1,
-            }}
-          >
+            </MotionTypography>
+          </Box>
+          <Box sx={styles.service_box}>
             <Typography sx={styles.typo_service_heading}>
               Temperature Controlled Trailers
             </Typography>
-            <Typography sx={styles.typo_service_desc}>
+            <MotionTypography
+              sx={styles.typo_service_desc}
+              initial={{ transform: "translateY(40px)" }}
+              whileInView={{ transform: "translateY(0px)" }}
+              transition={{
+                type: "spring",
+                visualDuration: 1,
+                bounce: 0.5,
+              }}
+            >
               Ensure the protection of your fresh or frozen perishable items
               with our temperature- controlled trailers (reefers) designed for
               FTL and LTL shipments. By communicating your requirements to us,
@@ -315,28 +319,29 @@ function Service() {
               expertise to maintain the cold chain at optimal temperatures
               throughout transit, while also sourcing the most suitable trucks
               at competitive prices.
-            </Typography>
-          </MotionBox>
-          <MotionBox
-            sx={styles.service_box}
-            initial={{ transform: "translateX(40px)" }}
-            whileInView={{ transform: "translateX(0px)" }}
-            transition={{
-              type: "spring",
-              visualDuration: 1,
-            }}
-          >
+            </MotionTypography>
+          </Box>
+          <Box sx={styles.service_box}>
             <Typography sx={styles.typo_service_heading}>
               Truckload Freight Claims
             </Typography>
-            <Typography sx={styles.typo_service_desc}>
+            <MotionTypography
+              sx={styles.typo_service_desc}
+              initial={{ transform: "translateY(40px)" }}
+              whileInView={{ transform: "translateY(0px)" }}
+              transition={{
+                type: "spring",
+                visualDuration: 1,
+                bounce: 0.5,
+              }}
+            >
               While not as common, truckload carrier claims can happen. Our
               expertise in trucking regulations ensures companies can navigate
               the claims process easier. Plus, all …. carriers carry
               industry-standard $100,000 cargo insurance for added peace of
               mind.
-            </Typography>
-          </MotionBox>
+            </MotionTypography>
+          </Box>
         </Box>
       </Box>
     </div>
