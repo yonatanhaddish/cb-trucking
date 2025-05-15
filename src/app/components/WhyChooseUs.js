@@ -39,7 +39,7 @@ function WhyChooseUs() {
     },
     heading_whychooseus: {
       fontSize: screenLessThan430
-        ? "24px"
+        ? "32px"
         : screenGreaterThan430LessThan768
         ? "28px"
         : screenGreaterThan768LessThan1024
@@ -64,11 +64,11 @@ function WhyChooseUs() {
         ? "20%"
         : "15%",
       textAlign: "center",
-      marginLeft: "5%",
-      marginBottom: "30px",
+      marginBottom: "50px",
+      justifySelf: "center",
     },
     desc_whychooseus: {
-      // border: "solid green 2px",
+      //   border: "solid green 2px",
       fontSize: screenLessThan430
         ? "0.9rem"
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
@@ -85,15 +85,14 @@ function WhyChooseUs() {
       textAlign: "center",
       justifySelf: "center",
       width: screenLessThan430
-        ? "80%"
+        ? "85%"
         : screenGreaterThan430LessThan768 ||
           screenGreaterThan768LessThan1024 ||
-          screenGreaterThan1280LessThan1440
+          screenGreaterThan1280LessThan1440 ||
+          screenGreaterThan1920LessThan3840
         ? "70%"
-        : screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
+        : screenGreaterThan1024LessThan1280 || screenGreaterThan1440LessThan1920
         ? "60%"
-        : screenGreaterThan1024LessThan1280
-        ? "50%"
         : "100%",
       margin: "0 auto",
       fontWeight: "bold",

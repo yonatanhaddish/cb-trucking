@@ -51,7 +51,7 @@ function ContactUs() {
     },
     heading_contactus: {
       fontSize: screenLessThan430
-        ? "24px"
+        ? "32px"
         : screenGreaterThan430LessThan768
         ? "28px"
         : screenGreaterThan768LessThan1024
@@ -76,8 +76,8 @@ function ContactUs() {
         ? "20%"
         : "15%",
       textAlign: "center",
-      marginLeft: "5%",
-      marginBottom: "30px",
+      marginBottom: "50px",
+      justifySelf: "center",
     },
     contactus_box: {
       // border: "solid blue 2px",

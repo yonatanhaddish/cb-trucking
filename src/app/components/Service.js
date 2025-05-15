@@ -78,7 +78,7 @@ function Service() {
     },
     heading_service: {
       fontSize: screenLessThan430
-        ? "24px"
+        ? "32px"
         : screenGreaterThan430LessThan768
         ? "28px"
         : screenGreaterThan768LessThan1024
@@ -92,7 +92,7 @@ function Service() {
         : "52px",
       borderBottom: "solid #c23237 2px",
       width: screenLessThan430
-        ? "50%"
+        ? "60%"
         : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
         ? "20%"
         : screenGreaterThan1440LessThan1920
@@ -103,8 +103,8 @@ function Service() {
         ? "15%"
         : "15%",
       textAlign: "center",
-      marginLeft: "5%",
-      marginBottom: "30px",
+      marginBottom: "50px",
+      justifySelf: "center",
     },
     desc_service: {
       //   border: "solid green 2px",

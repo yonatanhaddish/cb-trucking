@@ -29,9 +29,10 @@ function HomeSection() {
   );
   const MotionTypography = motion(Typography);
   const MotionBox = motion(Box);
+  const MotionButton = motion(Button);
   const styles = {
     parent_landingpage: {
-      // border: screenGreaterThan3840 ? "solid green 2px" : "solid red 5px",
+      // border: "solid green 2px",
       backgroundImage: `url("/images/landingpage_cb.jpg")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
@@ -155,7 +156,7 @@ function HomeSection() {
       justifySelf: "center",
     },
     parent_landing_smaller: {
-      // border: "solid green 2px",
+      // border: "solid green 6px",
       height:
         screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
           ? "93vh"
@@ -282,53 +283,50 @@ function HomeSection() {
         <Box sx={styles.parent_landingpage}>
           <Box sx={styles.overlay_box}></Box>
           <Box sx={styles.content_landingpage}>
-            <motion.div
+            <MotionTypography
+              sx={styles.typo_heading}
               initial={{ transform: "translateY(-100px)" }}
-              whileInView={{ transform: "translateY(10%)" }}
+              whileInView={{ transform: "translateY(0)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
             >
-              <Typography sx={styles.typo_heading}>
-                Reliable <span style={{ color: "#c23237" }}>Trucking</span> and{" "}
-                <span style={{ color: "#c23237" }}>Transportation</span>{" "}
-                Services
-              </Typography>
-            </motion.div>
-
-            <motion.div
+              Reliable <span style={{ color: "#c23237" }}>Trucking</span> and{" "}
+              <span style={{ color: "#c23237" }}>Transportation</span> Services
+            </MotionTypography>
+            <MotionTypography
+              sx={styles.typo_desc}
               initial={{ transform: "translateX(-100px)" }}
-              whileInView={{ transform: "translateX(10%)" }}
+              whileInView={{ transform: "translateX(0)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
             >
-              <Typography sx={styles.typo_desc}>
-                We provide services in the field of road transportation,ensuring
-                reliable, and efficient delivery solutions for business and
-                individuals.
-              </Typography>
-            </motion.div>
-            <motion.div
+              We provide services in the field of road transportation,ensuring
+              reliable, and efficient delivery solutions for business and
+              individuals.
+            </MotionTypography>
+            <MotionBox
+              sx={styles.button_parent}
               initial={{ transform: "translateY(100px)" }}
               whileInView={{ transform: "translateY(0)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
             >
-              <Box sx={styles.button_parent}>
-                <motion.div
+              <Link to="service_page" duration={500} smooth={true}>
+                <MotionButton
+                  sx={styles.button_services}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.8 }}
                 >
-                  <Link to="service_page" duration={500} smooth={true}>
-                    <Button sx={styles.button_services}>Our Services</Button>
-                  </Link>
-                </motion.div>
-                <motion.div
+                  Our Services
+                </MotionButton>
+              </Link>
+              <Link to="contact_us_page" duration={500} smooth={true}>
+                <MotionButton
+                  sx={styles.button_contact}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.8 }}
                 >
-                  <Link to="contact_us_page" duration={500} smooth={true}>
-                    <Button sx={styles.button_contact}>Contact Us</Button>
-                  </Link>
-                </motion.div>
-              </Box>
-            </motion.div>
+                  Contact Us
+                </MotionButton>
+              </Link>
+            </MotionBox>
           </Box>
         </Box>
       )}

@@ -76,7 +76,7 @@ function WeWorkWith() {
   const styles = {
     heading_our_partners: {
       fontSize: screenLessThan430
-        ? "24px"
+        ? "32px"
         : screenGreaterThan430LessThan768
         ? "28px"
         : screenGreaterThan768LessThan1024
@@ -91,7 +91,7 @@ function WeWorkWith() {
 
       borderBottom: "solid #c23237 2px",
       width: screenLessThan430
-        ? "50%"
+        ? "60%"
         : screenGreaterThan1024LessThan1280 ||
           screenGreaterThan768LessThan1024 ||
           screenGreaterThan1280LessThan1440
@@ -102,8 +102,8 @@ function WeWorkWith() {
         ? "25%"
         : "15%",
       textAlign: "center",
-      marginLeft: "5%",
-      marginBottom: "30px",
+      marginBottom: "80px",
+      justifySelf: "center",
     },
   };
 

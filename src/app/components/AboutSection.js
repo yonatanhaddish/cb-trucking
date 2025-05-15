@@ -40,7 +40,7 @@ function AboutSection() {
     },
     heading_aboutus: {
       fontSize: screenLessThan430
-        ? "24px"
+        ? "32px"
         : screenGreaterThan430LessThan768
         ? "28px"
         : screenGreaterThan768LessThan1024
@@ -54,7 +54,7 @@ function AboutSection() {
         : "52px",
       borderBottom: "solid #c23237 2px",
       width: screenLessThan430
-        ? "50%"
+        ? "60%"
         : screenGreaterThan1024LessThan1280 ||
           screenGreaterThan430LessThan768 ||
           screenGreaterThan768LessThan1024 ||
@@ -64,7 +64,8 @@ function AboutSection() {
         ? "15%"
         : "15%",
       textAlign: "center",
-      marginLeft: "5%",
+      marginBottom: "50px",
+      justifySelf: "center",
     },
     aboutsection_image_box: {
       border:

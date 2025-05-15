@@ -50,7 +50,7 @@ function CertificateRequest() {
     },
     heading_certification: {
       fontSize: screenLessThan430
-        ? "24px"
+        ? "32px"
         : screenGreaterThan430LessThan768
         ? "28px"
         : screenGreaterThan768LessThan1024
@@ -77,8 +77,8 @@ function CertificateRequest() {
         ? "30%"
         : "15%",
       textAlign: "center",
-      marginLeft: "5%",
-      marginBottom: "30px",
+      marginBottom: "50px",
+      justifySelf: "center",
     },
     license_box: {
       width: screenLessThan430
