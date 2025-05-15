@@ -1,10 +1,13 @@
 "use client";
 
 import React from "react";
-
 import { Box, Typography, useMediaQuery, Button } from "@mui/material";
+import { motion } from "framer-motion";
 
 function CertificateRequest() {
+  const MotionBox = motion(Box);
+  const MotionButton = motion(Button);
+
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
   );
@@ -247,16 +250,33 @@ function CertificateRequest() {
           margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
         }}
       >
-        <Typography sx={styles.heading_certification}>
-          Certificate & Accrediations
-        </Typography>
-        <Typography sx={styles.desc_certification}>
-          Our certifications and accreditations demonstrate our ongoing
-          commitment to quality, safety, and compliance. From recognized
-          industry standards to government-authorized validations, each
-          credential reflects our dedication to delivering trusted,
-          high-standard services that meet regulatory and customer expectations.
-        </Typography>
+        <motion.div
+          initial={{ transform: "translateY(-100px)" }}
+          whileInView={{ transform: "translateY(10%)" }}
+          transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+        >
+          <Typography sx={styles.heading_certification}>
+            Certificate & Accrediations
+          </Typography>
+        </motion.div>
+        <motion.div
+          initial={{ transform: "translateX(-100px)" }}
+          whileInView={{ transform: "translateX(0)" }}
+          transition={{
+            type: "spring",
+            bounce: 0.25,
+            visualDuration: 1.2,
+          }}
+        >
+          <Typography sx={styles.desc_certification}>
+            Our certifications and accreditations demonstrate our ongoing
+            commitment to quality, safety, and compliance. From recognized
+            industry standards to government-authorized validations, each
+            credential reflects our dedication to delivering trusted,
+            high-standard services that meet regulatory and customer
+            expectations.
+          </Typography>
+        </motion.div>
         <Box sx={styles.parent_certificate}>
           <Box sx={styles.license_box}>
             <Box sx={styles.license_logo_icc}></Box>
@@ -264,7 +284,13 @@ function CertificateRequest() {
             <Typography sx={styles.typo_desc}>
               Canadian Produce Marketing Association
             </Typography>
-            <Button sx={styles.button_request}>Request</Button>
+            <MotionButton
+              sx={styles.button_request}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.8 }}
+            >
+              Request
+            </MotionButton>
           </Box>
           <Box sx={styles.license_box}>
             <Box sx={styles.license_logo_cpma_license}></Box>
@@ -272,7 +298,13 @@ function CertificateRequest() {
             <Typography sx={styles.typo_desc}>
               Interstate Commerce Commission License
             </Typography>
-            <Button sx={styles.button_request}>Request</Button>
+            <MotionButton
+              sx={styles.button_request}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.8 }}
+            >
+              Request
+            </MotionButton>
           </Box>
           <Box sx={styles.license_box}>
             <Box sx={styles.wsib_license_logo}></Box>
@@ -280,7 +312,13 @@ function CertificateRequest() {
             <Typography sx={styles.typo_desc}>
               Workplace Safety and Insurance Board Clearance
             </Typography>
-            <Button sx={styles.button_request}>Request</Button>
+            <MotionButton
+              sx={styles.button_request}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.8 }}
+            >
+              Request
+            </MotionButton>
           </Box>
         </Box>
       </Box>

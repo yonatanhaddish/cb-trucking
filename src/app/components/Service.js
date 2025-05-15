@@ -3,6 +3,7 @@
 import React from "react";
 
 import { Box, Typography, useMediaQuery, Button } from "@mui/material";
+import { motion } from "framer-motion";
 function Service() {
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
@@ -66,7 +67,7 @@ function Service() {
       height: screenLessThan430
         ? "400px"
         : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
-        ? "440px"
+        ? "400px"
         : screenGreaterThan430LessThan768
         ? "400px"
         : screenGreaterThan768LessThan1024
@@ -166,7 +167,7 @@ function Service() {
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
         ? "1.0rem"
         : screenGreaterThan1024LessThan1280
-        ? "1.05rem"
+        ? "1.0rem"
         : screenGreaterThan1280LessThan1440
         ? "1.1rem"
         : screenGreaterThan1440LessThan1920
@@ -188,14 +189,31 @@ function Service() {
           margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
         }}
       >
-        <Typography sx={styles.heading_service}>Services</Typography>
-        <Typography sx={styles.desc_service}>
-          We provide reliable, professional, and customer-focused services
-          designed to meet your unique needs. With a strong commitment to
-          quality, efficiency, and integrity, our team ensures that every job is
-          handled with care—from the first interaction to final delivery. Your
-          satisfaction is our priority
-        </Typography>
+        <motion.div
+          initial={{ transform: "translateY(-100px)" }}
+          whileInView={{ transform: "translateY(10%)" }}
+          transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+        >
+          <Typography sx={styles.heading_service}>Services</Typography>
+        </motion.div>
+
+        <motion.div
+          initial={{ transform: "translateX(-100px)" }}
+          whileInView={{ transform: "translateX(0)" }}
+          transition={{
+            type: "spring",
+            bounce: 0.25,
+            visualDuration: 1.2,
+          }}
+        >
+          <Typography sx={styles.desc_service}>
+            We provide reliable, professional, and customer-focused services
+            designed to meet your unique needs. With a strong commitment to
+            quality, efficiency, and integrity, our team ensures that every job
+            is handled with care—from the first interaction to final delivery.
+            Your satisfaction is our priority
+          </Typography>
+        </motion.div>
         <Box sx={styles.parent_service}>
           <Box sx={styles.service_box}>
             <Typography sx={styles.typo_service_heading}>

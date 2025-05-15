@@ -9,6 +9,7 @@ import {
   Button,
   TextField,
 } from "@mui/material";
+import { motion } from "framer-motion";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationPinIcon from "@mui/icons-material/LocationPin";
 import EmailIcon from "@mui/icons-material/Email";
@@ -194,8 +195,8 @@ function ContactUs() {
             screenGreaterThan1920LessThan3840
           ? "80%"
           : "100%",
-      alignSelf: "center",
       paddingBottom: "30px",
+      alignSelf: "center",
     },
     button: {
       // border: "solid blue 1px",
@@ -232,6 +233,7 @@ function ContactUs() {
         ? "15px"
         : "14px",
       alignSelf: "center",
+      textAlign: "center",
     },
     input_text: {
       "& .MuiInputBase-root": {
@@ -264,7 +266,13 @@ function ContactUs() {
   return (
     <div id="contact_us_page">
       <Box sx={styles.parent_contactus_box}>
-        <Typography sx={styles.heading_contactus}>Contact Us</Typography>
+        <motion.div
+          initial={{ transform: "translateY(-100px)" }}
+          whileInView={{ transform: "translateY(10%)" }}
+          transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+        >
+          <Typography sx={styles.heading_contactus}>Contact Us</Typography>
+        </motion.div>
         <Box sx={styles.contactus_box}>
           <Box sx={styles.contact_info_box}>
             {screenLessThan430 ||
@@ -272,45 +280,84 @@ function ContactUs() {
             screenGreaterThan768LessThan1024 ? (
               <></>
             ) : (
-              <Typography sx={styles.typo_getintouch_heading}>
-                Get In Touch
-              </Typography>
+              <motion.div
+                initial={{ transform: "translateX(-100px)" }}
+                whileInView={{ transform: "translateX(0)" }}
+                transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+              >
+                <Typography sx={styles.typo_getintouch_heading}>
+                  Get In Touch
+                </Typography>
+              </motion.div>
             )}
-            <Typography sx={styles.typo_getintouch_desc}>
-              Have questions or need a quote? Get in touch with Reliable
-              Trucking and Transportation Services. We're here to provide prompt
-              and dependable support for all your transportation needs.
-            </Typography>
-            <Box sx={styles.single_contact_info}>
-              <LocationPinIcon
-                sx={{
-                  color: "#c23237",
-                  // marginRight: "8px",
-                  // border: "solid red 1px",
-                }}
-              />
-              <Typography>123 Wellington Ave. E</Typography>
-            </Box>
-            <Box sx={styles.single_contact_info}>
-              <PhoneIcon
-                sx={{
-                  color: "#c23237",
-                  // marginRight: "8px",
-                  // border: "solid red 1px",
-                }}
-              />
-              <Typography>(123) 456-7890</Typography>
-            </Box>
-            <Box sx={styles.single_contact_info}>
-              <EmailIcon
-                sx={{
-                  color: "#c23237",
-                  // marginRight: "8px",
-                  // border: "solid red 1px",
-                }}
-              />
-              <Typography>cb-trucking@email.com</Typography>
-            </Box>
+            <motion.div
+            // initial={{ transform: "translateX(100px)" }}
+            // whileInView={{ transform: "translateX(0)" }}
+            // transition={{ type: "spring", bounce: 0.25, visualDuration: 1.5 }}
+            >
+              <Typography sx={styles.typo_getintouch_desc}>
+                Have questions or need a quote? Get in touch with Reliable
+                Trucking and Transportation Services. We're here to provide
+                prompt and dependable support for all your transportation needs.
+              </Typography>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.4,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+              }}
+            >
+              <Box sx={styles.single_contact_info}>
+                <LocationPinIcon
+                  sx={{
+                    color: "#c23237",
+                    // marginRight: "8px",
+                    // border: "solid red 1px",
+                  }}
+                />
+                <Typography>123 Wellington Ave. E</Typography>
+              </Box>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                scale: { type: "spring", visualDuration: 0.3, bounce: 0.5 },
+              }}
+            >
+              <Box sx={styles.single_contact_info}>
+                <PhoneIcon
+                  sx={{
+                    color: "#c23237",
+                    // marginRight: "8px",
+                    // border: "solid red 1px",
+                  }}
+                />
+                <Typography>(123) 456-7890</Typography>
+              </Box>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.4,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+              }}
+            >
+              <Box sx={styles.single_contact_info}>
+                <EmailIcon
+                  sx={{
+                    color: "#c23237",
+                    // marginRight: "8px",
+                    // border: "solid red 1px",
+                  }}
+                />
+                <Typography>cb-trucking@email.com</Typography>
+              </Box>
+            </motion.div>
           </Box>
           <Box sx={styles.contact_input_box}>
             <Box sx={styles.input_box}>
@@ -342,7 +389,12 @@ function ContactUs() {
                 maxRows={10}
                 sx={styles.input_text}
               />
-              <Button sx={styles.button}>Send</Button>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.8 }}
+              >
+                <Button sx={styles.button}>Send</Button>
+              </motion.div>
             </Box>
           </Box>
         </Box>

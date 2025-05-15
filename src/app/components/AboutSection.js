@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Box, Typography, useMediaQuery, Button } from "@mui/material";
+import { motion } from "framer-motion";
 
 function AboutSection() {
   const screenLessThan430 = useMediaQuery(
@@ -276,7 +277,13 @@ function AboutSection() {
           paddingTop: "100px",
         }}
       >
-        <Typography sx={styles.heading_aboutus}>About Us</Typography>
+        <motion.div
+          initial={{ transform: "translateY(-100px)" }}
+          whileInView={{ transform: "translateY(10%)" }}
+          transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+        >
+          <Typography sx={styles.heading_aboutus}>About Us</Typography>
+        </motion.div>
         <Box sx={styles.parent_aboutsection}>
           <Box sx={styles.aboutsection_image_box}>
             <Box sx={styles.aboutsection_img1}></Box>

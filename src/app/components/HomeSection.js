@@ -27,7 +27,8 @@ function HomeSection() {
   const screenGreaterThan1920LessThan3840 = useMediaQuery(
     "(min-width: 1921px) and (max-width: 3840px)"
   );
-
+  const MotionTypography = motion(Typography);
+  const MotionBox = motion(Box);
   const styles = {
     parent_landingpage: {
       // border: screenGreaterThan3840 ? "solid green 2px" : "solid red 5px",
@@ -80,10 +81,11 @@ function HomeSection() {
         ? "32px"
         : "28px",
 
-      //   border: "solid white 1px",
+      // border: "solid white 1px",
       width: "80%",
       alignSelf: "center",
       textAlign: "center",
+      justifySelf: "center",
     },
     typo_desc: {
       color: "#fff",
@@ -148,8 +150,9 @@ function HomeSection() {
       display: "flex",
       flexDirection: "row",
       gap: screenGreaterThan1920LessThan3840 ? "80px" : "40px",
-      //   border: "solid 1px white",
+      // border: "solid 1px white",
       justifyContent: "center",
+      justifySelf: "center",
     },
     parent_landing_smaller: {
       // border: "solid green 2px",
@@ -235,16 +238,31 @@ function HomeSection() {
         <Box sx={styles.parent_landing_smaller}>
           <Box sx={styles.parent_landingpage_small}></Box>
           <Box sx={styles.content_landingpage_smaller}>
-            <Typography sx={styles.typo_heading_smaller}>
+            <MotionTypography
+              sx={styles.typo_heading_smaller}
+              initial={{ transform: "translateY(-100px)" }}
+              whileInView={{ transform: "translateY(10%)" }}
+              transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+            >
               Reliable <span style={{ color: "#c23237" }}>Trucking</span> and{" "}
               <span style={{ color: "#c23237" }}>Transportation</span> Services
-            </Typography>
-            <Typography sx={styles.typo_desc_smaller}>
+            </MotionTypography>
+            <MotionTypography
+              sx={styles.typo_desc_smaller}
+              initial={{ transform: "translateX(-100px)" }}
+              whileInView={{ transform: "translateX(0)" }}
+              transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+            >
               We provide services in the field of road transportation,ensuring
               reliable, and efficient delivery solutions for business and
               individuals.
-            </Typography>
-            <Box sx={styles.button_parent_smaller}>
+            </MotionTypography>
+            <MotionBox
+              sx={styles.button_parent_smaller}
+              initial={{ transform: "translateY(50px)" }}
+              whileInView={{ transform: "translateY(0)" }}
+              transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+            >
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
                 <Link to="service_page" duration={500} smooth={true}>
                   <Button sx={styles.button_services_smaller}>
@@ -257,34 +275,60 @@ function HomeSection() {
                   <Button sx={styles.button_contact_smaller}>Contact Us</Button>
                 </Link>
               </motion.div>
-            </Box>
+            </MotionBox>
           </Box>
         </Box>
       ) : (
         <Box sx={styles.parent_landingpage}>
           <Box sx={styles.overlay_box}></Box>
           <Box sx={styles.content_landingpage}>
-            <Typography sx={styles.typo_heading}>
-              Reliable <span style={{ color: "#c23237" }}>Trucking</span> and{" "}
-              <span style={{ color: "#c23237" }}>Transportation</span> Services
-            </Typography>
-            <Typography sx={styles.typo_desc}>
-              We provide services in the field of road transportation,ensuring
-              reliable, and efficient delivery solutions for business and
-              individuals.
-            </Typography>
-            <Box sx={styles.button_parent}>
-              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
-                <Link to="service_page" duration={500} smooth={true}>
-                  <Button sx={styles.button_services}>Our Services</Button>
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
-                <Link to="contact_us_page" duration={500} smooth={true}>
-                  <Button sx={styles.button_contact}>Contact Us</Button>
-                </Link>
-              </motion.div>
-            </Box>
+            <motion.div
+              initial={{ transform: "translateY(-100px)" }}
+              whileInView={{ transform: "translateY(10%)" }}
+              transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+            >
+              <Typography sx={styles.typo_heading}>
+                Reliable <span style={{ color: "#c23237" }}>Trucking</span> and{" "}
+                <span style={{ color: "#c23237" }}>Transportation</span>{" "}
+                Services
+              </Typography>
+            </motion.div>
+
+            <motion.div
+              initial={{ transform: "translateX(-100px)" }}
+              whileInView={{ transform: "translateX(10%)" }}
+              transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+            >
+              <Typography sx={styles.typo_desc}>
+                We provide services in the field of road transportation,ensuring
+                reliable, and efficient delivery solutions for business and
+                individuals.
+              </Typography>
+            </motion.div>
+            <motion.div
+              initial={{ transform: "translateY(100px)" }}
+              whileInView={{ transform: "translateY(0)" }}
+              transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+            >
+              <Box sx={styles.button_parent}>
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.8 }}
+                >
+                  <Link to="service_page" duration={500} smooth={true}>
+                    <Button sx={styles.button_services}>Our Services</Button>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.8 }}
+                >
+                  <Link to="contact_us_page" duration={500} smooth={true}>
+                    <Button sx={styles.button_contact}>Contact Us</Button>
+                  </Link>
+                </motion.div>
+              </Box>
+            </motion.div>
           </Box>
         </Box>
       )}

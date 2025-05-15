@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
+import { motion } from "framer-motion";
 
 const partners_array = [
   { name: "Atlantis Freight Solutions", fontFamily: "'Roboto', sans-serif" },
@@ -119,7 +120,13 @@ function WeWorkWith() {
         paddingTop: "100px",
       }}
     >
-      <Typography sx={styles.heading_our_partners}>We Work With</Typography>
+      <motion.div
+        initial={{ transform: "translateY(-100px)" }}
+        whileInView={{ transform: "translateY(10%)" }}
+        transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+      >
+        <Typography sx={styles.heading_our_partners}>We Work With</Typography>
+      </motion.div>
       <Box
         sx={{
           display: "flex",

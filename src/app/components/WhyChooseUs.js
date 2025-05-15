@@ -3,6 +3,8 @@
 import React from "react";
 
 import { Box, Typography, useMediaQuery, Button } from "@mui/material";
+import { motion } from "framer-motion";
+
 function WhyChooseUs() {
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
@@ -25,6 +27,9 @@ function WhyChooseUs() {
   const screenGreaterThan1920LessThan3840 = useMediaQuery(
     "(min-width: 1921px) and (max-width: 3840px)"
   );
+
+  const MotionBox = motion(Box);
+
   const styles = {
     parent_why_whoose_us_box: {
       backgroundColor: "#D9D9D9",
@@ -85,10 +90,10 @@ function WhyChooseUs() {
           screenGreaterThan768LessThan1024 ||
           screenGreaterThan1280LessThan1440
         ? "70%"
-        : screenGreaterThan1024LessThan1280 ||
-          screenGreaterThan1440LessThan1920 ||
-          screenGreaterThan1920LessThan3840
+        : screenGreaterThan1440LessThan1920 || screenGreaterThan1920LessThan3840
         ? "60%"
+        : screenGreaterThan1024LessThan1280
+        ? "50%"
         : "100%",
       margin: "0 auto",
       fontWeight: "bold",
@@ -213,14 +218,38 @@ function WhyChooseUs() {
   return (
     <div id="why_choose_us_page">
       <Box sx={styles.parent_why_whoose_us_box}>
-        <Typography sx={styles.heading_whychooseus}>Why Choose Us</Typography>
-        <Typography sx={styles.desc_whychooseus}>
-          At CB Trucking, we don't just move cargo - we move your business
-          foward. With a passion precision and a commitment to excellence,
-          here's why customers across the region trust us
-        </Typography>
+        <motion.div
+          initial={{ transform: "translateY(-100px)" }}
+          whileInView={{ transform: "translateY(10%)" }}
+          transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+        >
+          <Typography sx={styles.heading_whychooseus}>Why Choose Us</Typography>
+        </motion.div>
+        <motion.div
+          initial={{ transform: "translateX(-100px)" }}
+          whileInView={{ transform: "translateX(0)" }}
+          transition={{
+            type: "spring",
+            bounce: 0.25,
+            visualDuration: 1.2,
+          }}
+        >
+          <Typography sx={styles.desc_whychooseus}>
+            At CB Trucking, we don't just move cargo - we move your business
+            foward. With a passion precision and a commitment to excellence,
+            here's why customers across the region trust us
+          </Typography>
+        </motion.div>
         <Box sx={styles.child_whychooseus_box}>
-          <Box sx={styles.single_whychooseus_box}>
+          <MotionBox
+            sx={styles.single_whychooseus_box}
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
+            }}
+          >
             <Typography sx={styles.typo_heading}>
               Reliable & On-Time Delivery
             </Typography>
@@ -229,8 +258,16 @@ function WhyChooseUs() {
               ensure your freight reaches its destination safely and on schedule
               — every time
             </Typography>
-          </Box>
-          <Box sx={styles.single_whychooseus_box}>
+          </MotionBox>
+          <MotionBox
+            sx={styles.single_whychooseus_box}
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
+            }}
+          >
             <Typography sx={styles.typo_heading}>
               Customer-First Approach
             </Typography>
@@ -239,8 +276,16 @@ function WhyChooseUs() {
               around the clock, providing personalized support tailored to your
               needs
             </Typography>
-          </Box>
-          <Box sx={styles.single_whychooseus_box}>
+          </MotionBox>
+          <MotionBox
+            sx={styles.single_whychooseus_box}
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
+            }}
+          >
             <Typography sx={styles.typo_heading}>
               Trusted by Industry Leaders
             </Typography>
@@ -249,8 +294,16 @@ function WhyChooseUs() {
               logistics and retail. Our reputation is built on trust,
               transparency, and results
             </Typography>
-          </Box>
-          <Box sx={styles.single_whychooseus_box}>
+          </MotionBox>
+          <MotionBox
+            sx={styles.single_whychooseus_box}
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
+            }}
+          >
             <Typography sx={styles.typo_heading}>
               Competitive Pricing
             </Typography>
@@ -258,14 +311,22 @@ function WhyChooseUs() {
               Top-tier service shouldn’t come with top-tier pricing. Our
               transparent and fair rates ensure you get value at every mile
             </Typography>
-          </Box>
-          <Box sx={styles.single_whychooseus_box}>
+          </MotionBox>
+          <MotionBox
+            sx={styles.single_whychooseus_box}
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
+            }}
+          >
             <Typography sx={styles.typo_heading}>Flexible Solutions</Typography>
             <Typography sx={styles.typo_desc}>
               From same-day shipments to long-haul freight — vans, pallets, or
               boxes — we adapt to meet your business demands
             </Typography>
-          </Box>
+          </MotionBox>
         </Box>
       </Box>
     </div>
