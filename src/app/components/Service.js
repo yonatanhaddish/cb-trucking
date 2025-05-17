@@ -215,12 +215,12 @@ function Service() {
         </MotionTypography>
         <MotionTypography
           sx={styles.desc_service}
-          initial={{ transform: "translateY(40px)" }}
-          whileInView={{ transform: "translateY(0px)" }}
+          initial={{ transform: "translateX(-100px)" }}
+          whileInView={{ transform: "translateX(0px)" }}
           transition={{
             type: "spring",
-            visualDuration: 1,
-            bounce: 0.5,
+            bounce: 0.25,
+            visualDuration: 1.2,
           }}
         >
           We provide reliable, professional, and customer-focused services

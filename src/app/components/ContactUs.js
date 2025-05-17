@@ -17,6 +17,10 @@ import EmailIcon from "@mui/icons-material/Email";
 function ContactUs() {
   const [loading, setLoading] = useState(undefined);
 
+  const MotionBox = motion(Box);
+  const MotionTypography = motion(Typography);
+  const MotionButton = motion(Button);
+
   useEffect(() => {
     setLoading(false);
   }, []);
@@ -67,13 +71,15 @@ function ContactUs() {
       width: screenLessThan430
         ? "50%"
         : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
-        ? "30%"
-        : screenGreaterThan1440LessThan1920 || screenGreaterThan430LessThan768
+        ? "40%"
+        : screenGreaterThan1440LessThan1920
         ? "30%"
         : screenGreaterThan768LessThan1024
         ? "30%"
         : screenGreaterThan1920LessThan3840
         ? "20%"
+        : screenGreaterThan430LessThan768
+        ? "30%"
         : "15%",
       textAlign: "center",
       marginBottom: "50px",
@@ -106,6 +112,7 @@ function ContactUs() {
           ? "center"
           : "",
       paddingBottom: "100px",
+      marginTop: "50px",
     },
     contact_info_box: {
       // border: "solid green 1px",
@@ -266,13 +273,15 @@ function ContactUs() {
   return (
     <div id="contact_us_page">
       <Box sx={styles.parent_contactus_box}>
-        <motion.div
+        <MotionTypography
+          sx={styles.heading_contactus}
           initial={{ transform: "translateY(-100px)" }}
-          whileInView={{ transform: "translateY(10%)" }}
+          whileInView={{ transform: "translateY(0px)" }}
           transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
         >
-          <Typography sx={styles.heading_contactus}>Contact Us</Typography>
-        </motion.div>
+          Contact Us
+        </MotionTypography>
+
         <Box sx={styles.contactus_box}>
           <Box sx={styles.contact_info_box}>
             {screenLessThan430 ||
@@ -280,28 +289,31 @@ function ContactUs() {
             screenGreaterThan768LessThan1024 ? (
               <></>
             ) : (
-              <motion.div
+              <MotionTypography
+                sx={styles.typo_getintouch_heading}
                 initial={{ transform: "translateX(-100px)" }}
                 whileInView={{ transform: "translateX(0px)" }}
                 transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
               >
-                <Typography sx={styles.typo_getintouch_heading}>
-                  Get In Touch
-                </Typography>
-              </motion.div>
+                Get In Touch
+              </MotionTypography>
             )}
-            <motion.div
-            // initial={{ transform: "translateX(100px)" }}
-            // whileInView={{ transform: "translateX(0)" }}
-            // transition={{ type: "spring", bounce: 0.25, visualDuration: 1.5 }}
+            <MotionTypography
+              sx={styles.typo_getintouch_desc}
+              initial={{ transform: "translateX(-100px)" }}
+              whileInView={{ transform: "translateX(0px)" }}
+              transition={{
+                type: "spring",
+                bounce: 0.25,
+                visualDuration: 1.2,
+              }}
             >
-              <Typography sx={styles.typo_getintouch_desc}>
-                Have questions or need a quote? Get in touch with Reliable
-                Trucking and Transportation Services. We're here to provide
-                prompt and dependable support for all your transportation needs.
-              </Typography>
-            </motion.div>
-            <motion.div
+              Have questions or need a quote? Get in touch with Reliable
+              Trucking and Transportation Services. We're here to provide prompt
+              and dependable support for all your transportation needs.
+            </MotionTypography>
+            <MotionBox
+              sx={styles.single_contact_info}
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{
@@ -309,18 +321,15 @@ function ContactUs() {
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
               }}
             >
-              <Box sx={styles.single_contact_info}>
-                <LocationPinIcon
-                  sx={{
-                    color: "#c23237",
-                    // marginRight: "8px",
-                    // border: "solid red 1px",
-                  }}
-                />
-                <Typography>123 Wellington Ave. E</Typography>
-              </Box>
-            </motion.div>
-            <motion.div
+              <LocationPinIcon
+                sx={{
+                  color: "#c23237",
+                }}
+              />
+              <Typography>123 Wellington Ave. E</Typography>
+            </MotionBox>
+            <MotionBox
+              sx={styles.single_contact_info}
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{
@@ -328,18 +337,15 @@ function ContactUs() {
                 scale: { type: "spring", visualDuration: 0.3, bounce: 0.5 },
               }}
             >
-              <Box sx={styles.single_contact_info}>
-                <PhoneIcon
-                  sx={{
-                    color: "#c23237",
-                    // marginRight: "8px",
-                    // border: "solid red 1px",
-                  }}
-                />
-                <Typography>(123) 456-7890</Typography>
-              </Box>
-            </motion.div>
-            <motion.div
+              <PhoneIcon
+                sx={{
+                  color: "#c23237",
+                }}
+              />
+              <Typography>(123) 456-7890</Typography>
+            </MotionBox>
+            <MotionBox
+              sx={styles.single_contact_info}
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{
@@ -347,17 +353,13 @@ function ContactUs() {
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
               }}
             >
-              <Box sx={styles.single_contact_info}>
-                <EmailIcon
-                  sx={{
-                    color: "#c23237",
-                    // marginRight: "8px",
-                    // border: "solid red 1px",
-                  }}
-                />
-                <Typography>cb-trucking@email.com</Typography>
-              </Box>
-            </motion.div>
+              <EmailIcon
+                sx={{
+                  color: "#c23237",
+                }}
+              />
+              <Typography>cb-trucking@email.com</Typography>
+            </MotionBox>
           </Box>
           <Box sx={styles.contact_input_box}>
             <Box sx={styles.input_box}>
@@ -389,12 +391,17 @@ function ContactUs() {
                 maxRows={10}
                 sx={styles.input_text}
               />
-              <motion.div
+
+              <MotionButton
+                sx={styles.button}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.8 }}
+                initial={{ transform: "translateY(50px)" }}
+                whileInView={{ transform: "translateY(0px)" }}
+                transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
               >
-                <Button sx={styles.button}>Send</Button>
-              </motion.div>
+                Send
+              </MotionButton>
             </Box>
           </Box>
         </Box>

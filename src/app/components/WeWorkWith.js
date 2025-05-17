@@ -44,7 +44,6 @@ const WeWorkWith = () => {
   const total = partners_array.length;
   const visibleItems = 8;
 
-  // Media queries for responsive design
   const screenLessThan430 = useMediaQuery("(max-width: 430px)");
   const screenGreaterThan430LessThan768 = useMediaQuery(
     "(min-width: 431px) and (max-width: 768px)"
@@ -87,9 +86,9 @@ const WeWorkWith = () => {
       fontSize: screenLessThan430
         ? "32px"
         : screenGreaterThan430LessThan768
-        ? "34px"
+        ? "28px"
         : screenGreaterThan768LessThan1024
-        ? "36px"
+        ? "32px"
         : screenGreaterThan1024LessThan1280
         ? "36px"
         : screenGreaterThan1280LessThan1440
@@ -97,22 +96,23 @@ const WeWorkWith = () => {
         : screenGreaterThan1440LessThan1920
         ? "44px"
         : "52px",
-      borderBottom: "2px solid #c23237",
+      borderBottom: "solid #c23237 2px",
       width: screenLessThan430
-        ? "60%"
+        ? "50%"
         : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
-        ? "20%"
+        ? "40%"
         : screenGreaterThan1440LessThan1920
-        ? "15%"
+        ? "30%"
         : screenGreaterThan768LessThan1024
         ? "30%"
         : screenGreaterThan1920LessThan3840
-        ? "15%"
+        ? "20%"
         : screenGreaterThan430LessThan768
         ? "30%"
         : "15%",
       textAlign: "center",
-      margin: "0 auto 50px",
+      marginBottom: "50px",
+      justifySelf: "center",
     },
   };
 
@@ -143,7 +143,9 @@ const WeWorkWith = () => {
           width: `${(total / visibleItems) * 100}%`,
           transform: `translateX(${translateX})`,
           transition: "transform 0.8s ease-in-out",
-          marginTop: "80px",
+          marginTop: "100px",
+          // border: "solid black 2px",
+          marginBottom: "80px",
         }}
       >
         {partners_array.map((partner, index) => (

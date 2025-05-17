@@ -36,10 +36,10 @@ export default function Home() {
         <Service />
         <WeWorkWith />
         <CertificateRequest />
-        {/* <WhyChooseUs /> */}
-        {/* <ContactUs /> */}
-        {/* <Footer /> */}
-        {/* <FooterTwo /> */}
+        <WhyChooseUs />
+        <ContactUs />
+        <Footer />
+        <FooterTwo />
       </>
     </>
   );

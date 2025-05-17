@@ -55,13 +55,15 @@ function WhyChooseUs() {
       width: screenLessThan430
         ? "50%"
         : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
-        ? "30%"
-        : screenGreaterThan1440LessThan1920 || screenGreaterThan430LessThan768
+        ? "40%"
+        : screenGreaterThan1440LessThan1920
         ? "30%"
         : screenGreaterThan768LessThan1024
         ? "30%"
         : screenGreaterThan1920LessThan3840
         ? "20%"
+        : screenGreaterThan430LessThan768
+        ? "30%"
         : "15%",
       textAlign: "center",
       marginBottom: "50px",
@@ -226,7 +228,7 @@ function WhyChooseUs() {
         </motion.div>
         <motion.div
           initial={{ transform: "translateX(-100px)" }}
-          whileInView={{ transform: "translateX(0)" }}
+          whileInView={{ transform: "translateX(0px)" }}
           transition={{
             type: "spring",
             bounce: 0.25,
