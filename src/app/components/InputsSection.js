@@ -10,6 +10,7 @@ import {
   TextField,
 } from "@mui/material";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
 function InputsSection() {
   const MotionBox = motion(Box);
@@ -152,13 +153,27 @@ function InputsSection() {
     setMessage(event.target.value);
   };
 
-  const handleSendEmail = (event) => {
-    event.preventDefault();
-    console.log("000", {
-      name,
-      email,
-      message,
-    });
+  const handleSendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        e.target,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log("11111111111", result);
+          alert("Message Sent");
+        },
+        (error) => {
+          console.log("222222222", error);
+          alert("Error Sending Message. Please try again!!!");
+        }
+      );
+
+    e.target.reset();
     setName("");
     setEmail("");
     setMessage("");
@@ -172,15 +187,15 @@ function InputsSection() {
     }
   });
   return (
-    <div>
-      {" "}
+    <form onSubmit={handleSendEmail}>
       <Box sx={styles.input_box}>
         <Typography sx={styles.typo_getintouch_desc}>
           Feel free to leave us message anytime. We will get back to your as
           soon as we can!
         </Typography>
         <TextField
-          id="outlined-basic"
+          id="name"
+          name="name"
           label="Full Name"
           variant="outlined"
           size="small"
@@ -189,7 +204,8 @@ function InputsSection() {
           onChange={handleChangeName}
         />
         <TextField
-          id="outlined-basic"
+          id="email"
+          name="email"
           label="Email Address"
           variant="outlined"
           size="small"
@@ -198,7 +214,8 @@ function InputsSection() {
           onChange={handleChangeEmail}
         />
         <TextField
-          id="outlined-basic"
+          id="message"
+          name="message"
           label="Message"
           variant="outlined"
           size="small"
@@ -213,13 +230,14 @@ function InputsSection() {
           sx={styles.button}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.8 }}
-          onClick={handleSendEmail}
+          //   onClick={handleSendEmail}
           disabled={sendButtonDisabled}
+          type="submit"
         >
           Send
         </MotionButton>
       </Box>
-    </div>
+    </form>
   );
 }
 
