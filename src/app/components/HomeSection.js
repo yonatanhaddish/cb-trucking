@@ -37,12 +37,15 @@ function HomeSection() {
       backgroundSize: "cover",
       backgroundPosition: "center",
       height:
-        screenGreaterThan1024LessThan1280 ||
-        screenGreaterThan1280LessThan1440 ||
-        screenGreaterThan1440LessThan1920 ||
-        screenGreaterThan1920LessThan3840
-          ? "90vh"
-          : "86vh",
+        screenGreaterThan1024LessThan1280 || screenGreaterThan1440LessThan1920
+          ? "92vh"
+          : screenGreaterThan768LessThan1024
+          ? "88vh"
+          : screenGreaterThan1280LessThan1440
+          ? "93vh"
+          : screenGreaterThan1920LessThan3840
+          ? "94vh"
+          : "8vh",
       position: "relative",
       display: "flex",
       width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",

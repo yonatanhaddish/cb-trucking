@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-
+import { Link } from "react-scroll";
 import { Box, Typography, useMediaQuery, Button } from "@mui/material";
+import { motion } from "framer-motion";
 function Footer() {
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
@@ -26,43 +27,83 @@ function Footer() {
     "(min-width: 1921px) and (max-width: 3840px)"
   );
 
+  const MotionButton = motion(Button);
+
   const styles = {
     parent_box: {
-      // border: "solid red 2px",
+      // border: "solid green 2px",
       backgroundColor: "#000",
       display: "flex",
-      flexWrap: "wrap",
+      flexDirection:
+        screenLessThan430 || screenGreaterThan430LessThan768 ? "column" : "row",
+      gap: screenLessThan430 || screenGreaterThan430LessThan768 ? "40px" : "",
+      paddingTop: "50px",
+      justifyContent:
+        screenGreaterThan768LessThan1024 ||
+        screenGreaterThan1024LessThan1280 ||
+        screenGreaterThan1280LessThan1440 ||
+        screenGreaterThan1440LessThan1920 ||
+        screenGreaterThan1920LessThan3840
+          ? "space-evenly"
+          : "",
+      width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
+      margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
+      paddingBottom: "50px",
+    },
+    logo_address_box: {
+      // border: "solid red 2px",
+      display: "flex",
+      flexDirection: "column",
       gap:
         screenLessThan430 || screenGreaterThan430LessThan768
-          ? "50px"
+          ? "40px"
+          : screenGreaterThan768LessThan1024 ||
+            screenGreaterThan1024LessThan1280 ||
+            screenGreaterThan1280LessThan1440 ||
+            screenGreaterThan1440LessThan1920
+          ? "60px"
           : screenGreaterThan1920LessThan3840
           ? "100px"
           : "",
-      justifyContent: "center",
-      width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
-      margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
-      paddingTop: "100px",
-      alignItems: screenGreaterThan1920LessThan3840 ? "center" : "",
     },
-    logoname_box: {
+    nav_links_parent: {
       // border: "solid green 2px",
+      display: "flex",
+      flexDirection: "row",
+      justifyContent:
+        screenLessThan430 || screenGreaterThan430LessThan768
+          ? "space-evenly"
+          : "",
+      //   alignSelf: screenGreaterThan768LessThan1024 ? "center" : "",
+      gap: screenGreaterThan768LessThan1024
+        ? "80px"
+        : screenGreaterThan1024LessThan1280 ||
+          screenGreaterThan1280LessThan1440 ||
+          screenGreaterThan1440LessThan1920 ||
+          screenGreaterThan1920LessThan3840
+        ? "100px"
+        : screenLessThan430
+        ? "50px"
+        : "",
+      marginTop:
+        screenLessThan430 ||
+        screenGreaterThan430LessThan768 ||
+        screenGreaterThan768LessThan1024
+          ? ""
+          : "40px",
+    },
+    logo_heading: {
+      // border: "solid blue 2px",
       width: screenLessThan430
-        ? "80%"
-        : screenGreaterThan768LessThan1024
-        ? "60%"
-        : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
-        ? "50%"
-        : screenGreaterThan1440LessThan1920
-        ? "40%"
-        : screenGreaterThan1920LessThan3840
-        ? "100%"
+        ? "85%"
         : screenGreaterThan430LessThan768
-        ? "90%"
+        ? "80%"
         : "100%",
+      margin: "0 auto",
     },
     logo_box: {
       backgroundImage: `url("/images/logo.PNG")`,
-      // border: "solid red 2px",
+      //   border: "solid red 2px",
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: screenGreaterThan768LessThan1024
@@ -87,10 +128,9 @@ function Footer() {
         : screenLessThan430 || screenGreaterThan430LessThan768
         ? "200px"
         : "50px",
-      // margin: "0 auto",
     },
     typo_name_heading: {
-      // border: "solid green 2px",
+      //   border: "solid green 2px",
       color: "#d9d9d9",
       fontSize:
         screenLessThan430 || screenGreaterThan430LessThan768
@@ -98,10 +138,35 @@ function Footer() {
           : screenGreaterThan768LessThan1024 ||
             screenGreaterThan1024LessThan1280 ||
             screenGreaterThan1440LessThan1920
-          ? "30px"
+          ? "28px"
           : screenGreaterThan1920LessThan3840
           ? "40px"
+          : screenGreaterThan1280LessThan1440
+          ? "28px"
           : "1.4rem",
+      width: screenLessThan430
+        ? "55%"
+        : screenGreaterThan430LessThan768
+        ? "33%"
+        : screenGreaterThan1024LessThan1280
+        ? "78%"
+        : screenGreaterThan1280LessThan1440
+        ? "70%"
+        : screenGreaterThan1440LessThan1920
+        ? "74%"
+        : screenGreaterThan1920LessThan3840
+        ? "90%"
+        : "100%",
+      textAlign: "center",
+    },
+    typo_address: {
+      width: screenLessThan430
+        ? "80%"
+        : screenGreaterThan430LessThan768
+        ? "78%"
+        : "100%",
+      margin: "0 auto",
+      //   border: "solid green 2px",
     },
     typo_name: {
       // border: "solid blue 1px",
@@ -122,93 +187,10 @@ function Footer() {
         ? "1.25rem"
         : "1rem",
     },
-    box_one: {
-      // paddingTop: "20px",
-      display: "flex",
-      flexDirection:
-        screenLessThan430 ||
-        screenGreaterThan430LessThan768 ||
-        screenGreaterThan768LessThan1024 ||
-        screenGreaterThan1024LessThan1280 ||
-        screenGreaterThan1280LessThan1440 ||
-        screenGreaterThan1440LessThan1920 ||
-        screenGreaterThan1920LessThan3840
-          ? "column"
-          : "row",
-      gap:
-        screenLessThan430 ||
-        screenGreaterThan430LessThan768 ||
-        screenGreaterThan768LessThan1024 ||
-        screenGreaterThan1024LessThan1280 ||
-        screenGreaterThan1280LessThan1440 ||
-        screenGreaterThan1440LessThan1920 ||
-        screenGreaterThan1920LessThan3840
-          ? "20px"
-          : "100px",
-      // alignItems: "center",
-      // border: "solid blue 2px",
-      width: screenGreaterThan430LessThan768
-        ? "85%"
-        : screenGreaterThan1440LessThan1920
-        ? "30%"
-        : screenGreaterThan768LessThan1024
-        ? "40%"
-        : screenGreaterThan1280LessThan1440
-        ? "30%"
-        : screenLessThan430
-        ? "85%"
-        : screenGreaterThan1024LessThan1280
-        ? "35%"
-        : screenGreaterThan1920LessThan3840
-        ? "20%"
-        : "100%",
-    },
-    typo_address: {
-      // border: "solid green 2px",
-      width:
-        screenGreaterThan430LessThan768 || screenLessThan430
-          ? "85%"
-          : screenGreaterThan1280LessThan1440
-          ? "60%"
-          : screenGreaterThan1440LessThan1920
-          ? "60%"
-          : screenGreaterThan1920LessThan3840
-          ? "20%"
-          : screenGreaterThan768LessThan1024
-          ? "80%"
-          : screenGreaterThan1024LessThan1280
-          ? "75%"
-          : "100%",
-      margin:
-        screenLessThan430 ||
-        screenGreaterThan430LessThan768 ||
-        screenGreaterThan768LessThan1024 ||
-        screenGreaterThan1024LessThan1280
-          ? "0 auto"
-          : "",
-    },
-    nav_links: {
-      // border: "solid white 2px",
-      display: "flex",
-      flexDirection: "column",
-      width: screenGreaterThan768LessThan1024
-        ? "40%"
-        : screenGreaterThan1024LessThan1280
-        ? "40%"
-        : screenGreaterThan1280LessThan1440 || screenGreaterThan1440LessThan1920
-        ? "30%"
-        : screenLessThan430 || screenGreaterThan430LessThan768
-        ? "85%"
-        : screenGreaterThan1920LessThan3840
-        ? "20%"
-        : "100%",
-      margin:
-        screenLessThan430 || screenGreaterThan430LessThan768 ? "0 auto" : "",
-    },
     button_single: {
       color: "#d9d9d9",
       // border: "solid red 1px",
-      width: "fit-content",
+      // width: "fit-content",
       fontSize: screenLessThan430
         ? "0.75rem"
         : screenGreaterThan430LessThan768
@@ -224,34 +206,141 @@ function Footer() {
         : screenGreaterThan1920LessThan3840
         ? "1.0625rem"
         : "1rem",
+      alignSelf: "center",
+      textAlign: "center",
+    },
+    nav01: {
+      // border: "solid blue 1px",
+      display: "flex",
+      flexDirection: "column",
+      gap: "15px",
+      textAlign: "center",
+    },
+    nav02: {
+      // border: "solid blue 1px",
+      display: "flex",
+      flexDirection: "column",
+      gap: "15px",
+      textAlign: "center",
+    },
+    heading_link: {
+      fontWeight: "bold",
+      color: "#fff",
+      fontSize: screenLessThan430
+        ? "0.9rem"
+        : screenGreaterThan430LessThan768
+        ? "0.95rem"
+        : screenGreaterThan768LessThan1024
+        ? "1rem"
+        : screenGreaterThan1024LessThan1280
+        ? "1.05rem"
+        : screenGreaterThan1280LessThan1440
+        ? "1.1rem"
+        : screenGreaterThan1440LessThan1920
+        ? "1.15rem"
+        : screenGreaterThan1920LessThan3840
+        ? "1.2rem"
+        : "1rem",
+      borderBottom: "solid #c23237 2px",
+    },
+    onhover_effect: {
+      color: "#c23237",
     },
   };
   return (
     <Box sx={styles.parent_box}>
-      <Box sx={styles.box_one}>
-        <Box sx={styles.logoname_box}>
+      <Box sx={styles.logo_address_box}>
+        <Box sx={styles.logo_heading}>
           <Box sx={styles.logo_box}></Box>
           <Typography sx={styles.typo_name_heading}>CB Trucking</Typography>
         </Box>
+        <Box sx={styles.typo_address}>
+          <Typography sx={styles.typo_name}>
+            {" "}
+            100 Wellington Ave E, #508
+          </Typography>
+          <Typography sx={styles.typo_name}>Toronto ,ON, Canada</Typography>
+          <Typography sx={styles.typo_name}> M1L 1P6</Typography>
+          <Typography sx={styles.typo_name}>+1 (800)-222-2222</Typography>
+          <Typography sx={styles.typo_name}>cb_trucking@email.com</Typography>
+        </Box>
       </Box>
-      <Box sx={styles.nav_links}>
-        <Button sx={styles.button_single}>Home</Button>
-        <Button sx={styles.button_single}>About</Button>
-        <Button sx={styles.button_single}>Service</Button>
-        <Button sx={styles.button_single}>Certificates & Accrediations</Button>
-        <Button sx={styles.button_single}>Our Partners</Button>
-        <Button sx={styles.button_single}> Why Choose Us</Button>
-        <Button sx={styles.button_single}>Carrier</Button>
-      </Box>
-      <Box sx={styles.typo_address}>
-        <Typography sx={styles.typo_name}>
-          {" "}
-          100 Wellington Ave E, #508
-        </Typography>
-        <Typography sx={styles.typo_name}>Toronto ,ON, Canada</Typography>
-        <Typography sx={styles.typo_name}> M1L 1P6</Typography>
-        <Typography sx={styles.typo_name}>+1 (800)-222-2222</Typography>
-        <Typography sx={styles.typo_name}>cb_trucking@email.com</Typography>
+      <Box sx={styles.nav_links_parent}>
+        <Box sx={styles.nav01}>
+          <Button sx={styles.heading_link}>Company</Button>
+          <Link to="home_page" duration={500} smooth={true}>
+            <MotionButton
+              sx={styles.button_single}
+              whileHover={styles.onhover_effect}
+              whileTap={styles.onhover_effect}
+            >
+              Home
+            </MotionButton>
+          </Link>
+          <Link to="about_us_page" duration={500} smooth={true}>
+            <MotionButton
+              sx={styles.button_single}
+              whileHover={styles.onhover_effect}
+              whileTap={styles.onhover_effect}
+            >
+              About
+            </MotionButton>
+          </Link>
+          <Link to="service_page" duration={500} smooth={true}>
+            <MotionButton
+              sx={styles.button_single}
+              whileHover={styles.onhover_effect}
+              whileTap={styles.onhover_effect}
+            >
+              Service
+            </MotionButton>
+          </Link>
+          <Link to="contact_us_page" duration={500} smooth={true}>
+            <MotionButton
+              sx={styles.button_single}
+              whileHover={styles.onhover_effect}
+              whileTap={styles.onhover_effect}
+            >
+              Contact
+            </MotionButton>
+          </Link>
+        </Box>
+        <Box sx={styles.nav02}>
+          <MotionButton
+            sx={styles.heading_link}
+            whileHover={styles.onhover_effect}
+            whileTap={styles.onhover_effect}
+          >
+            Links
+          </MotionButton>
+          <Link to="our_partner_page" duration={500} smooth={true}>
+            <MotionButton
+              sx={styles.button_single}
+              whileHover={styles.onhover_effect}
+              whileTap={styles.onhover_effect}
+            >
+              Our Partners
+            </MotionButton>
+          </Link>
+          <Link to="why_choose_us_page" duration={500} smooth={true}>
+            <MotionButton
+              sx={styles.button_single}
+              whileHover={styles.onhover_effect}
+              whileTap={styles.onhover_effect}
+            >
+              Why Choose Us?
+            </MotionButton>
+          </Link>
+          <Link to="contact_us_page" duration={500} smooth={true}>
+            <MotionButton
+              sx={styles.button_single}
+              whileHover={styles.onhover_effect}
+              whileTap={styles.onhover_effect}
+            >
+              Carrier
+            </MotionButton>
+          </Link>
+        </Box>
       </Box>
     </Box>
   );

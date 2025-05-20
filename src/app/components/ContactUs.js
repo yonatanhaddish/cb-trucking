@@ -391,14 +391,13 @@ function ContactUs() {
                 maxRows={10}
                 sx={styles.input_text}
               />
-
               <MotionButton
                 sx={styles.button}
-                whileHover={{ scale: 1.05 }}
+                initial={{ y: 50 }}
+                whileInView={{ y: 0 }}
+                transition={{ type: "spring", bounce: 0.25 }}
+                whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.8 }}
-                initial={{ transform: "translateY(50px)" }}
-                whileInView={{ transform: "translateY(0px)" }}
-                transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
               >
                 Send
               </MotionButton>

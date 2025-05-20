@@ -34,15 +34,16 @@ function FooterTwo() {
   );
   const styles = {
     parent_footer_two: {
-      //   border: "solid #000 1px",
+      borderTop: "solid #fff 1px",
       backgroundColor: "#000",
       paddingTop: "30px",
       paddingBottom: "30px",
       width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
       margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
+      paddingTop: "20px",
     },
     typo_footer_two: {
-      color: "#d9d9d9",
+      color: "#c23237",
       textAlign: "center",
       fontSize: screenLessThan430
         ? "0.65rem"

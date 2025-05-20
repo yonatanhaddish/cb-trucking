@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 import {
   Box,
   Typography,
@@ -9,6 +10,7 @@ import {
   IconButton,
   Menu,
   MenuItem,
+  Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -24,6 +26,32 @@ function Navbar() {
 
   const isMobile = useMediaQuery("(max-width: 768px)");
   const isWideScreen = useMediaQuery("(min-width: 1921px)");
+
+  const screenLessThan430 = useMediaQuery(
+    "(min-width: 100px) and (max-width: 430px)"
+  );
+  const screenGreaterThan430LessThan768 = useMediaQuery(
+    "(min-width: 431px) and (max-width: 768px)"
+  );
+  const screenGreaterThan768LessThan1024 = useMediaQuery(
+    "(min-width: 769px) and (max-width: 1024px)"
+  );
+  const screenGreaterThan1024LessThan1280 = useMediaQuery(
+    "(min-width: 1025px) and (max-width: 1280px)"
+  );
+  const screenGreaterThan1280LessThan1440 = useMediaQuery(
+    "(min-width: 1281px) and (max-width: 1440px)"
+  );
+  const screenGreaterThan1440LessThan1920 = useMediaQuery(
+    "(min-width: 1441px) and (max-width: 1920px)"
+  );
+  const screenGreaterThan1920LessThan3840 = useMediaQuery(
+    "(min-width: 1921px) and (max-width: 3840px)"
+  );
+
+  const MotionMenuItem = motion(MenuItem);
+  const MotionTypography = motion(Typography);
+  const MotionButton = motion(Button);
 
   const styles = {
     parent_navbar_box: {
@@ -55,16 +83,16 @@ function Navbar() {
       marginRight: "8%",
     },
     icon_button: {
-      height: "50px",
-      width: "50px",
+      height: "40px",
+      width: "40px",
       // border: "solid white 2px",
       marginRight: "20px",
     },
     icon_close: {
-      height: "50px",
-      width: "50px",
+      height: "40px",
+      width: "40px",
       // border: "solid white 2px",
-      margin: "auto",
+      marginRight: "20px",
     },
     typo_nav_item: {
       fontSize: isWideScreen ? "25px" : "20px",
@@ -75,6 +103,7 @@ function Navbar() {
       display: "flex",
       alignItems: "center",
       gap: "8px",
+      cursor: "pointer",
     },
     typo_logo: {
       fontSize: "20px",
@@ -84,14 +113,27 @@ function Navbar() {
     side_navbar_box: {
       backgroundColor: "#c23237",
       position: "fixed",
-      top: 0,
+      top: isMobile ? "62px" : "72px",
       right: 0,
-      width: "92%",
-      height: "60vh",
+      width: screenLessThan430
+        ? "94vw"
+        : screenGreaterThan430LessThan768
+        ? "98vw"
+        : "",
+      height: "40vh",
       padding: "2rem 1rem",
       transform: openSideNavBar ? "translateX(0)" : "translateX(100%)",
       transition: "transform 0.3s ease",
       zIndex: 1000,
+    },
+    navlist_onhover: {
+      color: "#000",
+      textShadow: `
+        0 0 10px #e6e6e6,
+        0 0 20px #e6e6e6,
+        0 0 30px #e6e6e6,
+        0 0 40px #e6e6e6
+      `,
     },
   };
 
@@ -108,28 +150,28 @@ function Navbar() {
     <>
       <Box sx={styles.parent_navbar_box}>
         <Link to="home_page" duration={500} smooth={true}>
-          <Box sx={styles.logo_box_parent}>
+          <Button sx={styles.logo_box_parent}>
             <Box sx={styles.logo_img}></Box>
             <Typography sx={styles.typo_logo}>CB Trucking</Typography>
-          </Box>
+          </Button>
         </Link>
 
         {isMobile ? (
           <>
-            <IconButton onClick={toggleSideNavbar} sx={styles.icon_button}>
-              <MenuIcon />
-            </IconButton>
-            <Box sx={styles.side_navbar_box}>
-              <Link to="home_page" duration={500} smooth={true}>
-                <Box sx={styles.logo_box_parent}>
-                  <Box sx={styles.logo_img}></Box>
-                  <Typography sx={styles.typo_logo}>CB Trucking</Typography>
-                </Box>
-              </Link>
-              <IconButton onClick={toggleSideNavbar} sx={styles.icon_close}>
-                <CloseIcon />
+            {openSideNavBar ? (
+              <IconButton onClick={toggleSideNavbar}>
+                <CloseIcon sx={styles.icon_close} />
               </IconButton>
-              <Box>
+            ) : (
+              <IconButton onClick={toggleSideNavbar}>
+                <MenuIcon sx={styles.icon_button} />
+              </IconButton>
+            )}
+
+            <Box sx={styles.side_navbar_box}>
+              <Box
+                sx={{ display: "flex", flexDirection: "column", gap: "30px" }}
+              >
                 {[
                   { id: "home_page", label: "Home" },
                   { id: "about_us_page", label: "About" },
@@ -143,7 +185,47 @@ function Navbar() {
                   { id: "contact_us_page", label: "Contact" },
                 ].map((item) => (
                   <Link key={item.id} to={item.id} duration={500} smooth={true}>
-                    <MenuItem onClick={toggleSideNavbar}>{item.label}</MenuItem>
+                    <MotionTypography
+                      onClick={toggleSideNavbar}
+                      sx={{
+                        justifySelf: "center",
+                        textAlign: "center",
+                        fontSize: screenLessThan430
+                          ? "14px"
+                          : screenGreaterThan430LessThan768
+                          ? "15px"
+                          : screenGreaterThan768LessThan1024
+                          ? "15.5px"
+                          : screenGreaterThan1024LessThan1280
+                          ? "16px"
+                          : screenGreaterThan1280LessThan1440
+                          ? "16.5px"
+                          : screenGreaterThan1440LessThan1920
+                          ? "17px"
+                          : "18px",
+                        fontWeight: "bold",
+                      }}
+                      whileTap={{
+                        color: "#000",
+                        textShadow: `
+                          0 0 20px #e6e6e6,
+                          0 0 30px #e6e6e6,
+                          0 0 40px #e6e6e6,
+                          0 0 50px #e6e6e6
+                        `,
+                      }}
+                      whileHover={{
+                        color: "#000",
+                        textShadow: `
+                          0 0 20px #e6e6e6,
+                          0 0 30px #e6e6e6,
+                          0 0 40px #e6e6e6,
+                          0 0 50px #e6e6e6
+                        `,
+                      }}
+                    >
+                      {item.label}{" "}
+                    </MotionTypography>
                   </Link>
                 ))}
               </Box>
@@ -152,17 +234,41 @@ function Navbar() {
         ) : (
           <Box sx={styles.navlist_box}>
             <Link to="home_page" duration={500} smooth={true}>
-              <Typography sx={styles.typo_nav_item}>Home</Typography>
+              <Typography
+                sx={{
+                  ...styles.typo_nav_item,
+                  "&:hover": styles.navlist_onhover,
+                }}
+              >
+                Home
+              </Typography>
             </Link>
             <Link to="about_us_page" duration={500} smooth={true}>
-              <Typography sx={styles.typo_nav_item}>About</Typography>
+              <Typography
+                sx={{
+                  ...styles.typo_nav_item,
+                  "&:hover": styles.navlist_onhover,
+                }}
+              >
+                About
+              </Typography>
             </Link>
             <Link to="service_page" duration={500} smooth={true}>
-              <Typography sx={styles.typo_nav_item}>Service</Typography>
+              <Typography
+                sx={{
+                  ...styles.typo_nav_item,
+                  "&:hover": styles.navlist_onhover,
+                }}
+              >
+                Service
+              </Typography>
             </Link>
             <Typography
               onClick={handleClick}
-              sx={styles.typo_nav_item}
+              sx={{
+                ...styles.typo_nav_item,
+                "&:hover": styles.navlist_onhover,
+              }}
               aria-controls={open ? "basic-menu" : undefined}
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
@@ -175,6 +281,10 @@ function Navbar() {
               open={open}
               onClose={handleClose}
               MenuListProps={{ "aria-labelledby": "basic-button" }}
+              sx={{
+                ...styles.typo_nav_item,
+                "&:hover": styles.navlist_onhover,
+              }}
             >
               <Link
                 to="certificate_and_accrediation_page"

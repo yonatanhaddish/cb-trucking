@@ -38,6 +38,7 @@ export default function Home() {
         <CertificateRequest />
         <WhyChooseUs />
         <ContactUs />
+        {/* <Footer /> */}
         <Footer />
         <FooterTwo />
       </>
