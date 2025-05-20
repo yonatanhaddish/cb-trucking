@@ -16,13 +16,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 function Navbar() {
-  // const [loading, setLoading] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
   const [openSideNavBar, setOpenSideNavBar] = useState(false);
-
-  // useEffect(() => {
-  //   setLoading(false);
-  // }, []);
+  const [selectedCurrentLink, setSelectedCurrentLink] = useState("home-page");
 
   const isMobile = useMediaQuery("(max-width: 768px)");
   const isWideScreen = useMediaQuery("(min-width: 1921px)");
@@ -149,6 +145,15 @@ function Navbar() {
                     0 0 50px #e6e6e6
                   `,
     },
+    selected_link_current: {
+      color: "#000",
+      textShadow: `
+        0 0 10px #e6e6e6,
+        0 0 20px #e6e6e6,
+        0 0 30px #e6e6e6,
+        0 0 40px #e6e6e6
+      `,
+    },
   };
 
   const open = Boolean(anchorEl);
@@ -156,13 +161,9 @@ function Navbar() {
   const handleClose = () => setAnchorEl(null);
   const toggleSideNavbar = () => setOpenSideNavBar((prev) => !prev);
 
-  // if (loading) {
-  //   return (
-  //     <div>
-  //       <LocalShippingOutlinedIcon />
-  //     </div>
-  //   );
-  // }
+  const handleSelectCurrentLink = (data) => {
+    setSelectedCurrentLink(data);
+  };
 
   return (
     <>
@@ -208,7 +209,9 @@ function Navbar() {
                 ].map((item) => (
                   <Link key={item.id} to={item.id} duration={500} smooth={true}>
                     <MotionTypography
-                      onClick={toggleSideNavbar}
+                      onClick={() => {
+                        toggleSideNavbar();
+                      }}
                       sx={{
                         justifySelf: "center",
                         textAlign: "center",
@@ -260,7 +263,10 @@ function Navbar() {
                 sx={{
                   ...styles.typo_nav_item,
                   "&:hover": styles.navlist_onhover,
+                  ...(selectedCurrentLink === "home-page" &&
+                    styles.selected_link_current),
                 }}
+                onClick={() => handleSelectCurrentLink("home-page")}
               >
                 Home
               </Typography>
@@ -270,7 +276,10 @@ function Navbar() {
                 sx={{
                   ...styles.typo_nav_item,
                   "&:hover": styles.navlist_onhover,
+                  ...(selectedCurrentLink === "about_us_page" &&
+                    styles.selected_link_current),
                 }}
+                onClick={() => handleSelectCurrentLink("about_us_page")}
               >
                 About
               </Typography>
@@ -280,7 +289,10 @@ function Navbar() {
                 sx={{
                   ...styles.typo_nav_item,
                   "&:hover": styles.navlist_onhover,
+                  ...(selectedCurrentLink === "service_page" &&
+                    styles.selected_link_current),
                 }}
+                onClick={() => handleSelectCurrentLink("service_page")}
               >
                 Service
               </Typography>
@@ -290,10 +302,17 @@ function Navbar() {
               sx={{
                 ...styles.typo_nav_item,
                 "&:hover": styles.navlist_onhover,
+                ...([
+                  "certificate_and_accrediation_page",
+                  "our_partner_page",
+                  "why_choose_us_page",
+                  "contact_us_page",
+                ].includes(selectedCurrentLink) &&
+                  styles.selected_link_current),
               }}
-              aria-controls={open ? "basic-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
+              // aria-controls={open ? "basic-menu" : undefined}
+              // aria-haspopup="true"
+              // aria-expanded={open ? "true" : undefined}
             >
               Pages ⌄
             </Typography>
@@ -302,7 +321,6 @@ function Navbar() {
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
-              MenuListProps={{ "aria-labelledby": "basic-button" }}
               sx={{
                 ...styles.typo_nav_item,
               }}
@@ -323,8 +341,16 @@ function Navbar() {
                     sx={{
                       ...styles.pages_link,
                       "&:hover": styles.pages_onhover,
+                      ...(selectedCurrentLink ===
+                        "certificate_and_accrediation_page" &&
+                        styles.selected_link_current),
                     }}
-                    onClick={handleClose}
+                    onClick={() => {
+                      handleClose();
+                      handleSelectCurrentLink(
+                        "certificate_and_accrediation_page"
+                      );
+                    }}
                   >
                     Certificate & Accreditations
                   </MenuItem>
@@ -334,8 +360,13 @@ function Navbar() {
                     sx={{
                       ...styles.pages_link,
                       "&:hover": styles.pages_onhover,
+                      ...(selectedCurrentLink === "our_partner_page" &&
+                        styles.selected_link_current),
                     }}
-                    onClick={handleClose}
+                    onClick={() => {
+                      handleClose();
+                      handleSelectCurrentLink("our_partner_page");
+                    }}
                   >
                     Our Partners
                   </MenuItem>
@@ -345,8 +376,13 @@ function Navbar() {
                     sx={{
                       ...styles.pages_link,
                       "&:hover": styles.pages_onhover,
+                      ...(selectedCurrentLink === "why_choose_us_page" &&
+                        styles.selected_link_current),
                     }}
-                    onClick={handleClose}
+                    onClick={() => {
+                      handleClose();
+                      handleSelectCurrentLink("why_choose_us_page");
+                    }}
                   >
                     Why Choose Us?
                   </MenuItem>
@@ -356,8 +392,13 @@ function Navbar() {
                     sx={{
                       ...styles.pages_link,
                       "&:hover": styles.pages_onhover,
+                      ...(selectedCurrentLink === "contact_us_page" &&
+                        styles.selected_link_current),
                     }}
-                    onClick={handleClose}
+                    onClick={() => {
+                      handleClose();
+                      handleSelectCurrentLink("contact_us_page");
+                    }}
                   >
                     Contact
                   </MenuItem>
