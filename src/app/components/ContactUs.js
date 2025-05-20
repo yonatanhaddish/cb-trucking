@@ -16,15 +16,15 @@ import EmailIcon from "@mui/icons-material/Email";
 import InputsSection from "./InputsSection";
 
 function ContactUs() {
-  const [loading, setLoading] = useState(undefined);
+  // const [loading, setLoading] = useState(undefined);
 
   const MotionBox = motion(Box);
   const MotionTypography = motion(Typography);
   const MotionButton = motion(Button);
 
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+  // useEffect(() => {
+  //   setLoading(false);
+  // }, []);
 
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
@@ -269,9 +269,9 @@ function ContactUs() {
     },
   };
 
-  if (loading === undefined) {
-    return <div>Loading...</div>;
-  }
+  // if (loading === undefined) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <div id="contact_us_page">

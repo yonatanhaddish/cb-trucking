@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Box,
   Typography,
@@ -14,15 +14,15 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 function Navbar() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
   const [openSideNavBar, setOpenSideNavBar] = useState(false);
 
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+  // useEffect(() => {
+  //   setLoading(false);
+  // }, []);
 
   const isMobile = useMediaQuery("(max-width: 768px)");
   const isWideScreen = useMediaQuery("(min-width: 1921px)");
@@ -156,9 +156,13 @@ function Navbar() {
   const handleClose = () => setAnchorEl(null);
   const toggleSideNavbar = () => setOpenSideNavBar((prev) => !prev);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return (
+  //     <div>
+  //       <LocalShippingOutlinedIcon />
+  //     </div>
+  //   );
+  // }
 
   return (
     <>
