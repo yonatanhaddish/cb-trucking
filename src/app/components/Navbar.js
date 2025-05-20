@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import {
   Box,
   Typography,
@@ -135,6 +135,20 @@ function Navbar() {
         0 0 40px #e6e6e6
       `,
     },
+    pages_link: {
+      // fontSize: isWideScreen ? "25px" : "20px",
+      color: "#fff",
+      cursor: "pointer",
+    },
+    pages_onhover: {
+      color: "#000",
+      textShadow: `
+                    0 0 20px #e6e6e6,
+                    0 0 30px #e6e6e6,
+                    0 0 40px #e6e6e6,
+                    0 0 50px #e6e6e6
+                  `,
+    },
   };
 
   const open = Boolean(anchorEl);
@@ -170,7 +184,11 @@ function Navbar() {
 
             <Box sx={styles.side_navbar_box}>
               <Box
-                sx={{ display: "flex", flexDirection: "column", gap: "30px" }}
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "30px",
+                }}
               >
                 {[
                   { id: "home_page", label: "Home" },
@@ -283,27 +301,64 @@ function Navbar() {
               MenuListProps={{ "aria-labelledby": "basic-button" }}
               sx={{
                 ...styles.typo_nav_item,
-                "&:hover": styles.navlist_onhover,
               }}
             >
-              <Link
-                to="certificate_and_accrediation_page"
-                duration={500}
-                smooth={true}
+              <Box
+                style={{
+                  backgroundColor: " #c23237",
+                  marginTop: "-8px",
+                  marginBottom: "-8px",
+                }}
               >
-                <MenuItem onClick={handleClose}>
-                  Certificate & Accreditations
-                </MenuItem>
-              </Link>
-              <Link to="our_partner_page" duration={500} smooth={true}>
-                <MenuItem onClick={handleClose}>Our Partners</MenuItem>
-              </Link>
-              <Link to="why_choose_us_page" duration={500} smooth={true}>
-                <MenuItem onClick={handleClose}>Why Choose Us?</MenuItem>
-              </Link>
-              <Link to="contact_us_page" duration={500} smooth={true}>
-                <MenuItem onClick={handleClose}>Contact</MenuItem>
-              </Link>
+                <Link
+                  to="certificate_and_accrediation_page"
+                  duration={500}
+                  smooth={true}
+                >
+                  <MenuItem
+                    sx={{
+                      ...styles.pages_link,
+                      "&:hover": styles.pages_onhover,
+                    }}
+                    onClick={handleClose}
+                  >
+                    Certificate & Accreditations
+                  </MenuItem>
+                </Link>
+                <Link to="our_partner_page" duration={500} smooth={true}>
+                  <MenuItem
+                    sx={{
+                      ...styles.pages_link,
+                      "&:hover": styles.pages_onhover,
+                    }}
+                    onClick={handleClose}
+                  >
+                    Our Partners
+                  </MenuItem>
+                </Link>
+                <Link to="why_choose_us_page" duration={500} smooth={true}>
+                  <MenuItem
+                    sx={{
+                      ...styles.pages_link,
+                      "&:hover": styles.pages_onhover,
+                    }}
+                    onClick={handleClose}
+                  >
+                    Why Choose Us?
+                  </MenuItem>
+                </Link>
+                <Link to="contact_us_page" duration={500} smooth={true}>
+                  <MenuItem
+                    sx={{
+                      ...styles.pages_link,
+                      "&:hover": styles.pages_onhover,
+                    }}
+                    onClick={handleClose}
+                  >
+                    Contact
+                  </MenuItem>
+                </Link>
+              </Box>
             </Menu>
           </Box>
         )}
