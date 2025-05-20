@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import {
   Box,
@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationPinIcon from "@mui/icons-material/LocationPin";
 import EmailIcon from "@mui/icons-material/Email";
+import InputsSection from "./InputsSection";
 
 function ContactUs() {
   const [loading, setLoading] = useState(undefined);
@@ -24,6 +25,7 @@ function ContactUs() {
   useEffect(() => {
     setLoading(false);
   }, []);
+
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
   );
@@ -270,6 +272,7 @@ function ContactUs() {
   if (loading === undefined) {
     return <div>Loading...</div>;
   }
+
   return (
     <div id="contact_us_page">
       <Box sx={styles.parent_contactus_box}>
@@ -362,46 +365,7 @@ function ContactUs() {
             </MotionBox>
           </Box>
           <Box sx={styles.contact_input_box}>
-            <Box sx={styles.input_box}>
-              <Typography sx={styles.typo_getintouch_desc}>
-                Feel free to leave us message anytime. We will get back to your
-                as soon as we can!
-              </Typography>
-              <TextField
-                id="outlined-basic"
-                label="Full Name"
-                variant="outlined"
-                size="small"
-                sx={styles.input_text}
-              />
-              <TextField
-                id="outlined-basic"
-                label="Email Address"
-                variant="outlined"
-                size="small"
-                sx={styles.input_text}
-              />
-              <TextField
-                id="outlined-basic"
-                label="Message"
-                variant="outlined"
-                size="small"
-                multiline
-                minRows={6}
-                maxRows={10}
-                sx={styles.input_text}
-              />
-              <MotionButton
-                sx={styles.button}
-                initial={{ y: 50 }}
-                whileInView={{ y: 0 }}
-                transition={{ type: "spring", bounce: 0.25 }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.8 }}
-              >
-                Send
-              </MotionButton>
-            </Box>
+            <InputsSection />
           </Box>
         </Box>
       </Box>

@@ -244,7 +244,7 @@ function WhyChooseUs() {
         <Box sx={styles.child_whychooseus_box}>
           <MotionBox
             sx={styles.single_whychooseus_box}
-            initial={{ opacity: 0, scale: 0 }}
+            initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.4,
@@ -262,7 +262,7 @@ function WhyChooseUs() {
           </MotionBox>
           <MotionBox
             sx={styles.single_whychooseus_box}
-            initial={{ opacity: 0, scale: 0 }}
+            initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.4,
@@ -280,7 +280,7 @@ function WhyChooseUs() {
           </MotionBox>
           <MotionBox
             sx={styles.single_whychooseus_box}
-            initial={{ opacity: 0, scale: 0 }}
+            initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.4,
@@ -298,7 +298,7 @@ function WhyChooseUs() {
           </MotionBox>
           <MotionBox
             sx={styles.single_whychooseus_box}
-            initial={{ opacity: 0, scale: 0 }}
+            initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.4,
@@ -315,7 +315,7 @@ function WhyChooseUs() {
           </MotionBox>
           <MotionBox
             sx={styles.single_whychooseus_box}
-            initial={{ opacity: 0, scale: 0 }}
+            initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.4,
