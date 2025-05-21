@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Link } from "react-scroll";
+import NextLink from "next/link";
 import { Box, Typography, useMediaQuery, Button } from "@mui/material";
 import { motion } from "framer-motion";
 function Footer() {
@@ -331,15 +332,15 @@ function Footer() {
               Why Choose Us?
             </MotionButton>
           </Link>
-          <Link to="contact_us_page" duration={500} smooth={true}>
-            <MotionButton
-              sx={styles.button_single}
-              whileHover={styles.onhover_effect}
-              whileTap={styles.onhover_effect}
-            >
-              Carrier
-            </MotionButton>
-          </Link>
+          <MotionButton
+            LinkComponent={NextLink}
+            href="/carriers"
+            sx={styles.button_single}
+            whileHover={styles.onhover_effect}
+            whileTap={styles.onhover_effect}
+          >
+            Carrier
+          </MotionButton>
         </Box>
       </Box>
     </Box>

@@ -310,9 +310,9 @@ function Navbar() {
                 ].includes(selectedCurrentLink) &&
                   styles.selected_link_current),
               }}
-              // aria-controls={open ? "basic-menu" : undefined}
-              // aria-haspopup="true"
-              // aria-expanded={open ? "true" : undefined}
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
             >
               Pages ⌄
             </Typography>
