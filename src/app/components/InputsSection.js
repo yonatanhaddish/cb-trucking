@@ -10,7 +10,7 @@ import {
   TextField,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 function InputsSection() {
   const MotionBox = motion(Box);

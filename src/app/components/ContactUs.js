@@ -269,10 +269,6 @@ function ContactUs() {
     },
   };
 
-  // if (loading === undefined) {
-  //   return <div>Loading...</div>;
-  // }
-
   return (
     <div id="contact_us_page">
       <Box sx={styles.parent_contactus_box}>

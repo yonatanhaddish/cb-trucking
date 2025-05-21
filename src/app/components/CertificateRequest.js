@@ -119,28 +119,28 @@ function CertificateRequest() {
       paddingBottom: "20px",
     },
     license_logo_icc: {
-      backgroundImage: `url("/images/icc_license.png")`,
+      backgroundImage: `url("/images/slg_insurance.svg")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: "100px",
-      width: "100px",
-      //   border: "solid green 1px",
+      width: "200px",
+      // border: "solid green 1px",
     },
     license_logo_cpma_license: {
-      backgroundImage: `url("/images/cpma_license.png")`,
+      backgroundImage: `url("/images/wsib_clearance.png")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
-      height: "150px",
-      width: "150px",
-      //   border: "solid green 1px",
+      height: "70px",
+      width: "200px",
+      // border: "solid green 1px",
     },
     wsib_license_logo: {
-      backgroundImage: `url("/images/wsib_license.png")`,
-      backgroundSize: "cover",
+      backgroundImage: `url("/images/blue_book.jpg")`,
+      backgroundSize: "contain",
       backgroundPosition: "center",
-      height: "150px",
-      width: "200px",
-      //   border: "solid green 1px",
+      height: "140px",
+      width: "140px",
+      // border: "solid green 1px",
     },
     button_request: {
       //   border: "solid 1px blue",
@@ -288,9 +288,9 @@ function CertificateRequest() {
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
               }}
             ></MotionBox>
-            <Typography sx={styles.typo_heading}>ICC LICENSE</Typography>
+            <Typography sx={styles.typo_heading}>SLG INSURANCE</Typography>
             <Typography sx={styles.typo_desc}>
-              Canadian Produce Marketing Association
+              Sunbelt Logistics Group's Certificate of Insurance
             </Typography>
             <MotionButton
               sx={styles.button_request}
@@ -313,9 +313,9 @@ function CertificateRequest() {
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
               }}
             ></MotionBox>
-            <Typography sx={styles.typo_heading}>CPMA</Typography>
+            <Typography sx={styles.typo_heading}>WSIB CLEARANCE</Typography>
             <Typography sx={styles.typo_desc}>
-              Interstate Commerce Commission License
+              Workplace Safety and Insurance Board Clearance
             </Typography>
             <MotionButton
               sx={styles.button_request}
@@ -338,9 +338,11 @@ function CertificateRequest() {
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
               }}
             ></MotionBox>
-            <Typography sx={styles.typo_heading}>WSIB CLEARANCE</Typography>
+            <Typography sx={styles.typo_heading}>
+              Blue Book Honor Service
+            </Typography>
             <Typography sx={styles.typo_desc}>
-              Workplace Safety and Insurance Board Clearance
+              Proud Member of the Blue Book Honor Service
             </Typography>
             <MotionButton
               sx={styles.button_request}
