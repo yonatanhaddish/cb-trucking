@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-scroll";
-import { motion } from "framer-motion";
+
+import { color, motion } from "framer-motion";
 import {
   Box,
   Typography,
@@ -19,6 +19,7 @@ import Navbar from "../components/Navbar";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import CircularProgress from "@mui/material/CircularProgress";
 import InputSectionCarrier from "../components/InputSectionCarrier";
+import FooterTwo from "../components/FooterTwo";
 
 function Carriers() {
   const [mounted, setMounted] = useState(false);
@@ -48,9 +49,9 @@ function Carriers() {
 
   const styles = {
     parent_carrier_box: {
-      border: "solid red 2px",
+      // border: "solid red 2px",
       backgroundColor: "#d9d9d9",
-      paddingTop: "50px",
+      paddingTop: "30px",
       width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
       margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
     },
@@ -87,24 +88,20 @@ function Carriers() {
       justifySelf: "center",
     },
     carrier_sub_box: {
-      border: "solid blue 2px",
+      // border: "solid blue 2px",
       display: "flex",
       flexDirection: screenLessThan430 ? "column" : "row",
       width: screenLessThan430 ? "95%" : "100%",
       margin: "0 auto ",
-      gap: screenLessThan430 ? "30px" : "",
+      gap: screenLessThan430 ? "10px" : "",
     },
     info_parent_box: {
-      border: "solid green 2px",
+      // border: "solid green 2px",
       display: "flex",
       flexDirection: "column",
-      gap: screenLessThan430 ? "20px" : "",
-    },
-    info_input_box: {
-      border: "solid red 2px",
     },
     join_team_desc: {
-      border: "solid green 2px",
+      // border: "solid green 2px",
       width: screenLessThan430 ? "90%" : "100%",
       display: "flex",
       flexDirection: "column",
@@ -112,7 +109,7 @@ function Carriers() {
       gap: "6px",
     },
     address_info_box: {
-      border: "solid green 2px",
+      // border: "solid green 2px",
       width: screenLessThan430 ? "90%" : "100%",
       margin: "0 auto",
     },
@@ -151,11 +148,18 @@ function Carriers() {
     <>
       <Navbar />
       <Box sx={styles.parent_carrier_box}>
-        <Typography sx={styles.typo_heading}>Carriers</Typography>
         <Box sx={styles.carrier_sub_box}>
           <Box sx={styles.info_parent_box}>
             <Box sx={styles.join_team_desc}>
-              <Typography>Join Our Team</Typography>
+              <Typography
+                sx={{
+                  color: "#c23237",
+                  fontWeight: "bold",
+                  fontSize: screenLessThan430 ? "22px" : "1.4rem",
+                }}
+              >
+                Join Our Team
+              </Typography>
               <Typography sx={{ width: "90%", alignSelf: "center" }}>
                 We're always looking for passionate, motivated individuals to
                 join our growing team. Whether you're an experienced
@@ -166,18 +170,12 @@ function Carriers() {
                 form below and let’s start a conversation.
               </Typography>
             </Box>
-            <Box sx={styles.address_info_box}>
-              <Typography>
-                For additional information, contact one of our agents at
-              </Typography>
-              <Typography>Support Center</Typography>
-              <Typography>(123) 456 7890</Typography>
-              <Typography>Get in touch with us</Typography>
-              <Typography>cb-trucking@email.com</Typography>
-            </Box>
           </Box>
-          <Box sx={styles.info_input_box}>
+          <Box>
             <InputSectionCarrier />
+          </Box>
+          <Box>
+            <FooterTwo />
           </Box>
         </Box>
       </Box>
