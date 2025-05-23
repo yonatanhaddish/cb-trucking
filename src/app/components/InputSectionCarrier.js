@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 
 import {
@@ -16,6 +16,13 @@ import {
 } from "@mui/material";
 
 function InputSectionCarrier() {
+  const [sendButtonDisabled, setSendButtonDisable] = useState(true);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
   );
@@ -37,15 +44,25 @@ function InputSectionCarrier() {
   const screenGreaterThan1920LessThan3840 = useMediaQuery(
     "(min-width: 1921px) and (max-width: 3840px)"
   );
+
+  const MotionTypography = motion(Typography);
+
   const styles = {
     contact_and_input: {
       // border: "solid green 2px",
       display: "flex",
       flexDirection: "column",
-      gap: "20px",
+      gap: "10px",
+      marginTop: screenGreaterThan1280LessThan1440
+        ? "30px"
+        : screenGreaterThan1440LessThan1920
+        ? "90px"
+        : screenGreaterThan1920LessThan3840
+        ? "150px"
+        : "",
     },
     address_info_box: {
-      border: "solid #000 1px",
+      // border: "solid #000 1px",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
@@ -55,30 +72,74 @@ function InputSectionCarrier() {
       paddingRight: "15px",
       paddingTop: "10px",
       paddingBottom: "20px",
+      margin: "0 auto",
+      width: screenLessThan430
+        ? "80% "
+        : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
+        ? "70%"
+        : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
+        ? "80%"
+        : screenGreaterThan1440LessThan1920
+        ? "95%"
+        : screenGreaterThan1920LessThan3840
+        ? "90%"
+        : "100%",
     },
     input_box: {
       // border: "solid #000 1px",
       // boxShadow: "0 0 10px #c23237",
-      borderTop: "none",
       display: "flex",
       flexWrap: "wrap",
       gap: "10px",
       justifyContent: "center",
       backgroundColor: "#fff",
-      width: screenLessThan430 ? "90%" : "100%",
+      width: screenLessThan430
+        ? "90%"
+        : screenGreaterThan430LessThan768
+        ? "75%"
+        : screenGreaterThan768LessThan1024
+        ? "75%"
+        : screenGreaterThan1024LessThan1280
+        ? "85%"
+        : screenGreaterThan1280LessThan1440
+        ? "85%"
+        : screenGreaterThan1920LessThan3840
+        ? "94%"
+        : "100%",
       margin: "0 auto",
       paddingTop: "30px",
+      marginBottom: screenGreaterThan1024LessThan1280 ? "80px" : "100px",
     },
     single_input: {
       // border: "solid red 2px",
-      width: screenLessThan430 ? "80%" : "50%",
+      width:
+        screenLessThan430 || screenGreaterThan430LessThan768
+          ? "80%"
+          : screenGreaterThan768LessThan1024
+          ? "40%"
+          : screenGreaterThan1024LessThan1280 ||
+            screenGreaterThan1280LessThan1440 ||
+            screenGreaterThan1440LessThan1920 ||
+            screenGreaterThan1920LessThan3840
+          ? "45%"
+          : "100%",
     },
     button: {
       // border: "solid blue 2px",
-      width: "80%",
+      width: screenGreaterThan768LessThan1024
+        ? "80%"
+        : screenGreaterThan1280LessThan1440
+        ? "90%"
+        : screenGreaterThan1440LessThan1920
+        ? "90%"
+        : screenGreaterThan1920LessThan3840
+        ? "70%"
+        : screenGreaterThan1024LessThan1280
+        ? "90%"
+        : "80%",
       marginBottom: "30px",
       marginTop: "20px",
-      backgroundColor: "#c23237",
+      backgroundColor: sendButtonDisabled ? "grey" : "#c23237",
       color: "#fff",
       fontSize: screenGreaterThan1920LessThan3840
         ? "20px"
@@ -103,17 +164,81 @@ function InputSectionCarrier() {
           ? "50px"
           : "",
     },
+    message_single_input: {
+      // border: "solid red 2px",
+      width:
+        screenLessThan430 || screenGreaterThan430LessThan768
+          ? "80%"
+          : screenGreaterThan768LessThan1024
+          ? "82%"
+          : screenGreaterThan1024LessThan1280
+          ? "92%"
+          : screenGreaterThan1280LessThan1440
+          ? "91%"
+          : screenGreaterThan1440LessThan1920
+          ? "91%"
+          : screenGreaterThan1920LessThan3840
+          ? "92%"
+          : "100%",
+    },
   };
-  const handleSendEmail = () => {
-    console.log("test!!!");
+
+  const handleChangeFirstName = (event) => {
+    setFirstName(event.target.value);
   };
+  const handleChangeLastName = (event) => {
+    setLastName(event.target.value);
+  };
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handleChangePhoneNumber = (event) => {
+    setPhoneNumber(event.target.value);
+  };
+  const handleChangeMessage = (event) => {
+    setMessage(event.target.value);
+  };
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID_02,
+        e.target,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log("11111111111", result);
+          alert("Message Sent");
+        },
+        (error) => {
+          console.log("222222222", error);
+          alert("Error Sending Message. Please try again!!!");
+        }
+      );
+
+    e.target.reset();
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhoneNumber("");
+    setMessage("");
+  };
+
+  useEffect(() => {
+    if (firstName && lastName && email && phoneNumber && message) {
+      setSendButtonDisable(false);
+    } else {
+      setSendButtonDisable(true);
+    }
+  });
   return (
     <Box sx={styles.contact_and_input}>
       <Box sx={styles.address_info_box}>
-        <Typography sx={{ fontWeight: 600, marginBottom: "15px" }}>
-          Feel free to leave us message anytime. We will get back to your as
-          soon as we can!
-        </Typography>
         <Typography
           sx={{
             fontWeight: 600,
@@ -124,10 +249,32 @@ function InputSectionCarrier() {
         >
           Support Center 24/7
         </Typography>
-        <Typography sx={{ fontWeight: 500 }}> (123) 456 7890</Typography>
-        <Typography sx={{ fontWeight: 500 }}> cb-trucking@email.com</Typography>
+        <MotionTypography
+          sx={{ fontWeight: 500 }}
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1,
+            scale: { type: "spring", visualDuration: 0.3, bounce: 0.5 },
+          }}
+        >
+          {" "}
+          (123) 456 7890
+        </MotionTypography>
+        <MotionTypography
+          sx={{ fontWeight: 500 }}
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1,
+            scale: { type: "spring", visualDuration: 0.3, bounce: 0.5 },
+          }}
+        >
+          {" "}
+          cb-trucking@email.com
+        </MotionTypography>
       </Box>
-      <form onSubmit={handleSendEmail}>
+      <form onSubmit={handleSubmitForm}>
         <Box sx={styles.input_box}>
           <TextField
             id="f_name"
@@ -136,6 +283,8 @@ function InputSectionCarrier() {
             variant="outlined"
             size="small"
             sx={styles.single_input}
+            value={firstName}
+            onChange={handleChangeFirstName}
           />
           <TextField
             id="l_name"
@@ -144,6 +293,8 @@ function InputSectionCarrier() {
             variant="outlined"
             size="small"
             sx={styles.single_input}
+            value={lastName}
+            onChange={handleChangeLastName}
           />
           <TextField
             id="email"
@@ -152,6 +303,8 @@ function InputSectionCarrier() {
             variant="outlined"
             size="small"
             sx={styles.single_input}
+            value={email}
+            onChange={handleChangeEmail}
           />
           <TextField
             id="phone_number"
@@ -160,6 +313,8 @@ function InputSectionCarrier() {
             variant="outlined"
             size="small"
             sx={styles.single_input}
+            value={phoneNumber}
+            onChange={handleChangePhoneNumber}
           />
           <TextField
             id="message"
@@ -169,10 +324,17 @@ function InputSectionCarrier() {
             size="small"
             multiline
             maxRows={8}
-            minRows={6}
-            sx={styles.single_input}
+            minRows={7}
+            sx={{ ...styles.single_input, ...styles.message_single_input }}
+            value={message}
+            onChange={handleChangeMessage}
           />
-          <Button type="submit" sx={styles.button}>
+          <input type="hidden" id="subject" name="subject" value="Carrier" />
+          <Button
+            type="submit"
+            sx={styles.button}
+            disabled={sendButtonDisabled}
+          >
             Send
           </Button>
         </Box>

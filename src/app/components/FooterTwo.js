@@ -41,6 +41,7 @@ function FooterTwo() {
       width: screenGreaterThan1920LessThan3840 ? "80%" : "100%",
       margin: screenGreaterThan1920LessThan3840 ? "0 auto" : "",
       paddingTop: "20px",
+      // border: "solid red 2px",
     },
     typo_footer_two: {
       color: "#c23237",
