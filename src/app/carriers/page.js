@@ -245,7 +245,7 @@ function Carriers() {
                 creativity, and a desire to make a difference. If you're
                 interested in working with a company that values teamwork,
                 innovation, and growth, we'd love to hear from you. Fill out the
-                form below and let’s start a conversation.
+                form and let’s start a conversation.
               </Typography>
             </Box>
           </Box>

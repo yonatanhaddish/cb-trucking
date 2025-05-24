@@ -13,7 +13,11 @@ import {
   MenuItem,
   Button,
   TextField,
+  Badge,
+  Stack,
+  Alert,
 } from "@mui/material";
+import CheckIcon from "@mui/icons-material/Check";
 
 function InputSectionCarrier() {
   const [sendButtonDisabled, setSendButtonDisable] = useState(true);
@@ -22,6 +26,11 @@ function InputSectionCarrier() {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
+  const [firstNameValidated, setFirstNameValidated] = useState(true);
+  const [lastNameValidated, setLastNameValidated] = useState(true);
+  const [emailValidated, setEmailValidated] = useState(true);
+  const [phoneNumberValidated, setPhoneNumberValidated] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
@@ -181,53 +190,111 @@ function InputSectionCarrier() {
           ? "92%"
           : "100%",
     },
+    input_single_onactive: {
+      border: firstNameValidated ? "solid grey 1px" : "solid red 1px",
+    },
   };
 
+  const isValidName = (name) => {
+    const fullNameRegex = /^[a-zA-Z]+$/;
+    return fullNameRegex.test(name.trim());
+  };
+  const isValidPhoneNumber = (phone) => {
+    return /^\d{10}$/.test(String(phone).trim());
+  };
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email.trim().toLowerCase());
+  };
   const handleChangeFirstName = (event) => {
+    if (isValidName(event.target.value)) {
+      setFirstNameValidated(true);
+      setErrorMessage("");
+    } else {
+      setFirstNameValidated(false);
+      setErrorMessage("fix me");
+    }
     setFirstName(event.target.value);
   };
   const handleChangeLastName = (event) => {
+    if (isValidName(event.target.value)) {
+      setLastNameValidated(true);
+    } else {
+      setLastNameValidated(false);
+    }
     setLastName(event.target.value);
   };
   const handleChangeEmail = (event) => {
+    if (isValidEmail(event.target.value)) {
+      setEmailValidated(true);
+    } else {
+      setEmailValidated(false);
+    }
     setEmail(event.target.value);
   };
   const handleChangePhoneNumber = (event) => {
+    if (isValidPhoneNumber(event.target.value) && event.target.value > 0) {
+      setPhoneNumberValidated(true);
+    } else {
+      setPhoneNumberValidated(false);
+    }
     setPhoneNumber(event.target.value);
   };
   const handleChangeMessage = (event) => {
     setMessage(event.target.value);
   };
+  const validatedAllInput = () => {
+    if (
+      firstNameValidated &&
+      lastNameValidated &&
+      emailValidated &&
+      phoneNumberValidated &&
+      message
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   const handleSubmitForm = (e) => {
     e.preventDefault();
+    if (validatedAllInput()) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_SERVICE_ID,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID_02,
+          e.target,
+          process.env.NEXT_PUBLIC_PUBLIC_KEY
+        )
+        .then(
+          (result) => {
+            console.log("11111111111", result);
+            alert("Message Sent");
+          },
+          (error) => {
+            console.log("222222222", error);
+            alert("Error Sending Message. Please try again!!!");
+          }
+        );
 
-    const form = e.target;
-
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID_02,
-        e.target,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          console.log("11111111111", result);
-          alert("Message Sent");
-        },
-        (error) => {
-          console.log("222222222", error);
-          alert("Error Sending Message. Please try again!!!");
-        }
-      );
-
-    e.target.reset();
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPhoneNumber("");
-    setMessage("");
+      e.target.reset();
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPhoneNumber("");
+      setMessage("");
+    } else {
+      console.log("Fail One or More");
+    }
   };
+
+  // console.log({
+  //   firstNameValidated,
+  //   lastNameValidated,
+  //   emailValidated,
+  //   phoneNumberValidated,
+  //   message: true,
+  // });
 
   useEffect(() => {
     if (firstName && lastName && email && phoneNumber && message) {
@@ -279,47 +346,99 @@ function InputSectionCarrier() {
           <TextField
             id="f_name"
             name="f_name"
-            label="First Name"
+            placeholder="First Name"
             variant="outlined"
             size="small"
-            sx={styles.single_input}
+            sx={{
+              ...styles.single_input,
+              "& .MuiOutlinedInput-root": {
+                "& .MuiOutlinedInput-notchedOutline": {
+                  border: firstNameValidated
+                    ? "1px solid grey"
+                    : "solid red 1px",
+                },
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  border: firstNameValidated
+                    ? "1px solid grey"
+                    : "solid red 1px",
+                },
+              },
+            }}
             value={firstName}
             onChange={handleChangeFirstName}
           />
           <TextField
             id="l_name"
             name="l_name"
-            label="Last Name"
+            placeholder="Last Name"
             variant="outlined"
             size="small"
-            sx={styles.single_input}
+            sx={{
+              ...styles.single_input,
+              "& .MuiOutlinedInput-root": {
+                "& .MuiOutlinedInput-notchedOutline": {
+                  border: lastNameValidated
+                    ? "1px solid grey"
+                    : "solid red 1px",
+                },
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  border: lastNameValidated
+                    ? "1px solid grey"
+                    : "solid red 1px",
+                },
+              },
+            }}
             value={lastName}
             onChange={handleChangeLastName}
           />
           <TextField
             id="email"
             name="email"
-            label="Email Address"
+            placeholder="Email Address"
             variant="outlined"
             size="small"
-            sx={styles.single_input}
+            sx={{
+              ...styles.single_input,
+              "& .MuiOutlinedInput-root": {
+                "& .MuiOutlinedInput-notchedOutline": {
+                  border: emailValidated ? "1px solid grey" : "solid red 1px",
+                },
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  border: emailValidated ? "1px solid grey" : "solid red 1px",
+                },
+              },
+            }}
             value={email}
             onChange={handleChangeEmail}
           />
           <TextField
             id="phone_number"
             name="phone_number"
-            label="Phone Number"
+            placeholder="Phone Number"
             variant="outlined"
             size="small"
-            sx={styles.single_input}
+            sx={{
+              ...styles.single_input,
+              "& .MuiOutlinedInput-root": {
+                "& .MuiOutlinedInput-notchedOutline": {
+                  border: phoneNumberValidated
+                    ? "1px solid grey"
+                    : "solid red 1px",
+                },
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  border: phoneNumberValidated
+                    ? "1px solid grey"
+                    : "solid red 1px",
+                },
+              },
+            }}
             value={phoneNumber}
             onChange={handleChangePhoneNumber}
           />
           <TextField
             id="message"
             name="message"
-            label="Message"
+            placeholder="Message"
             variant="outlined"
             size="small"
             multiline
