@@ -18,6 +18,7 @@ import {
   Alert,
 } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
+import ErrorIcon from "@mui/icons-material/Error";
 
 function InputSectionCarrier() {
   const [sendButtonDisabled, setSendButtonDisable] = useState(true);
@@ -30,7 +31,7 @@ function InputSectionCarrier() {
   const [lastNameValidated, setLastNameValidated] = useState(true);
   const [emailValidated, setEmailValidated] = useState(true);
   const [phoneNumberValidated, setPhoneNumberValidated] = useState(true);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessageSend, setErrorMessageSend] = useState(null);
 
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
@@ -54,7 +55,7 @@ function InputSectionCarrier() {
     "(min-width: 1921px) and (max-width: 3840px)"
   );
 
-  const MotionTypography = motion(Typography);
+  const MotionBox = motion(Box);
 
   const styles = {
     contact_and_input: {
@@ -69,6 +70,7 @@ function InputSectionCarrier() {
         : screenGreaterThan1920LessThan3840
         ? "150px"
         : "",
+      position: "relative",
     },
     address_info_box: {
       // border: "solid #000 1px",
@@ -193,6 +195,13 @@ function InputSectionCarrier() {
     input_single_onactive: {
       border: firstNameValidated ? "solid grey 1px" : "solid red 1px",
     },
+    alert_box: {
+      position: "absolute",
+      left: screenLessThan430 ? "10%" : "15%",
+      top: 0,
+      // border: "solid red 2px",
+      width: screenLessThan430 ? "80%" : "",
+    },
   };
 
   const isValidName = (name) => {
@@ -209,10 +218,8 @@ function InputSectionCarrier() {
   const handleChangeFirstName = (event) => {
     if (isValidName(event.target.value)) {
       setFirstNameValidated(true);
-      setErrorMessage("");
     } else {
       setFirstNameValidated(false);
-      setErrorMessage("fix me");
     }
     setFirstName(event.target.value);
   };
@@ -268,12 +275,10 @@ function InputSectionCarrier() {
         )
         .then(
           (result) => {
-            console.log("11111111111", result);
-            alert("Message Sent");
+            setErrorMessageSend(false);
           },
           (error) => {
-            console.log("222222222", error);
-            alert("Error Sending Message. Please try again!!!");
+            setErrorMessageSend(true);
           }
         );
 
@@ -284,18 +289,19 @@ function InputSectionCarrier() {
       setPhoneNumber("");
       setMessage("");
     } else {
-      console.log("Fail One or More");
+      setErrorMessageSend(true);
     }
   };
 
-  // console.log({
-  //   firstNameValidated,
-  //   lastNameValidated,
-  //   emailValidated,
-  //   phoneNumberValidated,
-  //   message: true,
-  // });
+  useEffect(() => {
+    if (errorMessageSend !== null) {
+      const timer = setTimeout(() => {
+        setErrorMessageSend(null);
+      }, 2000);
 
+      return () => clearTimeout(timer);
+    }
+  }, [errorMessageSend]);
   useEffect(() => {
     if (firstName && lastName && email && phoneNumber && message) {
       setSendButtonDisable(false);
@@ -305,6 +311,30 @@ function InputSectionCarrier() {
   });
   return (
     <Box sx={styles.contact_and_input}>
+      {errorMessageSend !== null && (
+        <MotionBox
+          sx={styles.alert_box}
+          initial={{ y: 0 }}
+          animate={{ y: 60 }}
+          transition={{ type: "spring", bounce: 0.25, duration: 1 }}
+        >
+          <Alert
+            icon={
+              errorMessageSend ? (
+                <ErrorIcon fontSize="inherit" />
+              ) : (
+                <CheckIcon fontSize="inherit" />
+              )
+            }
+            severity={errorMessageSend ? "error" : "success"}
+          >
+            {errorMessageSend
+              ? "Failed to send the message. Please try again."
+              : "Message sent successfully!"}
+          </Alert>
+        </MotionBox>
+      )}
+
       <Box sx={styles.address_info_box}>
         <Typography
           sx={{
@@ -316,30 +346,8 @@ function InputSectionCarrier() {
         >
           Support Center 24/7
         </Typography>
-        <MotionTypography
-          sx={{ fontWeight: 500 }}
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 1,
-            scale: { type: "spring", visualDuration: 0.3, bounce: 0.5 },
-          }}
-        >
-          {" "}
-          (123) 456 7890
-        </MotionTypography>
-        <MotionTypography
-          sx={{ fontWeight: 500 }}
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 1,
-            scale: { type: "spring", visualDuration: 0.3, bounce: 0.5 },
-          }}
-        >
-          {" "}
-          cb-trucking@email.com
-        </MotionTypography>
+        <Typography sx={{ fontWeight: 500 }}> (123) 456 7890</Typography>
+        <Typography sx={{ fontWeight: 500 }}> cb-trucking@email.com</Typography>
       </Box>
       <form onSubmit={handleSubmitForm}>
         <Box sx={styles.input_box}>
@@ -444,7 +452,18 @@ function InputSectionCarrier() {
             multiline
             maxRows={8}
             minRows={7}
-            sx={{ ...styles.single_input, ...styles.message_single_input }}
+            sx={{
+              ...styles.single_input,
+              "& .MuiOutlinedInput-root": {
+                "& .MuiOutlinedInput-notchedOutline": {
+                  border: "1px solid grey",
+                },
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  border: "1px solid grey",
+                },
+              },
+              ...styles.message_single_input,
+            }}
             value={message}
             onChange={handleChangeMessage}
           />

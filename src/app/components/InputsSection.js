@@ -8,9 +8,12 @@ import {
   useMediaQuery,
   Button,
   TextField,
+  Alert,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import CheckIcon from "@mui/icons-material/Check";
+import ErrorIcon from "@mui/icons-material/Error";
 
 function InputsSection() {
   const MotionBox = motion(Box);
@@ -21,6 +24,9 @@ function InputsSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [nameValidated, setNameValidated] = useState(true);
+  const [emailValidated, setEmailValidated] = useState(true);
+  const [errorMessageSend, setErrorMessageSend] = useState(null);
 
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
@@ -79,6 +85,7 @@ function InputsSection() {
       paddingBottom: "30px",
       alignSelf: "center",
       margin: "0 auto",
+      position: "relative",
     },
     button: {
       // border: "solid blue 1px",
@@ -140,44 +147,88 @@ function InputsSection() {
         color: "#c23237",
       },
     },
+    alert_box: {
+      position: "absolute",
+      left: screenLessThan430 ? 0 : "15%",
+      top: -20,
+      // border: "solid red 2px",
+      width: screenLessThan430 ? "100%" : "",
+    },
   };
 
   const handleChangeName = (event) => {
+    if (isValidName(event.target.value)) {
+      setNameValidated(true);
+    } else {
+      setNameValidated(false);
+    }
     setName(event.target.value);
   };
 
   const handleChangeEmail = (event) => {
+    if (isValidEmail(event.target.value)) {
+      setEmailValidated(true);
+    } else {
+      setEmailValidated(false);
+    }
     setEmail(event.target.value);
   };
   const handleChangeMessage = (event) => {
     setMessage(event.target.value);
   };
 
+  const isValidName = (name) => {
+    const fullNameRegex = /^[a-zA-Z]+( [a-zA-Z]+)*$/;
+    return fullNameRegex.test(name.trim());
+  };
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email.trim().toLowerCase());
+  };
+  const validatedAllInput = () => {
+    if (nameValidated && emailValidated) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const handleSendEmail = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        e.target,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          console.log("11111111111", result);
-          alert("Message Sent");
-        },
-        (error) => {
-          console.log("222222222", error);
-          alert("Error Sending Message. Please try again!!!");
-        }
-      );
-
-    e.target.reset();
-    setName("");
-    setEmail("");
-    setMessage("");
+    if (validatedAllInput()) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_SERVICE_ID,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID,
+          e.target,
+          process.env.NEXT_PUBLIC_PUBLIC_KEY
+        )
+        .then(
+          (result) => {
+            setErrorMessageSend(false);
+          },
+          (error) => {
+            setErrorMessageSend(true);
+          }
+        );
+      e.target.reset();
+      setName("");
+      setEmail("");
+      setMessage("");
+    } else {
+      setErrorMessageSend(true);
+    }
   };
+
+  useEffect(() => {
+    if (errorMessageSend !== null) {
+      const timer = setTimeout(() => {
+        setErrorMessageSend(null);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [errorMessageSend]);
 
   useEffect(() => {
     if (name && email && message) {
@@ -189,6 +240,30 @@ function InputsSection() {
   return (
     <form onSubmit={handleSendEmail}>
       <Box sx={styles.input_box}>
+        {errorMessageSend !== null && (
+          <MotionBox
+            sx={styles.alert_box}
+            // initial={{ y: 0 }}
+            // animate={{ y: 30 }}
+            // transition={{ type: "spring", bounce: 0.25, duration: 1 }}
+          >
+            <Alert
+              icon={
+                errorMessageSend ? (
+                  <ErrorIcon fontSize="inherit" />
+                ) : (
+                  <CheckIcon fontSize="inherit" />
+                )
+              }
+              severity={errorMessageSend ? "error" : "success"}
+            >
+              {errorMessageSend
+                ? "Failed to send the message. Please try again."
+                : "Message sent successfully!"}
+            </Alert>
+          </MotionBox>
+        )}
+
         <Typography sx={styles.typo_getintouch_desc}>
           Feel free to leave us message anytime. We will get back to your as
           soon as we can!
@@ -199,7 +274,17 @@ function InputsSection() {
           label="Full Name"
           variant="outlined"
           size="small"
-          sx={styles.input_text}
+          sx={{
+            ...styles.input_text,
+            "& .MuiOutlinedInput-root": {
+              "& .MuiOutlinedInput-notchedOutline": {
+                border: nameValidated ? "1px solid grey" : "solid red 1px",
+              },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                border: nameValidated ? "1px solid grey" : "solid red 1px",
+              },
+            },
+          }}
           value={name}
           onChange={handleChangeName}
         />
@@ -209,7 +294,17 @@ function InputsSection() {
           label="Email Address"
           variant="outlined"
           size="small"
-          sx={styles.input_text}
+          sx={{
+            ...styles.input_text,
+            "& .MuiOutlinedInput-root": {
+              "& .MuiOutlinedInput-notchedOutline": {
+                border: emailValidated ? "1px solid grey" : "solid red 1px",
+              },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                border: emailValidated ? "1px solid grey" : "solid red 1px",
+              },
+            },
+          }}
           value={email}
           onChange={handleChangeEmail}
         />
