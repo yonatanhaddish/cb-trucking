@@ -15,7 +15,7 @@ import emailjs from "@emailjs/browser";
 import CheckIcon from "@mui/icons-material/Check";
 import ErrorIcon from "@mui/icons-material/Error";
 
-function InputsSection() {
+function InputsSection({ insuranceNameSelectedFromContact }) {
   const MotionBox = motion(Box);
   const MotionTypography = motion(Typography);
   const MotionButton = motion(Button);
@@ -27,6 +27,11 @@ function InputsSection() {
   const [nameValidated, setNameValidated] = useState(true);
   const [emailValidated, setEmailValidated] = useState(true);
   const [errorMessageSend, setErrorMessageSend] = useState(null);
+  const [selectedCertificate, setSelectedCertificate] = useState("");
+
+  useEffect(() => {
+    setSelectedCertificate(insuranceNameSelectedFromContact);
+  }, [insuranceNameSelectedFromContact]);
 
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
@@ -237,6 +242,7 @@ function InputsSection() {
       setSendButtonDisable(true);
     }
   });
+
   return (
     <form onSubmit={handleSendEmail}>
       <Box sx={styles.input_box}>
@@ -320,6 +326,14 @@ function InputsSection() {
           sx={styles.input_text}
           value={message}
           onChange={handleChangeMessage}
+        />
+        <input
+          type="hidden"
+          id="subject"
+          name="subject"
+          value={
+            selectedCertificate === "" ? "General Inquiry" : selectedCertificate
+          }
         />
         <MotionButton
           sx={styles.button}

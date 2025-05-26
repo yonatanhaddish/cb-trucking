@@ -1,10 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography, useMediaQuery, Button } from "@mui/material";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
-function CertificateRequest() {
+function CertificateRequest({ onRequestClick }) {
   const MotionBox = motion(Box);
   const MotionButton = motion(Button);
   const MotionTypography = motion(Typography);
@@ -143,7 +144,7 @@ function CertificateRequest() {
       // border: "solid green 1px",
     },
     button_request: {
-      //   border: "solid 1px blue",
+      // border: "solid 1px blue",
       width:
         screenLessThan430 || screenGreaterThan430LessThan768
           ? "80%"
@@ -241,6 +242,11 @@ function CertificateRequest() {
         : "1rem",
     },
   };
+
+  const handleClickRequest = (name) => {
+    onRequestClick(name);
+  };
+
   return (
     <div id="certificate_and_accrediation_page">
       <Box
@@ -259,7 +265,6 @@ function CertificateRequest() {
         >
           Certificate & Accrediations
         </MotionTypography>
-
         <MotionTypography
           sx={styles.desc_certification}
           initial={{ transform: "translateX(-100px)" }}
@@ -292,16 +297,24 @@ function CertificateRequest() {
             <Typography sx={styles.typo_desc}>
               Sunbelt Logistics Group's Certificate of Insurance
             </Typography>
-            <MotionButton
-              sx={styles.button_request}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.8 }}
-              initial={{ transform: "translateY(50px)" }}
-              whileInView={{ transform: "translateY(0px)" }}
-              transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+            <Link
+              to="contact_us_page"
+              duration={500}
+              smooth={true}
+              style={{ width: "100%" }}
             >
-              Request
-            </MotionButton>
+              <MotionButton
+                sx={styles.button_request}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                initial={{ transform: "translateY(50px)" }}
+                whileInView={{ transform: "translateY(0px)" }}
+                transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+                onClick={() => handleClickRequest("SLG Insurance")}
+              >
+                Request
+              </MotionButton>
+            </Link>
           </Box>
           <Box sx={styles.license_box}>
             <MotionBox
@@ -317,16 +330,24 @@ function CertificateRequest() {
             <Typography sx={styles.typo_desc}>
               Workplace Safety and Insurance Board Clearance
             </Typography>
-            <MotionButton
-              sx={styles.button_request}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.8 }}
-              initial={{ transform: "translateY(50px)" }}
-              whileInView={{ transform: "translateY(0px)" }}
-              transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+            <Link
+              to="contact_us_page"
+              duration={500}
+              smooth={true}
+              style={{ width: "100%" }}
             >
-              Request
-            </MotionButton>
+              <MotionButton
+                sx={styles.button_request}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                initial={{ transform: "translateY(50px)" }}
+                whileInView={{ transform: "translateY(0px)" }}
+                transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+                onClick={() => handleClickRequest("WSIB Clearance")}
+              >
+                Request
+              </MotionButton>
+            </Link>
           </Box>
           <Box sx={styles.license_box}>
             <MotionBox
@@ -344,16 +365,25 @@ function CertificateRequest() {
             <Typography sx={styles.typo_desc}>
               Proud Member of the Blue Book Honor Service
             </Typography>
-            <MotionButton
-              sx={styles.button_request}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.8 }}
-              initial={{ transform: "translateY(50px)" }}
-              whileInView={{ transform: "translateY(0px)" }}
-              transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+
+            <Link
+              to="contact_us_page"
+              duration={500}
+              smooth={true}
+              style={{ width: "100%" }}
             >
-              Request
-            </MotionButton>
+              <MotionButton
+                sx={styles.button_request}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                initial={{ transform: "translateY(50px)" }}
+                whileInView={{ transform: "translateY(0px)" }}
+                transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+                onClick={() => handleClickRequest("Blue Book")}
+              >
+                Request
+              </MotionButton>
+            </Link>
           </Box>
         </Box>
       </Box>

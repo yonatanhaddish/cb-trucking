@@ -20,6 +20,7 @@ import Box from "@mui/material/Box";
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [dataFromCertificate, setDataFromCertificate] = useState("");
 
   useEffect(() => {
     setMounted(true);
@@ -51,6 +52,10 @@ export default function Home() {
     );
   }
 
+  const handleClickRequest = (name) => {
+    setDataFromCertificate(name);
+  };
+
   return (
     <>
       <Navbar />
@@ -58,9 +63,9 @@ export default function Home() {
       <AboutSection />
       <Service />
       <WeWorkWith />
-      <CertificateRequest />
+      <CertificateRequest onRequestClick={handleClickRequest} />
       <WhyChooseUs />
-      <ContactUs />
+      <ContactUs insuranceNameSelected={dataFromCertificate} />
       <Footer />
       <FooterTwo />
     </>

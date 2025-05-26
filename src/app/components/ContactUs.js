@@ -15,16 +15,12 @@ import LocationPinIcon from "@mui/icons-material/LocationPin";
 import EmailIcon from "@mui/icons-material/Email";
 import InputsSection from "./InputsSection";
 
-function ContactUs() {
+function ContactUs({ insuranceNameSelected }) {
   // const [loading, setLoading] = useState(undefined);
 
   const MotionBox = motion(Box);
   const MotionTypography = motion(Typography);
   const MotionButton = motion(Button);
-
-  // useEffect(() => {
-  //   setLoading(false);
-  // }, []);
 
   const screenLessThan430 = useMediaQuery(
     "(min-width: 100px) and (max-width: 430px)"
@@ -361,7 +357,9 @@ function ContactUs() {
             </MotionBox>
           </Box>
           <Box sx={styles.contact_input_box}>
-            <InputsSection />
+            <InputsSection
+              insuranceNameSelectedFromContact={insuranceNameSelected}
+            />
           </Box>
         </Box>
       </Box>
