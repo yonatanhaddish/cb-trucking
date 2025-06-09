@@ -237,9 +237,9 @@ function WhyChooseUs() {
           }}
         >
           <Typography sx={styles.desc_whychooseus}>
-            At CB Trucking, we don't just move cargo - we move your business
-            foward. With a passion precision and a commitment to excellence,
-            here's why customers across the region trust us
+            At CB Trucking, we don&rsquo;t just move cargo - we move your
+            business forward. With a passion, precision and a commitment to
+            excellence, here&rsquo;s why customers across the region trust us
           </Typography>
         </motion.div>
         <Box sx={styles.child_whychooseus_box}>
@@ -310,8 +310,8 @@ function WhyChooseUs() {
               Competitive Pricing
             </Typography>
             <Typography sx={styles.typo_desc}>
-              Top-tier service shouldn’t come with top-tier pricing. Our
-              transparent and fair rates ensure you get value at every mile
+              Top-tier service shouldn&rsquo;t come with top-tier pricing. Our
+              transparent and fair rates ensure you get value at every mile.
             </Typography>
           </MotionBox>
           <MotionBox
