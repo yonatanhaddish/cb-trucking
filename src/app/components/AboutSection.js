@@ -328,7 +328,7 @@ function AboutSection() {
                 }}
               >
                 CB Trucking
-              </span>{" "}
+              </span>
               is one of Canada's most exciting third-party logistics providers.
               We take pride in our commitment to service, competitiveness, and
               reliability. At CB Trucking we strive to serve not only our
