@@ -129,35 +129,13 @@ function InputsSection({ insuranceNameSelectedFromContact }) {
       alignSelf: "center",
       textAlign: "center",
     },
-    input_text: {
-      "& .MuiInputBase-root": {
-        backgroundColor: "#fff",
-        "&:hover": {
-          backgroundColor: "#fff",
-        },
-        "&.Mui-focused": {
-          backgroundColor: "#fff",
-        },
-      },
-      "& .MuiOutlinedInput-notchedOutline": {
-        // borderColor: "#000",
-      },
-      "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
-        borderColor: "#000",
-      },
-      "& .MuiInputLabel-root": {
-        color: "#000",
-      },
-      "& .MuiInputLabel-root.Mui-focused": {
-        color: "#c23237",
-      },
-    },
+    input_text: {},
     alert_box: {
       position: "absolute",
-      left: screenLessThan430 ? 0 : "15%",
+      left: 0,
       top: -20,
       // border: "solid red 2px",
-      width: screenLessThan430 ? "100%" : "",
+      width: "100%",
     },
   };
 
@@ -249,9 +227,9 @@ function InputsSection({ insuranceNameSelectedFromContact }) {
         {errorMessageSend !== null && (
           <MotionBox
             sx={styles.alert_box}
-            // initial={{ y: 0 }}
-            // animate={{ y: 30 }}
-            // transition={{ type: "spring", bounce: 0.25, duration: 1 }}
+            initial={{ y: -100 }}
+            animate={{ y: 15 }}
+            transition={{ type: "spring", bounce: 0.25, duration: 2 }}
           >
             <Alert
               icon={
@@ -277,7 +255,7 @@ function InputsSection({ insuranceNameSelectedFromContact }) {
         <TextField
           id="name"
           name="name"
-          label="Full Name"
+          placeholder="Full Name"
           variant="outlined"
           size="small"
           sx={{
@@ -297,7 +275,7 @@ function InputsSection({ insuranceNameSelectedFromContact }) {
         <TextField
           id="email"
           name="email"
-          label="Email Address"
+          placeholder="Email Address"
           variant="outlined"
           size="small"
           sx={{
@@ -311,19 +289,28 @@ function InputsSection({ insuranceNameSelectedFromContact }) {
               },
             },
           }}
-          value={email}
           onChange={handleChangeEmail}
         />
         <TextField
           id="message"
           name="message"
-          label="Message"
+          placeholder="Message"
           variant="outlined"
           size="small"
           multiline
           minRows={6}
           maxRows={10}
-          sx={styles.input_text}
+          sx={{
+            ...styles.input_text,
+            "& .MuiOutlinedInput-root": {
+              "& .MuiOutlinedInput-notchedOutline": {
+                border: "1px solid grey",
+              },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                border: "1px solid grey",
+              },
+            },
+          }}
           value={message}
           onChange={handleChangeMessage}
         />

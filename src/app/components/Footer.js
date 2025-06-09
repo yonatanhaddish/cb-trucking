@@ -131,7 +131,7 @@ function Footer() {
         : "50px",
     },
     typo_name_heading: {
-      //   border: "solid green 2px",
+      // border: "solid green 2px",
       color: "#d9d9d9",
       fontSize:
         screenLessThan430 || screenGreaterThan430LessThan768
@@ -143,20 +143,20 @@ function Footer() {
           : screenGreaterThan1920LessThan3840
           ? "40px"
           : screenGreaterThan1280LessThan1440
-          ? "28px"
+          ? "26px"
           : "1.4rem",
       width: screenLessThan430
         ? "55%"
         : screenGreaterThan430LessThan768
         ? "33%"
         : screenGreaterThan1024LessThan1280
-        ? "78%"
-        : screenGreaterThan1280LessThan1440
-        ? "70%"
-        : screenGreaterThan1440LessThan1920
-        ? "74%"
-        : screenGreaterThan1920LessThan3840
         ? "90%"
+        : screenGreaterThan1280LessThan1440
+        ? "80%"
+        : screenGreaterThan1440LessThan1920
+        ? "80%"
+        : screenGreaterThan1920LessThan3840
+        ? "100%"
         : "100%",
       textAlign: "center",
     },
@@ -167,7 +167,7 @@ function Footer() {
         ? "78%"
         : "100%",
       margin: "0 auto",
-      //   border: "solid green 2px",
+      // border: "solid green 2px",
     },
     typo_name: {
       // border: "solid blue 1px",
@@ -256,13 +256,10 @@ function Footer() {
           <Typography sx={styles.typo_name_heading}>CB Trucking</Typography>
         </Box>
         <Box sx={styles.typo_address}>
-          <Typography sx={styles.typo_name}>
-            {" "}
-            100 Wellington Ave E, #508
-          </Typography>
-          <Typography sx={styles.typo_name}>Toronto ,ON, Canada</Typography>
-          <Typography sx={styles.typo_name}> M1L 1P6</Typography>
-          <Typography sx={styles.typo_name}>+1 (800)-222-2222</Typography>
+          <Typography sx={styles.typo_name}>140 Erskine Avenue</Typography>
+          <Typography sx={styles.typo_name}>Toronto ,ON</Typography>
+          <Typography sx={styles.typo_name}>Canada, M4P 1Z2</Typography>
+          <Typography sx={styles.typo_name}>+1 (647) 807 6911</Typography>
           <Typography sx={styles.typo_name}>cb_trucking@email.com</Typography>
         </Box>
       </Box>

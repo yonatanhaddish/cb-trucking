@@ -31,6 +31,7 @@ function InputSectionCarrier() {
   const [lastNameValidated, setLastNameValidated] = useState(true);
   const [emailValidated, setEmailValidated] = useState(true);
   const [phoneNumberValidated, setPhoneNumberValidated] = useState(true);
+  const [phoneNumberFormat, setPhoneNumberFormat] = useState("");
   const [errorMessageSend, setErrorMessageSend] = useState(null);
 
   const screenLessThan430 = useMediaQuery(
@@ -192,15 +193,35 @@ function InputSectionCarrier() {
           ? "92%"
           : "100%",
     },
-    input_single_onactive: {
-      border: firstNameValidated ? "solid grey 1px" : "solid red 1px",
-    },
+    // input_single_onactive: {
+    //   border: firstNameValidated ? "solid grey 1px" : "solid red 1px",
+    // },
     alert_box: {
       position: "absolute",
-      left: screenLessThan430 ? "10%" : "15%",
+      left: screenLessThan430
+        ? "10%"
+        : screenGreaterThan430LessThan768 ||
+          screenGreaterThan768LessThan1024 ||
+          screenGreaterThan1024LessThan1280 ||
+          screenGreaterThan1280LessThan1440 ||
+          screenGreaterThan1440LessThan1920 ||
+          screenGreaterThan1920LessThan3840
+        ? "20%"
+        : "15%",
       top: 0,
       // border: "solid red 2px",
-      width: screenLessThan430 ? "80%" : "",
+      width: screenLessThan430
+        ? "80%"
+        : screenGreaterThan430LessThan768
+        ? "60%"
+        : screenGreaterThan768LessThan1024
+        ? "60%"
+        : screenGreaterThan1024LessThan1280 ||
+          screenGreaterThan1280LessThan1440 ||
+          screenGreaterThan1440LessThan1920 ||
+          screenGreaterThan1920LessThan3840
+        ? "60%"
+        : "",
     },
   };
 
@@ -240,13 +261,26 @@ function InputSectionCarrier() {
     setEmail(event.target.value);
   };
   const handleChangePhoneNumber = (event) => {
-    if (isValidPhoneNumber(event.target.value) && event.target.value > 0) {
-      setPhoneNumberValidated(true);
-    } else {
-      setPhoneNumberValidated(false);
+    const input = event.target.value;
+
+    const digits = input.replace(/\D/g, "").slice(0, 10);
+
+    setPhoneNumberValidated(digits.length === 10);
+
+    let formatted = "";
+    if (digits.length > 6) {
+      formatted = `(${digits.slice(0, 3)}) ${digits.slice(3, 6)} ${digits.slice(
+        6
+      )}`;
+    } else if (digits.length > 3) {
+      formatted = `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+    } else if (digits.length > 0) {
+      formatted = `(${digits}`;
     }
-    setPhoneNumber(event.target.value);
+
+    setPhoneNumber(formatted);
   };
+
   const handleChangeMessage = (event) => {
     setMessage(event.target.value);
   };
@@ -346,7 +380,7 @@ function InputSectionCarrier() {
         >
           Support Center 24/7
         </Typography>
-        <Typography sx={{ fontWeight: 500 }}> (123) 456 7890</Typography>
+        <Typography sx={{ fontWeight: 500 }}>+1 (647) 807 6911</Typography>
         <Typography sx={{ fontWeight: 500 }}> cb-trucking@email.com</Typography>
       </Box>
       <form onSubmit={handleSubmitForm}>

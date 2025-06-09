@@ -79,6 +79,7 @@ function CertificateRequest({ onRequestClick }) {
         ? "30%"
         : "15%",
       textAlign: "center",
+      margin: "0 auto",
       marginBottom: "50px",
       justifySelf: "center",
     },
@@ -290,7 +291,7 @@ function CertificateRequest({ onRequestClick }) {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.4,
-                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
               }}
             ></MotionBox>
             <Typography sx={styles.typo_heading}>SLG INSURANCE</Typography>
@@ -299,9 +300,9 @@ function CertificateRequest({ onRequestClick }) {
             </Typography>
             <Link
               to="contact_us_page"
-              duration={500}
+              duration={1000}
               smooth={true}
-              style={{ width: "100%" }}
+              style={{ width: "100%", textAlign: "center" }}
             >
               <MotionButton
                 sx={styles.button_request}
@@ -323,7 +324,7 @@ function CertificateRequest({ onRequestClick }) {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.4,
-                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
               }}
             ></MotionBox>
             <Typography sx={styles.typo_heading}>WSIB CLEARANCE</Typography>
@@ -332,9 +333,9 @@ function CertificateRequest({ onRequestClick }) {
             </Typography>
             <Link
               to="contact_us_page"
-              duration={500}
+              duration={1000}
               smooth={true}
-              style={{ width: "100%" }}
+              style={{ width: "100%", textAlign: "center" }}
             >
               <MotionButton
                 sx={styles.button_request}
@@ -356,7 +357,7 @@ function CertificateRequest({ onRequestClick }) {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.4,
-                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
               }}
             ></MotionBox>
             <Typography sx={styles.typo_heading}>
@@ -368,9 +369,9 @@ function CertificateRequest({ onRequestClick }) {
 
             <Link
               to="contact_us_page"
-              duration={500}
+              duration={1000}
               smooth={true}
-              style={{ width: "100%" }}
+              style={{ width: "100%", textAlign: "center" }}
             >
               <MotionButton
                 sx={styles.button_request}

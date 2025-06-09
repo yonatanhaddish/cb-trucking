@@ -80,6 +80,7 @@ function ContactUs({ insuranceNameSelected }) {
         ? "30%"
         : "15%",
       textAlign: "center",
+      margin: "0 auto",
       marginBottom: "50px",
       justifySelf: "center",
     },
@@ -321,7 +322,7 @@ function ContactUs({ insuranceNameSelected }) {
                   color: "#c23237",
                 }}
               />
-              <Typography>123 Wellington Ave. E</Typography>
+              <Typography>140 Erskine Avenue, Toronto ,ON</Typography>
             </MotionBox>
             <MotionBox
               sx={styles.single_contact_info}
@@ -337,7 +338,7 @@ function ContactUs({ insuranceNameSelected }) {
                   color: "#c23237",
                 }}
               />
-              <Typography>(123) 456-7890</Typography>
+              <Typography>+1 (647) 807 6911</Typography>
             </MotionBox>
             <MotionBox
               sx={styles.single_contact_info}

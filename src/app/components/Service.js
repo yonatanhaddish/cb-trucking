@@ -337,7 +337,7 @@ function Service() {
             >
               While not as common, truckload carrier claims can happen. Our
               expertise in trucking regulations ensures companies can navigate
-              the claims process easier. Plus, all …. carriers carry
+              the claims process easier. Plus, all carriers carry
               industry-standard $100,000 cargo insurance for added peace of
               mind.
             </MotionTypography>

@@ -30,6 +30,7 @@ function HomeSection() {
   const MotionTypography = motion(Typography);
   const MotionBox = motion(Box);
   const MotionButton = motion(Button);
+
   const styles = {
     parent_landingpage: {
       // border: "solid green 2px",
@@ -227,6 +228,7 @@ function HomeSection() {
       justifyContent: "space-between",
     },
     button_services_smaller: {
+      border: "solid 2px #c23237",
       backgroundColor: "#c23237",
       color: "#fff",
       width: "150px",
@@ -238,11 +240,11 @@ function HomeSection() {
     },
   };
   return (
-    <div id="home_page">
+    <>
       {screenLessThan430 ||
       screenGreaterThan430LessThan768 ||
       screenGreaterThan768LessThan1024 ? (
-        <Box sx={styles.parent_landing_smaller}>
+        <Box sx={styles.parent_landing_smaller} id="home_page">
           <Box sx={styles.parent_landingpage_small}></Box>
           <Box sx={styles.content_landingpage_smaller}>
             <MotionTypography
@@ -286,7 +288,7 @@ function HomeSection() {
           </Box>
         </Box>
       ) : (
-        <Box sx={styles.parent_landingpage}>
+        <Box sx={styles.parent_landingpage} id="home_page">
           <Box sx={styles.overlay_box}></Box>
           <Box sx={styles.content_landingpage}>
             <MotionTypography
@@ -336,7 +338,7 @@ function HomeSection() {
           </Box>
         </Box>
       )}
-    </div>
+    </>
   );
 }
 

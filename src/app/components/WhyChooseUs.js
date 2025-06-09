@@ -66,6 +66,7 @@ function WhyChooseUs() {
         ? "30%"
         : "15%",
       textAlign: "center",
+      margin: "0 auto",
       marginBottom: "50px",
       justifySelf: "center",
     },

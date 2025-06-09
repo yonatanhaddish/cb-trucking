@@ -5,36 +5,30 @@ import { Box, Typography, useMediaQuery } from "@mui/material";
 import { motion, useInView } from "framer-motion";
 
 const partners_array = [
-  { name: "Atlantis Freight Solutions", fontFamily: "'Roboto', sans-serif" },
-  { name: "Evergreen Cargo", fontFamily: "'Montserrat', sans-serif" },
-  { name: "Summit Logistics Group", fontFamily: "'Lora', cursive" },
-  { name: "Titan Supply Chain", fontFamily: "'Oswald', sans-serif" },
-  { name: "BlueWave Distributors", fontFamily: "'Playfair Display', serif" },
-  { name: "PrimeSource Freight", fontFamily: "'Poppins', sans-serif" },
-  { name: "Metro Goods Transport", fontFamily: "'Merriweather', serif" },
-  { name: "CargoLink Enterprise", fontFamily: "'Raleway', cursive" },
-  { name: "ProHaul Shipping", fontFamily: "'Ubuntu', sans-serif" },
-  { name: "Horizon Logistics", fontFamily: "'Fira Sans', sans-serif" },
-  { name: "Nexus Distribution", fontFamily: "'Nunito', sans-serif" },
-  { name: "Apex Freight Systems", fontFamily: "'Quicksand', sans-serif" },
-  { name: "Zenith Cargo", fontFamily: "'Dancing Script', cursive" },
-  { name: "Vertex Transport", fontFamily: "'Bebas Neue', sans-serif" },
-  { name: "Omni Logistics", fontFamily: "'Pacifico', serif" },
-  { name: "Infinity Freight", fontFamily: "'Open Sans', sans-serif" },
-  { name: "Global Transport Network", fontFamily: "'Lobster', cursive" },
-  { name: "Unity Cargo Services", fontFamily: "'Source Sans Pro', sans-serif" },
-  { name: "Pinnacle Shipping Co.", fontFamily: "'Teko', sans-serif" },
-  { name: "Elite Cargo Movers", fontFamily: "'Anton', sans-serif" },
-  { name: "SwiftLine Logistics", fontFamily: "'Josefin Sans', sans-serif" },
-  { name: "Eagle Eye Freight", fontFamily: "'Arvo', serif" },
-  { name: "Royal Transport Group", fontFamily: "'Rubik', cursive" },
-  { name: "Diamond Cargo Express", fontFamily: "'Noto Sans', sans-serif" },
-  { name: "Falcon Freight Services", fontFamily: "'PT Sans', sans-serif" },
-  { name: "Phoenix Distribution", fontFamily: "'Cormorant Garamond', serif" },
-  { name: "Thunderbolt Shipping", fontFamily: "'Libre Baskerville', serif" },
-  { name: "Vanguard Logistics", fontFamily: "'Work Sans', sans-serif" },
-  { name: "Orion Transport Co.", fontFamily: "'Cabin', cursive" },
-  { name: "Polaris Freight Network", fontFamily: "'Vollkorn', serif" },
+  { name: "Costco", fontFamily: "'Roboto', sans-serif" },
+  { name: "Taylor Farms", fontFamily: "'Roboto', sans-serif" },
+  { name: "Sobeys", fontFamily: "'Roboto', sans-serif" },
+  { name: "Costco", fontFamily: "'Roboto', sans-serif" },
+  { name: "Taylor Farms", fontFamily: "'Roboto', sans-serif" },
+  { name: "Sobeys", fontFamily: "'Roboto', sans-serif" },
+  { name: "Costco", fontFamily: "'Roboto', sans-serif" },
+  { name: "Taylor Farms", fontFamily: "'Roboto', sans-serif" },
+  { name: "Sobeys", fontFamily: "'Roboto', sans-serif" },
+  { name: "Costco", fontFamily: "'Roboto', sans-serif" },
+  { name: "Taylor Farms", fontFamily: "'Roboto', sans-serif" },
+  { name: "Sobeys", fontFamily: "'Roboto', sans-serif" },
+  { name: "Costco", fontFamily: "'Roboto', sans-serif" },
+  { name: "Taylor Farms", fontFamily: "'Roboto', sans-serif" },
+  { name: "Sobeys", fontFamily: "'Roboto', sans-serif" },
+  { name: "Costco", fontFamily: "'Roboto', sans-serif" },
+  { name: "Taylor Farms", fontFamily: "'Roboto', sans-serif" },
+  { name: "Sobeys", fontFamily: "'Roboto', sans-serif" },
+  { name: "Costco", fontFamily: "'Roboto', sans-serif" },
+  { name: "Taylor Farms", fontFamily: "'Roboto', sans-serif" },
+  { name: "Sobeys", fontFamily: "'Roboto', sans-serif" },
+  { name: "Costco", fontFamily: "'Roboto', sans-serif" },
+  { name: "Taylor Farms", fontFamily: "'Roboto', sans-serif" },
+  { name: "Sobeys", fontFamily: "'Roboto', sans-serif" },
 ];
 
 const WeWorkWith = () => {
@@ -113,6 +107,7 @@ const WeWorkWith = () => {
       textAlign: "center",
       marginBottom: "50px",
       justifySelf: "center",
+      margin: "0 auto",
     },
   };
 
@@ -134,7 +129,7 @@ const WeWorkWith = () => {
         whileInView={isInView ? { y: 0 } : {}}
         transition={{ type: "spring", bounce: 0.25, duration: 1 }}
       >
-        <Typography sx={styles.heading_our_partners}>We Work With</Typography>
+        <Typography sx={styles.heading_our_partners}>Trusted By</Typography>
       </motion.div>
 
       <Box

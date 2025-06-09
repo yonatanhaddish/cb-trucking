@@ -77,6 +77,7 @@ function Navbar() {
       flexDirection: "row",
       gap: "30px",
       marginRight: "8%",
+      // border: "solid white 2px",
     },
     icon_button: {
       height: "40px",
@@ -203,7 +204,7 @@ function Navbar() {
                     id: "certificate_and_accrediation_page",
                     label: "Certificate & Accreditations",
                   },
-                  { id: "our_partner_page", label: "Our Partners" },
+                  { id: "our_partner_page", label: "Trusted By" },
                   { id: "why_choose_us_page", label: "Why Choose Us?" },
                   { id: "contact_us_page", label: "Contact" },
                 ].map((item) => (
@@ -310,9 +311,9 @@ function Navbar() {
                 ].includes(selectedCurrentLink) &&
                   styles.selected_link_current),
               }}
-              aria-controls={open ? "basic-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
+              // aria-controls={open ? "basic-menu" : undefined}
+              // aria-haspopup="true"
+              // aria-expanded={open ? "true" : undefined}
             >
               Pages ⌄
             </Typography>
@@ -368,7 +369,7 @@ function Navbar() {
                       handleSelectCurrentLink("our_partner_page");
                     }}
                   >
-                    Our Partners
+                    Trusted By
                   </MenuItem>
                 </Link>
                 <Link to="why_choose_us_page" duration={500} smooth={true}>
