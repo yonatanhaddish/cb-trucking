@@ -305,8 +305,8 @@ function ContactUs({ insuranceNameSelected }) {
               }}
             >
               Have questions or need a quote? Get in touch with Reliable
-              Trucking and Transportation Services. We're here to provide prompt
-              and dependable support for all your transportation needs.
+              Trucking and Transportation Services. We&rsquo;re here to provide
+              prompt and dependable support for all your transportation needs.
             </MotionTypography>
             <MotionBox
               sx={styles.single_contact_info}

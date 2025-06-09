@@ -296,7 +296,7 @@ function CertificateRequest({ onRequestClick }) {
             ></MotionBox>
             <Typography sx={styles.typo_heading}>SLG INSURANCE</Typography>
             <Typography sx={styles.typo_desc}>
-              Sunbelt Logistics Group's Certificate of Insurance
+              Sunbelt Logistics Group&rsquo;s Certificate of Insurance
             </Typography>
             <Link
               to="contact_us_page"

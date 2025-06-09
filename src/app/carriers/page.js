@@ -239,13 +239,13 @@ function Carriers() {
                 Join Our Team
               </MotionTypography>
               <Typography sx={{ width: "90%", alignSelf: "center" }}>
-                We're always looking for passionate, motivated individuals to
-                join our growing team. Whether you're an experienced
+                We&rsquo;re always looking for passionate, motivated individuals
+                to join our growing team. Whether you&rsquo;re an experienced
                 professional or just starting out, we value dedication,
-                creativity, and a desire to make a difference. If you're
+                creativity, and a desire to make a difference. If you&rsquo;re
                 interested in working with a company that values teamwork,
-                innovation, and growth, we'd love to hear from you. Fill out the
-                form and let’s start a conversation.
+                innovation, and growth, we&rsquo;d love to hear from you. Fill
+                out the form and let&rsquo;s start a conversation.
               </Typography>
             </Box>
           </Box>

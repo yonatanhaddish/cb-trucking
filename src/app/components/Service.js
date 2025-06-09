@@ -246,12 +246,12 @@ function Service() {
               }}
             >
               With our Full Truckload (FTL) service, we take complete control of
-              your freight's journey. We provide extensive FTL coverage across
-              hundreds of lanes throughout Ontario. Whether managing single
-              pick-and-drop locations or navigating complex multi-stop shipments
-              for both dry and refrigerated cargo, our operations team’s vast
-              expertise ensures you receive a reliable and cost-effective
-              solution on short notice.
+              your freight&rsquo;s journey. We provide extensive FTL coverage
+              across hundreds of lanes throughout Ontario. Whether managing
+              single pick-and-drop locations or navigating complex multi-stop
+              shipments for both dry and refrigerated cargo, our operations
+              team’s vast expertise ensures you receive a reliable and
+              cost-effective solution on short notice.
             </MotionTypography>
           </Box>
           <Box sx={styles.service_box}>
