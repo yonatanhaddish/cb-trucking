@@ -121,7 +121,8 @@ function CertificateRequest({ onRequestClick }) {
       paddingBottom: "20px",
     },
     license_logo_icc: {
-      backgroundImage: `url("/images/slg_insurance.svg")`,
+      // backgroundImage: `url("/images/slg_insurance.svg")`,
+      backgroundImage: `url("/images/wsib_clearance.png")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: "100px",
@@ -296,7 +297,7 @@ function CertificateRequest({ onRequestClick }) {
             ></MotionBox>
             <Typography sx={styles.typo_heading}>SLG INSURANCE</Typography>
             <Typography sx={styles.typo_desc}>
-              Sunbelt Logistics Group&rsquo;s Certificate of Insurance
+              Some Description will go here!!!
             </Typography>
             <Link
               to="contact_us_page"
