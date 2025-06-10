@@ -381,7 +381,9 @@ function InputSectionCarrier() {
           Support Center 24/7
         </Typography>
         <Typography sx={{ fontWeight: 500 }}>+1 (647) 807 6911</Typography>
-        <Typography sx={{ fontWeight: 500 }}> cb-trucking@email.com</Typography>
+        <Typography sx={{ fontWeight: 500 }}>
+          cb@cbtransportation.org
+        </Typography>
       </Box>
       <form onSubmit={handleSubmitForm}>
         <Box sx={styles.input_box}>

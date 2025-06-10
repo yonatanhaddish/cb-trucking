@@ -354,7 +354,7 @@ function ContactUs({ insuranceNameSelected }) {
                   color: "#c23237",
                 }}
               />
-              <Typography>cb-trucking@email.com</Typography>
+              <Typography>cb@cbtransportation.org</Typography>
             </MotionBox>
           </Box>
           <Box sx={styles.contact_input_box}>
