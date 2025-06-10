@@ -66,7 +66,7 @@ function FooterTwo() {
   return (
     <Box sx={styles.parent_footer_two}>
       <Typography sx={styles.typo_footer_two}>
-        © 2025 CB Logistics Inc. All rights reserved.
+        © 2025 CB Transportation Inc. All rights reserved.
       </Typography>
     </Box>
   );

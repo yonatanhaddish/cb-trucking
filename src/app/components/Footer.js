@@ -146,15 +146,15 @@ function Footer() {
           ? "26px"
           : "1.4rem",
       width: screenLessThan430
-        ? "55%"
+        ? "80%"
         : screenGreaterThan430LessThan768
-        ? "33%"
+        ? "45%"
         : screenGreaterThan1024LessThan1280
-        ? "90%"
+        ? "100%"
         : screenGreaterThan1280LessThan1440
-        ? "80%"
+        ? "100%"
         : screenGreaterThan1440LessThan1920
-        ? "80%"
+        ? "100%"
         : screenGreaterThan1920LessThan3840
         ? "100%"
         : "100%",
@@ -253,7 +253,9 @@ function Footer() {
       <Box sx={styles.logo_address_box}>
         <Box sx={styles.logo_heading}>
           <Box sx={styles.logo_box}></Box>
-          <Typography sx={styles.typo_name_heading}>CB Trucking</Typography>
+          <Typography sx={styles.typo_name_heading}>
+            CB Transportation
+          </Typography>
         </Box>
         <Box sx={styles.typo_address}>
           <Typography sx={styles.typo_name}>140 Erskine Avenue</Typography>

@@ -94,7 +94,7 @@ function NavbarCarrier() {
       <Box sx={styles.parent_nav_bar_carrier}>
         <Button sx={styles.logo_box_parent} component={NextLink} href="/">
           <Box sx={styles.logo_img}></Box>
-          <Typography sx={styles.typo_logo}>CB Trucking</Typography>
+          <Typography sx={styles.typo_logo}>CB Transportation</Typography>
         </Button>
         <Box sx={styles.navlink_button}>
           <Button

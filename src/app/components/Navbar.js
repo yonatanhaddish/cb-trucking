@@ -172,10 +172,9 @@ function Navbar() {
         <Link to="home_page" duration={500} smooth={true}>
           <Button sx={styles.logo_box_parent}>
             <Box sx={styles.logo_img}></Box>
-            <Typography sx={styles.typo_logo}>CB Trucking</Typography>
+            <Typography sx={styles.typo_logo}>CB Transportation</Typography>
           </Button>
         </Link>
-
         {isMobile ? (
           <>
             {openSideNavBar ? (

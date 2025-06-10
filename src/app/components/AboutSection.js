@@ -321,19 +321,11 @@ function AboutSection() {
               whileInView={{ transform: "translateX(0px)" }}
               transition={{ type: "spring", bounce: 0.7, visualDuration: 0.5 }}
             >
-              <span
-                style={{
-                  color: "#000",
-                  // fontWeight: "bold",
-                }}
-              >
-                CB Trucking
-              </span>
-              is one of Canada&rsquo;s most exciting third-party logistics
-              providers. We take pride in our commitment to service,
-              competitiveness, and reliability. At CB Trucking we strive to
-              serve not only our customers but also our carriers with the same
-              level of dedication.
+              CB Transportation is one of Canada&rsquo;s most exciting
+              third-party logistics providers. We take pride in our commitment
+              to service, competitiveness, and reliability. At CB Transportation
+              we strive to serve not only our customers but also our carriers
+              with the same level of dedication.
             </MotionTypography>
             <MotionTypography
               sx={styles.typo_desc}

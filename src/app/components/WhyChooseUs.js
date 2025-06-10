@@ -237,7 +237,7 @@ function WhyChooseUs() {
           }}
         >
           <Typography sx={styles.desc_whychooseus}>
-            At CB Trucking, we don&rsquo;t just move cargo - we move your
+            At CB Transportation, we don&rsquo;t just move cargo - we move your
             business forward. With a passion, precision and a commitment to
             excellence, here&rsquo;s why customers across the region trust us
           </Typography>
