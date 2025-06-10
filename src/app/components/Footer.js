@@ -260,7 +260,7 @@ function Footer() {
           <Typography sx={styles.typo_name}>Toronto ,ON</Typography>
           <Typography sx={styles.typo_name}>Canada, M4P 1Z2</Typography>
           <Typography sx={styles.typo_name}>+1 (647) 807 6911</Typography>
-          <Typography sx={styles.typo_name}>cb_trucking@email.com</Typography>
+          <Typography sx={styles.typo_name}>cb@cbtransportation.org</Typography>
         </Box>
       </Box>
       <Box sx={styles.nav_links_parent}>
