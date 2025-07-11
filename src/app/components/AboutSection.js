@@ -304,15 +304,15 @@ function AboutSection() {
         <Box sx={styles.parent_aboutsection}>
           <Box sx={styles.aboutsection_image_box}>
             <Box sx={styles.aboutsection_img1}></Box>
-            <MotionImg
+            {/* <MotionImg
               sx={styles.aboutsection_img2}
-              initial={{ opacity: 0, scale: 0 }}
+              initial={{ opacity: 1, scale: 1 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.4,
                 scale: { type: "spring", visualDuration: 1, bounce: 0.5 },
               }}
-            ></MotionImg>
+            ></MotionImg> */}
           </Box>
           <Box sx={styles.aboutsection_desc_box}>
             <MotionTypography
