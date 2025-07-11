@@ -212,7 +212,7 @@ function AboutSection() {
     },
     aboutsection_desc_box: {
       // border: "solid black 1px",
-      boxShadow: "0 0 10px black",
+      // boxShadow: "0 0 10px black",
       width:
         screenGreaterThan1024LessThan1280 ||
         screenGreaterThan1280LessThan1440 ||
@@ -229,7 +229,7 @@ function AboutSection() {
           : "100%",
       display: "flex",
       flexDirection: "column",
-      backgroundColor: "#c23237",
+      backgroundColor: "#d9d9d9",
       justifyContent: "center",
       alignItems: "center",
       height: screenLessThan430
@@ -321,11 +321,20 @@ function AboutSection() {
               whileInView={{ transform: "translateX(0px)" }}
               transition={{ type: "spring", bounce: 0.7, visualDuration: 0.5 }}
             >
-              CB Transportation is one of Canada&rsquo;s most exciting
-              third-party logistics providers. We take pride in our commitment
-              to service, competitiveness, and reliability. At CB Transportation
-              we strive to serve not only our customers but also our carriers
-              with the same level of dedication.
+              <span
+                style={{
+                  fontSize: "1.2rem",
+                  color: "#c23237",
+                  fontWeight: "bold",
+                }}
+              >
+                CB Transportation
+              </span>{" "}
+              is one of Canada&rsquo;s most exciting third-party logistics
+              providers. We take pride in our commitment to service,
+              competitiveness, and reliability. At CB Transportation we strive
+              to serve not only our customers but also our carriers with the
+              same level of dedication.
             </MotionTypography>
             <MotionTypography
               sx={styles.typo_desc}
