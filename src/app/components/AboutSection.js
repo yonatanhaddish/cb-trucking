@@ -48,6 +48,7 @@ function AboutSection() {
           ? "80px"
           : "50px",
       marginTop: "50px",
+      gap: "30px",
     },
     heading_aboutus: {
       fontSize: screenLessThan430
@@ -105,7 +106,7 @@ function AboutSection() {
         : screenGreaterThan768LessThan1024
         ? "450px"
         : screenGreaterThan1280LessThan1440
-        ? "500px"
+        ? "300px"
         : screenGreaterThan1440LessThan1920
         ? "600px"
         : "300px",
@@ -131,7 +132,7 @@ function AboutSection() {
       // border: "solid green 2px",
     },
     aboutsection_img1: {
-      backgroundImage: `url("/images/aboutus.jpg")`,
+      backgroundImage: `url("/images/aboutus.jpeg")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       height:
@@ -139,16 +140,17 @@ function AboutSection() {
           ? "80%"
           : screenGreaterThan430LessThan768
           ? "85%"
-          : "70%",
+          : "100%",
       width:
         screenGreaterThan768LessThan1024 || screenGreaterThan1920LessThan3840
           ? "80%"
           : screenGreaterThan430LessThan768
           ? "80%"
-          : "70%",
-      // border: "solid black 1px",
-      boxShadow: "0 0 10px black",
+          : "90%",
+      border: "solid black 1px",
+      boxShadow: "0 0 10px grey",
       margin: screenGreaterThan768LessThan1024 ? "0 auto" : "",
+      borderRadius: "10px",
     },
     aboutsection_img2: {
       backgroundImage: `url("/images/aboutus2.jpg")`,
@@ -211,8 +213,8 @@ function AboutSection() {
   `,
     },
     aboutsection_desc_box: {
-      // border: "solid black 1px",
-      // boxShadow: "0 0 10px black",
+      border: "solid black 1px",
+      boxShadow: "0 0 10px black",
       width:
         screenGreaterThan1024LessThan1280 ||
         screenGreaterThan1280LessThan1440 ||
@@ -230,10 +232,10 @@ function AboutSection() {
       display: "flex",
       flexDirection: "column",
       backgroundColor: "#d9d9d9",
-      justifyContent: "center",
+      justifyContent: "space-around",
       alignItems: "center",
       height: screenLessThan430
-        ? "520px"
+        ? "500px"
         : screenGreaterThan1024LessThan1280 ||
           screenGreaterThan1280LessThan1440 ||
           screenGreaterThan1440LessThan1920 ||
@@ -244,7 +246,7 @@ function AboutSection() {
         : screenGreaterThan768LessThan1024
         ? "480px"
         : "",
-      gap: "30px",
+      borderRadius: "10px",
       margin:
         screenLessThan430 ||
         screenGreaterThan430LessThan768 ||
@@ -323,7 +325,6 @@ function AboutSection() {
             >
               <span
                 style={{
-                  fontSize: "1.2rem",
                   color: "#c23237",
                   fontWeight: "bold",
                 }}
