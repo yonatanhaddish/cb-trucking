@@ -252,7 +252,7 @@ function Service() {
               across hundreds of lanes throughout Ontario. Whether managing
               single pick-and-drop locations or navigating complex multi-stop
               shipments for both dry and refrigerated cargo, our operations
-              team’s vast expertise ensures you receive a reliable and
+              team&apos;s vast expertise ensures you receive a reliable and
               cost-effective solution on short notice.
             </MotionTypography>
           </Box>
@@ -274,9 +274,9 @@ function Service() {
               medium-sized orders where the pickup or delivery locations do not
               align well with your existing orders. If you have occasional
               pallet-sized orders that need to be loaded promptly, our LTL
-              service is straightforward and efficient. You won’t have to deal
-              with complex calculations, we provide a flat per-pallet rate for
-              shipments of up to 12 pallets across numerous Ontario routes.
+              service is straightforward and efficient. You won&apos;t have to
+              deal with complex calculations, we provide a flat per-pallet rate
+              for shipments of up to 12 pallets across numerous Ontario routes.
             </MotionTypography>
           </Box>
           <Box sx={styles.service_box}>
