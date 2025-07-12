@@ -301,7 +301,7 @@ function CertificateRequest({ onRequestClick }) {
               CB Transportaion INSURANCE
             </Typography>
             <Typography sx={styles.typo_desc}>
-              CB Transportaion Group's Certificate of Insurance
+              CB Transportaion Group&apos;s Certificate of Insurance
             </Typography>
             <Link
               to="contact_us_page"
