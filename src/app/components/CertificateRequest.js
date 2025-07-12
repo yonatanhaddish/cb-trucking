@@ -121,8 +121,7 @@ function CertificateRequest({ onRequestClick }) {
       paddingBottom: "20px",
     },
     license_logo_cb: {
-      // backgroundImage: `url("/images/slg_insurance.svg")`,
-      backgroundImage: `url("/images/logo.png")`,
+      backgroundImage: `url("/images/wsib_clearance.png")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: "100px",
