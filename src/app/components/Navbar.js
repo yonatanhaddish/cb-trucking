@@ -64,7 +64,7 @@ function Navbar() {
       zIndex: 1100,
     },
     logo_img: {
-      backgroundImage: `url("/images/logo.png")`,
+      backgroundImage: `url("/images/logo.PNG")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: "60px",
