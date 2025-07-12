@@ -121,7 +121,7 @@ function CertificateRequest({ onRequestClick }) {
       paddingBottom: "20px",
     },
     license_logo_cb: {
-      backgroundImage: `url("/images/logo.png")`,
+      backgroundImage: `url("/images/license_logo_cb.png")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: "100px",
