@@ -274,6 +274,7 @@ function ContactUs({ insuranceNameSelected }) {
           initial={{ transform: "translateY(-100px)" }}
           whileInView={{ transform: "translateY(0px)" }}
           transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+          viewport={{ once: true }}
         >
           Contact Us
         </MotionTypography>
@@ -290,6 +291,7 @@ function ContactUs({ insuranceNameSelected }) {
                 initial={{ transform: "translateX(-100px)" }}
                 whileInView={{ transform: "translateX(0px)" }}
                 transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+                viewport={{ once: true }}
               >
                 Get In Touch
               </MotionTypography>
@@ -303,6 +305,7 @@ function ContactUs({ insuranceNameSelected }) {
                 bounce: 0.25,
                 visualDuration: 1.2,
               }}
+              viewport={{ once: true }}
             >
               Have questions or need a quote? Get in touch with Reliable
               Trucking and Transportation Services. We&rsquo;re here to provide

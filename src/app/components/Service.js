@@ -66,9 +66,9 @@ function Service() {
         : screenGreaterThan768LessThan1024
         ? "40%"
         : screenGreaterThan1024LessThan1280
-        ? "24%"
+        ? "27%"
         : screenGreaterThan1920LessThan3840
-        ? "24%"
+        ? "26%"
         : screenGreaterThan1280LessThan1440
         ? "22%"
         : screenGreaterThan1440LessThan1920
@@ -210,6 +210,7 @@ function Service() {
           initial={{ transform: "translateY(-100px)" }}
           whileInView={{ transform: "translateY(10%)" }}
           transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+          viewport={{ once: true }}
         >
           Services
         </MotionTypography>
@@ -222,6 +223,7 @@ function Service() {
             visualDuration: 1,
             bounce: 0.5,
           }}
+          viewport={{ once: true }}
         >
           We provide reliable, professional, and customer-focused services
           designed to meet your unique needs. With a strong commitment to
@@ -237,8 +239,8 @@ function Service() {
             </Typography>
             <MotionTypography
               sx={styles.typo_service_desc}
-              initial={{ transform: "translateY(40px)" }}
-              whileInView={{ transform: "translateY(0px)" }}
+              initial={{ transform: "translateX(10px)" }}
+              whileInView={{ transform: "translateX(0px)" }}
               transition={{
                 type: "spring",
                 visualDuration: 1,
@@ -260,8 +262,8 @@ function Service() {
             </Typography>
             <MotionTypography
               sx={styles.typo_service_desc}
-              initial={{ transform: "translateY(40px)" }}
-              whileInView={{ transform: "translateY(0px)" }}
+              initial={{ transform: "translateX(10px)" }}
+              whileInView={{ transform: "translateX(0px)" }}
               transition={{
                 type: "spring",
                 visualDuration: 1,
@@ -283,8 +285,8 @@ function Service() {
             </Typography>
             <MotionTypography
               sx={styles.typo_service_desc}
-              initial={{ transform: "translateY(40px)" }}
-              whileInView={{ transform: "translateY(0px)" }}
+              initial={{ transform: "translateX(10px)" }}
+              whileInView={{ transform: "translateX(0px)" }}
               transition={{
                 type: "spring",
                 visualDuration: 1,
@@ -304,8 +306,8 @@ function Service() {
             </Typography>
             <MotionTypography
               sx={styles.typo_service_desc}
-              initial={{ transform: "translateY(40px)" }}
-              whileInView={{ transform: "translateY(0px)" }}
+              initial={{ transform: "translateX(10px)" }}
+              whileInView={{ transform: "translateX(0px)" }}
               transition={{
                 type: "spring",
                 visualDuration: 1,
@@ -327,8 +329,8 @@ function Service() {
             </Typography>
             <MotionTypography
               sx={styles.typo_service_desc}
-              initial={{ transform: "translateY(40px)" }}
-              whileInView={{ transform: "translateY(0px)" }}
+              initial={{ transform: "translateX(10px)" }}
+              whileInView={{ transform: "translateX(0px)" }}
               transition={{
                 type: "spring",
                 visualDuration: 1,

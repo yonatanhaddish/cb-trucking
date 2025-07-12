@@ -235,6 +235,7 @@ function Carriers() {
                 initial={{ transform: "translateX(-100px)" }}
                 whileInView={{ transform: "translateX(0px)" }}
                 transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+                viewport={{ once: true }}
               >
                 Join Our Team
               </MotionTypography>

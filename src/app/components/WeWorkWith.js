@@ -12,6 +12,7 @@ const partners_array = [
   { name: "Metro", fontFamily: "'Roboto', sans-serif" },
   { name: "Walmart", fontFamily: "'Roboto', sans-serif" },
   { name: "Longos", fontFamily: "'Roboto', sans-serif" },
+  { name: "Yorkshire Valley Farms", fontFamily: "'Roboto', sans-serif" },
   { name: "Costco", fontFamily: "'Roboto', sans-serif" },
   { name: "Taylor Farms", fontFamily: "'Roboto', sans-serif" },
   { name: "Sobeys", fontFamily: "'Roboto', sans-serif" },
@@ -19,6 +20,7 @@ const partners_array = [
   { name: "Metro", fontFamily: "'Roboto', sans-serif" },
   { name: "Walmart", fontFamily: "'Roboto', sans-serif" },
   { name: "Longos", fontFamily: "'Roboto', sans-serif" },
+  { name: "Yorkshire Valley Farms", fontFamily: "'Roboto', sans-serif" },
   { name: "Costco", fontFamily: "'Roboto', sans-serif" },
   { name: "Taylor Farms", fontFamily: "'Roboto', sans-serif" },
   { name: "Sobeys", fontFamily: "'Roboto', sans-serif" },
@@ -26,6 +28,7 @@ const partners_array = [
   { name: "Metro", fontFamily: "'Roboto', sans-serif" },
   { name: "Walmart", fontFamily: "'Roboto', sans-serif" },
   { name: "Longos", fontFamily: "'Roboto', sans-serif" },
+  { name: "Yorkshire Valley Farms", fontFamily: "'Roboto', sans-serif" },
   { name: "Costco", fontFamily: "'Roboto', sans-serif" },
   { name: "Taylor Farms", fontFamily: "'Roboto', sans-serif" },
   { name: "Sobeys", fontFamily: "'Roboto', sans-serif" },
@@ -33,6 +36,7 @@ const partners_array = [
   { name: "Metro", fontFamily: "'Roboto', sans-serif" },
   { name: "Walmart", fontFamily: "'Roboto', sans-serif" },
   { name: "Longos", fontFamily: "'Roboto', sans-serif" },
+  { name: "Yorkshire Valley Farms", fontFamily: "'Roboto', sans-serif" },
 ];
 
 const WeWorkWith = () => {
@@ -132,6 +136,7 @@ const WeWorkWith = () => {
         initial={{ y: -100 }}
         whileInView={isInView ? { y: 0 } : {}}
         transition={{ type: "spring", bounce: 0.25, duration: 1 }}
+        viewport={{ once: true }}
       >
         <Typography sx={styles.heading_our_partners}>Trusted By</Typography>
       </motion.div>

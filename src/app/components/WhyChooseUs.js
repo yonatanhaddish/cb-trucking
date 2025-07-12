@@ -224,6 +224,7 @@ function WhyChooseUs() {
           initial={{ transform: "translateY(-100px)" }}
           whileInView={{ transform: "translateY(10%)" }}
           transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+          viewport={{ once: true }}
         >
           <Typography sx={styles.heading_whychooseus}>Why Choose Us</Typography>
         </motion.div>
@@ -235,6 +236,7 @@ function WhyChooseUs() {
             bounce: 0.25,
             visualDuration: 1.2,
           }}
+          viewport={{ once: true }}
         >
           <Typography sx={styles.desc_whychooseus}>
             At CB Transportation, we don&rsquo;t just move cargo - we move your
@@ -245,7 +247,7 @@ function WhyChooseUs() {
         <Box sx={styles.child_whychooseus_box}>
           <MotionBox
             sx={styles.single_whychooseus_box}
-            initial={{ opacity: 0, scale: 0.5 }}
+            initial={{ opacity: 0.8, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.4,
@@ -263,7 +265,7 @@ function WhyChooseUs() {
           </MotionBox>
           <MotionBox
             sx={styles.single_whychooseus_box}
-            initial={{ opacity: 0, scale: 0.5 }}
+            initial={{ opacity: 0.8, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.4,
@@ -281,7 +283,7 @@ function WhyChooseUs() {
           </MotionBox>
           <MotionBox
             sx={styles.single_whychooseus_box}
-            initial={{ opacity: 0, scale: 0.5 }}
+            initial={{ opacity: 0.8, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.4,
@@ -299,7 +301,7 @@ function WhyChooseUs() {
           </MotionBox>
           <MotionBox
             sx={styles.single_whychooseus_box}
-            initial={{ opacity: 0, scale: 0.5 }}
+            initial={{ opacity: 0.8, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.4,
@@ -316,7 +318,7 @@ function WhyChooseUs() {
           </MotionBox>
           <MotionBox
             sx={styles.single_whychooseus_box}
-            initial={{ opacity: 0, scale: 0.5 }}
+            initial={{ opacity: 0.8, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.4,

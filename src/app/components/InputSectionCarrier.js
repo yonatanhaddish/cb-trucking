@@ -57,6 +57,7 @@ function InputSectionCarrier() {
   );
 
   const MotionBox = motion(Box);
+  const MotionTypography = motion(Typography);
 
   const styles = {
     contact_and_input: {
@@ -368,22 +369,45 @@ function InputSectionCarrier() {
           </Alert>
         </MotionBox>
       )}
-
       <Box sx={styles.address_info_box}>
-        <Typography
+        <MotionTypography
           sx={{
             fontWeight: 600,
             borderBottom: "solid #c23237 1px",
             width: "80%",
             marginBottom: "10px",
           }}
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.4,
+            scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+          }}
         >
           Support Center 24/7
-        </Typography>
-        <Typography sx={{ fontWeight: 500 }}>+1 (647) 807 6911</Typography>
-        <Typography sx={{ fontWeight: 500 }}>
+        </MotionTypography>
+        <MotionTypography
+          sx={{ fontWeight: 500 }}
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.4,
+            scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+          }}
+        >
+          +1 (647) 807 6911
+        </MotionTypography>
+        <MotionTypography
+          sx={{ fontWeight: 500 }}
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.4,
+            scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+          }}
+        >
           cb@cbtransportation.org
-        </Typography>
+        </MotionTypography>
       </Box>
       <form onSubmit={handleSubmitForm}>
         <Box sx={styles.input_box}>

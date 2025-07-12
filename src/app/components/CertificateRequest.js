@@ -120,13 +120,13 @@ function CertificateRequest({ onRequestClick }) {
       borderRadius: "5px",
       paddingBottom: "20px",
     },
-    license_logo_icc: {
+    license_logo_cb: {
       // backgroundImage: `url("/images/slg_insurance.svg")`,
-      backgroundImage: `url("/images/wsib_clearance.png")`,
+      backgroundImage: `url("/images/logo.png")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: "100px",
-      width: "200px",
+      width: "150px",
       // border: "solid green 1px",
     },
     license_logo_cpma_license: {
@@ -139,10 +139,10 @@ function CertificateRequest({ onRequestClick }) {
     },
     wsib_license_logo: {
       backgroundImage: `url("/images/blue_book.jpg")`,
-      backgroundSize: "contain",
+      backgroundSize: "cover",
       backgroundPosition: "center",
-      height: "140px",
-      width: "140px",
+      height: "100px",
+      width: "100px",
       // border: "solid green 1px",
     },
     button_request: {
@@ -264,6 +264,7 @@ function CertificateRequest({ onRequestClick }) {
           initial={{ transform: "translateY(-100px)" }}
           whileInView={{ transform: "translateY(10%)" }}
           transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+          viewport={{ once: true }}
         >
           Certificate & Accrediations
         </MotionTypography>
@@ -276,6 +277,7 @@ function CertificateRequest({ onRequestClick }) {
             bounce: 0.25,
             visualDuration: 1.2,
           }}
+          viewport={{ once: true }}
         >
           Our certifications and accreditations demonstrate our ongoing
           commitment to quality, safety, and compliance. From recognized
@@ -287,8 +289,8 @@ function CertificateRequest({ onRequestClick }) {
         <Box sx={styles.parent_certificate}>
           <Box sx={styles.license_box}>
             <MotionBox
-              sx={styles.license_logo_icc}
-              initial={{ opacity: 0, scale: 0 }}
+              sx={styles.license_logo_cb}
+              initial={{ opacity: 0.8, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.4,
@@ -314,7 +316,9 @@ function CertificateRequest({ onRequestClick }) {
                 initial={{ transform: "translateY(50px)" }}
                 whileInView={{ transform: "translateY(0px)" }}
                 transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
-                onClick={() => handleClickRequest("SLG Insurance")}
+                onClick={() =>
+                  handleClickRequest("CB Transportation Insurance")
+                }
               >
                 Request
               </MotionButton>
@@ -323,7 +327,7 @@ function CertificateRequest({ onRequestClick }) {
           <Box sx={styles.license_box}>
             <MotionBox
               sx={styles.license_logo_cpma_license}
-              initial={{ opacity: 0, scale: 0 }}
+              initial={{ opacity: 0.8, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.4,
@@ -356,7 +360,7 @@ function CertificateRequest({ onRequestClick }) {
           <Box sx={styles.license_box}>
             <MotionBox
               sx={styles.wsib_license_logo}
-              initial={{ opacity: 0, scale: 0 }}
+              initial={{ opacity: 0.8, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.4,

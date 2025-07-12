@@ -326,6 +326,9 @@ function InputsSection({ insuranceNameSelectedFromContact }) {
           sx={styles.button}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.8 }}
+          initial={{ transform: "translateY(30px)" }}
+          whileInView={{ transform: "translateY(0px)" }}
+          transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
           //   onClick={handleSendEmail}
           disabled={sendButtonDisabled}
           type="submit"

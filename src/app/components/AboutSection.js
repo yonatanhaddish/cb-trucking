@@ -106,9 +106,9 @@ function AboutSection() {
         : screenGreaterThan768LessThan1024
         ? "450px"
         : screenGreaterThan1280LessThan1440
-        ? "300px"
+        ? "400px"
         : screenGreaterThan1440LessThan1920
-        ? "600px"
+        ? "500px"
         : "300px",
       position: "relative",
       width: screenLessThan430
@@ -135,18 +135,22 @@ function AboutSection() {
       backgroundImage: `url("/images/aboutus.jpeg")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
-      height:
-        screenGreaterThan768LessThan1024 || screenGreaterThan1920LessThan3840
-          ? "80%"
-          : screenGreaterThan430LessThan768
-          ? "85%"
-          : "100%",
-      width:
-        screenGreaterThan768LessThan1024 || screenGreaterThan1920LessThan3840
-          ? "80%"
-          : screenGreaterThan430LessThan768
-          ? "80%"
-          : "90%",
+      height: screenGreaterThan1920LessThan3840
+        ? "80%"
+        : screenGreaterThan430LessThan768
+        ? "85%"
+        : screenGreaterThan768LessThan1024
+        ? "76%"
+        : "99%",
+      width: screenGreaterThan1920LessThan3840
+        ? "80%"
+        : screenGreaterThan430LessThan768
+        ? "96%"
+        : screenLessThan430
+        ? "89%"
+        : screenGreaterThan768LessThan1024
+        ? "96%"
+        : "90%",
       border: "solid black 1px",
       boxShadow: "0 0 10px grey",
       margin: screenGreaterThan768LessThan1024 ? "0 auto" : "",
@@ -242,9 +246,9 @@ function AboutSection() {
           screenGreaterThan1920LessThan3840
         ? "full"
         : screenGreaterThan430LessThan768
-        ? "500px"
+        ? "450px"
         : screenGreaterThan768LessThan1024
-        ? "480px"
+        ? "400px"
         : "",
       borderRadius: "10px",
       margin:
@@ -299,6 +303,7 @@ function AboutSection() {
           initial={{ transform: "translateY(-100px)" }}
           whileInView={{ transform: "translateY(10%)" }}
           transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+          viewport={{ once: true }}
         >
           About Us
         </MotionTypography>
