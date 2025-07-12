@@ -295,9 +295,11 @@ function CertificateRequest({ onRequestClick }) {
                 scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
               }}
             ></MotionBox>
-            <Typography sx={styles.typo_heading}>SLG INSURANCE</Typography>
+            <Typography sx={styles.typo_heading}>
+              CB Transportaion INSURANCE
+            </Typography>
             <Typography sx={styles.typo_desc}>
-              Some Description will go here!!!
+              CB Transportaion Group's Certificate of Insurance
             </Typography>
             <Link
               to="contact_us_page"
