@@ -319,13 +319,16 @@ function ContactUs({ insuranceNameSelected }) {
                 duration: 0.4,
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
               }}
+              viewport={{ once: true }}
             >
               <LocationPinIcon
                 sx={{
                   color: "#c23237",
                 }}
               />
-              <Typography>140 Erskine Avenue, Toronto ,ON</Typography>
+              <Typography>
+                1646 Victoria Park Ave, North York, Ontario
+              </Typography>
             </MotionBox>
             <MotionBox
               sx={styles.single_contact_info}
@@ -335,13 +338,16 @@ function ContactUs({ insuranceNameSelected }) {
                 duration: 1,
                 scale: { type: "spring", visualDuration: 0.3, bounce: 0.5 },
               }}
+              viewport={{ once: true }}
             >
               <PhoneIcon
                 sx={{
                   color: "#c23237",
                 }}
               />
-              <Typography>+1 (647) 807 6911</Typography>
+              <Typography>
+                +1 (416) 919 3149 <br></br>+1 (647) 807 6911
+              </Typography>
             </MotionBox>
             <MotionBox
               sx={styles.single_contact_info}
@@ -351,6 +357,7 @@ function ContactUs({ insuranceNameSelected }) {
                 duration: 0.4,
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
               }}
+              viewport={{ once: true }}
             >
               <EmailIcon
                 sx={{

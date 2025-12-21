@@ -246,6 +246,7 @@ function Service() {
                 visualDuration: 1,
                 bounce: 0.5,
               }}
+              viewport={{ once: true }}
             >
               With our Full Truckload (FTL) service, we take complete control of
               your freight&rsquo;s journey. We provide extensive FTL coverage
@@ -269,6 +270,7 @@ function Service() {
                 visualDuration: 1,
                 bounce: 0.5,
               }}
+              viewport={{ once: true }}
             >
               LTL shipping is a cost-effective solution for small to
               medium-sized orders where the pickup or delivery locations do not
@@ -292,6 +294,7 @@ function Service() {
                 visualDuration: 1,
                 bounce: 0.5,
               }}
+              viewport={{ once: true }}
             >
               Our storage trailer rental services in Toronto provide exceptional
               flexibility, enabling customers to rent our trailers for any
@@ -313,6 +316,7 @@ function Service() {
                 visualDuration: 1,
                 bounce: 0.5,
               }}
+              viewport={{ once: true }}
             >
               Ensure the protection of your fresh or frozen perishable items
               with our temperature- controlled trailers (reefers) designed for
@@ -336,6 +340,7 @@ function Service() {
                 visualDuration: 1,
                 bounce: 0.5,
               }}
+              viewport={{ once: true }}
             >
               While not as common, truckload carrier claims can happen. Our
               expertise in trucking regulations ensures companies can navigate

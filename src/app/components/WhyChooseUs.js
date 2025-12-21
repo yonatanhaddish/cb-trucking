@@ -253,6 +253,7 @@ function WhyChooseUs() {
               duration: 0.4,
               scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
             }}
+            viewport={{ once: true }}
           >
             <Typography sx={styles.typo_heading}>
               Reliable & On-Time Delivery
@@ -271,6 +272,7 @@ function WhyChooseUs() {
               duration: 0.4,
               scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
             }}
+            viewport={{ once: true }}
           >
             <Typography sx={styles.typo_heading}>
               Customer-First Approach
@@ -289,6 +291,7 @@ function WhyChooseUs() {
               duration: 0.4,
               scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
             }}
+            viewport={{ once: true }}
           >
             <Typography sx={styles.typo_heading}>
               Trusted by Industry Leaders
@@ -307,6 +310,7 @@ function WhyChooseUs() {
               duration: 0.4,
               scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
             }}
+            viewport={{ once: true }}
           >
             <Typography sx={styles.typo_heading}>
               Competitive Pricing
@@ -324,6 +328,7 @@ function WhyChooseUs() {
               duration: 0.4,
               scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
             }}
+            viewport={{ once: true }}
           >
             <Typography sx={styles.typo_heading}>Flexible Solutions</Typography>
             <Typography sx={styles.typo_desc}>

@@ -252,6 +252,7 @@ function HomeSection() {
               initial={{ transform: "translateY(-100px)" }}
               whileInView={{ transform: "translateY(10%)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+              viewport={{ once: true }}
             >
               Reliable <span style={{ color: "#c23237" }}>Trucking</span> and{" "}
               <span style={{ color: "#c23237" }}>Transportation</span> Services
@@ -261,6 +262,7 @@ function HomeSection() {
               initial={{ transform: "translateX(-50px)" }}
               whileInView={{ transform: "translateX(0px)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+              viewport={{ once: true }}
             >
               We provide services in the field of road transportation,ensuring
               reliable, and efficient delivery solutions for business and
@@ -271,6 +273,7 @@ function HomeSection() {
               initial={{ transform: "translateY(50px)" }}
               whileInView={{ transform: "translateY(0px)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+              viewport={{ once: true }}
             >
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
                 <Link to="service_page" duration={500} smooth={true}>
@@ -296,6 +299,7 @@ function HomeSection() {
               initial={{ transform: "translateY(-100px)" }}
               whileInView={{ transform: "translateY(0px)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+              viewport={{ once: true }}
             >
               Reliable <span style={{ color: "#c23237" }}>Trucking</span> and{" "}
               <span style={{ color: "#c23237" }}>Transportation</span> Services
@@ -305,6 +309,7 @@ function HomeSection() {
               initial={{ transform: "translateX(-100px)" }}
               whileInView={{ transform: "translateX(0px)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+              viewport={{ once: true }}
             >
               We provide services in the field of road transportation,ensuring
               reliable, and efficient delivery solutions for business and
@@ -315,6 +320,7 @@ function HomeSection() {
               initial={{ transform: "translateY(100px)" }}
               whileInView={{ transform: "translateY(-20px)" }}
               transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+              viewport={{ once: true }}
             >
               <Link to="service_page" duration={500} smooth={true}>
                 <MotionButton

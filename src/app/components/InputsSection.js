@@ -230,6 +230,7 @@ function InputsSection({ insuranceNameSelectedFromContact }) {
             initial={{ y: -100 }}
             animate={{ y: 15 }}
             transition={{ type: "spring", bounce: 0.25, duration: 2 }}
+            viewport={{ once: true }}
           >
             <Alert
               icon={
@@ -329,6 +330,7 @@ function InputsSection({ insuranceNameSelectedFromContact }) {
           initial={{ transform: "translateY(30px)" }}
           whileInView={{ transform: "translateY(0px)" }}
           transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+          viewport={{ once: true }}
           //   onClick={handleSendEmail}
           disabled={sendButtonDisabled}
           type="submit"

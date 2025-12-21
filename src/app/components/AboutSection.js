@@ -327,6 +327,7 @@ function AboutSection() {
               initial={{ transform: "translateX(-10px)" }}
               whileInView={{ transform: "translateX(0px)" }}
               transition={{ type: "spring", bounce: 0.7, visualDuration: 0.5 }}
+              viewport={{ once: true }}
             >
               <span
                 style={{
@@ -347,6 +348,7 @@ function AboutSection() {
               initial={{ transform: "translateX(-10px)" }}
               whileInView={{ transform: "translateX(0px)" }}
               transition={{ type: "spring", bounce: 0.7, visualDuration: 0.5 }}
+              viewport={{ once: true }}
             >
               We are well-equipped to meet your needs with our vast experience
               in the transportation industry and a deep understanding of the
@@ -357,6 +359,7 @@ function AboutSection() {
               initial={{ transform: "translateX(-10px)" }}
               whileInView={{ transform: "translateX(0px)" }}
               transition={{ type: "spring", bounce: 0.7, visualDuration: 0.5 }}
+              viewport={{ once: true }}
             >
               Just a phone call away, we offer both competitive and fixed
               pricing. Our reliability is unmatched.

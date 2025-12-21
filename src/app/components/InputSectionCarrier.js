@@ -378,6 +378,7 @@ function InputSectionCarrier() {
             marginBottom: "10px",
           }}
           initial={{ opacity: 0, scale: 0 }}
+          viewport={{ once: true }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 0.4,
@@ -390,17 +391,19 @@ function InputSectionCarrier() {
           sx={{ fontWeight: 500 }}
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.4,
             scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
           }}
         >
-          +1 (647) 807 6911
+          +1 (416) 919 3149 <br></br> +1 (647) 807 6911
         </MotionTypography>
         <MotionTypography
           sx={{ fontWeight: 500 }}
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.4,
             scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },

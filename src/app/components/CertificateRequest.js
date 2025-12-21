@@ -295,6 +295,7 @@ function CertificateRequest({ onRequestClick }) {
                 duration: 0.4,
                 scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
               }}
+              viewport={{ once: true }}
             ></MotionBox>
             <Typography sx={styles.typo_heading}>
               CB Transportaion INSURANCE
@@ -315,6 +316,7 @@ function CertificateRequest({ onRequestClick }) {
                 initial={{ transform: "translateY(50px)" }}
                 whileInView={{ transform: "translateY(0px)" }}
                 transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+                viewport={{ once: true }}
                 onClick={() =>
                   handleClickRequest("CB Transportation Insurance")
                 }
@@ -332,6 +334,7 @@ function CertificateRequest({ onRequestClick }) {
                 duration: 0.4,
                 scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
               }}
+              viewport={{ once: true }}
             ></MotionBox>
             <Typography sx={styles.typo_heading}>WSIB CLEARANCE</Typography>
             <Typography sx={styles.typo_desc}>
@@ -350,6 +353,7 @@ function CertificateRequest({ onRequestClick }) {
                 initial={{ transform: "translateY(50px)" }}
                 whileInView={{ transform: "translateY(0px)" }}
                 transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+                viewport={{ once: true }}
                 onClick={() => handleClickRequest("WSIB Clearance")}
               >
                 Request
@@ -365,6 +369,7 @@ function CertificateRequest({ onRequestClick }) {
                 duration: 0.4,
                 scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 },
               }}
+              viewport={{ once: true }}
             ></MotionBox>
             <Typography sx={styles.typo_heading}>
               Blue Book Honor Service
@@ -386,6 +391,7 @@ function CertificateRequest({ onRequestClick }) {
                 initial={{ transform: "translateY(50px)" }}
                 whileInView={{ transform: "translateY(0px)" }}
                 transition={{ type: "spring", bounce: 0.25, visualDuration: 1 }}
+                viewport={{ once: true }}
                 onClick={() => handleClickRequest("Blue Book")}
               >
                 Request

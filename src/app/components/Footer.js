@@ -258,10 +258,12 @@ function Footer() {
           </Typography>
         </Box>
         <Box sx={styles.typo_address}>
-          <Typography sx={styles.typo_name}>140 Erskine Avenue</Typography>
-          <Typography sx={styles.typo_name}>Toronto ,ON</Typography>
-          <Typography sx={styles.typo_name}>Canada, M4P 1Z2</Typography>
-          <Typography sx={styles.typo_name}>+1 (647) 807 6911</Typography>
+          <Typography sx={styles.typo_name}>1646 Victoria Park Ave</Typography>
+          <Typography sx={styles.typo_name}>North York ,ON</Typography>
+          <Typography sx={styles.typo_name}>Canada, M1R 1P7</Typography>
+          <Typography sx={styles.typo_name}>
+            +1 (416) 919 3149 <br></br> +1 (647) 807 6911
+          </Typography>
           <Typography sx={styles.typo_name}>cb@cbtransportation.org</Typography>
         </Box>
       </Box>
