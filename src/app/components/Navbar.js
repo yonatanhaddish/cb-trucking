@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Box,
   Typography,
@@ -171,7 +172,13 @@ function Navbar() {
       <Box sx={styles.parent_navbar_box}>
         <Link to="home_page" duration={500} smooth={true}>
           <Button sx={styles.logo_box_parent}>
-            <Box sx={styles.logo_img}></Box>
+            <Image
+              src="/logo.png" // local image from public
+              alt="Logo"
+              width={60} // width in pixels
+              height={60} // height in pixels
+              style={{ cursor: "pointer" }}
+            />
             <Typography sx={styles.typo_logo}>CB Transportation</Typography>
           </Button>
         </Link>
