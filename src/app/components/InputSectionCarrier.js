@@ -35,25 +35,25 @@ function InputSectionCarrier() {
   const [errorMessageSend, setErrorMessageSend] = useState(null);
 
   const screenLessThan430 = useMediaQuery(
-    "(min-width: 100px) and (max-width: 430px)"
+    "(min-width: 100px) and (max-width: 430px)",
   );
   const screenGreaterThan430LessThan768 = useMediaQuery(
-    "(min-width: 431px) and (max-width: 768px)"
+    "(min-width: 431px) and (max-width: 768px)",
   );
   const screenGreaterThan768LessThan1024 = useMediaQuery(
-    "(min-width: 769px) and (max-width: 1024px)"
+    "(min-width: 769px) and (max-width: 1024px)",
   );
   const screenGreaterThan1024LessThan1280 = useMediaQuery(
-    "(min-width: 1025px) and (max-width: 1280px)"
+    "(min-width: 1025px) and (max-width: 1280px)",
   );
   const screenGreaterThan1280LessThan1440 = useMediaQuery(
-    "(min-width: 1281px) and (max-width: 1440px)"
+    "(min-width: 1281px) and (max-width: 1440px)",
   );
   const screenGreaterThan1440LessThan1920 = useMediaQuery(
-    "(min-width: 1441px) and (max-width: 1920px)"
+    "(min-width: 1441px) and (max-width: 1920px)",
   );
   const screenGreaterThan1920LessThan3840 = useMediaQuery(
-    "(min-width: 1921px) and (max-width: 3840px)"
+    "(min-width: 1921px) and (max-width: 3840px)",
   );
 
   const MotionBox = motion(Box);
@@ -68,10 +68,10 @@ function InputSectionCarrier() {
       marginTop: screenGreaterThan1280LessThan1440
         ? "30px"
         : screenGreaterThan1440LessThan1920
-        ? "90px"
-        : screenGreaterThan1920LessThan3840
-        ? "150px"
-        : "",
+          ? "90px"
+          : screenGreaterThan1920LessThan3840
+            ? "150px"
+            : "",
       position: "relative",
     },
     address_info_box: {
@@ -89,14 +89,15 @@ function InputSectionCarrier() {
       width: screenLessThan430
         ? "80% "
         : screenGreaterThan430LessThan768 || screenGreaterThan768LessThan1024
-        ? "70%"
-        : screenGreaterThan1024LessThan1280 || screenGreaterThan1280LessThan1440
-        ? "80%"
-        : screenGreaterThan1440LessThan1920
-        ? "95%"
-        : screenGreaterThan1920LessThan3840
-        ? "90%"
-        : "100%",
+          ? "70%"
+          : screenGreaterThan1024LessThan1280 ||
+              screenGreaterThan1280LessThan1440
+            ? "80%"
+            : screenGreaterThan1440LessThan1920
+              ? "95%"
+              : screenGreaterThan1920LessThan3840
+                ? "90%"
+                : "100%",
     },
     input_box: {
       // border: "solid #000 1px",
@@ -109,16 +110,16 @@ function InputSectionCarrier() {
       width: screenLessThan430
         ? "90%"
         : screenGreaterThan430LessThan768
-        ? "75%"
-        : screenGreaterThan768LessThan1024
-        ? "75%"
-        : screenGreaterThan1024LessThan1280
-        ? "85%"
-        : screenGreaterThan1280LessThan1440
-        ? "85%"
-        : screenGreaterThan1920LessThan3840
-        ? "94%"
-        : "100%",
+          ? "75%"
+          : screenGreaterThan768LessThan1024
+            ? "75%"
+            : screenGreaterThan1024LessThan1280
+              ? "85%"
+              : screenGreaterThan1280LessThan1440
+                ? "85%"
+                : screenGreaterThan1920LessThan3840
+                  ? "94%"
+                  : "100%",
       margin: "0 auto",
       paddingTop: "30px",
       marginBottom: screenGreaterThan1024LessThan1280 ? "80px" : "100px",
@@ -129,27 +130,27 @@ function InputSectionCarrier() {
         screenLessThan430 || screenGreaterThan430LessThan768
           ? "80%"
           : screenGreaterThan768LessThan1024
-          ? "40%"
-          : screenGreaterThan1024LessThan1280 ||
-            screenGreaterThan1280LessThan1440 ||
-            screenGreaterThan1440LessThan1920 ||
-            screenGreaterThan1920LessThan3840
-          ? "45%"
-          : "100%",
+            ? "40%"
+            : screenGreaterThan1024LessThan1280 ||
+                screenGreaterThan1280LessThan1440 ||
+                screenGreaterThan1440LessThan1920 ||
+                screenGreaterThan1920LessThan3840
+              ? "45%"
+              : "100%",
     },
     button: {
       // border: "solid blue 2px",
       width: screenGreaterThan768LessThan1024
         ? "80%"
         : screenGreaterThan1280LessThan1440
-        ? "90%"
-        : screenGreaterThan1440LessThan1920
-        ? "90%"
-        : screenGreaterThan1920LessThan3840
-        ? "70%"
-        : screenGreaterThan1024LessThan1280
-        ? "90%"
-        : "80%",
+          ? "90%"
+          : screenGreaterThan1440LessThan1920
+            ? "90%"
+            : screenGreaterThan1920LessThan3840
+              ? "70%"
+              : screenGreaterThan1024LessThan1280
+                ? "90%"
+                : "80%",
       marginBottom: "30px",
       marginTop: "20px",
       backgroundColor: sendButtonDisabled ? "grey" : "#c23237",
@@ -157,12 +158,12 @@ function InputSectionCarrier() {
       fontSize: screenGreaterThan1920LessThan3840
         ? "20px"
         : screenGreaterThan1440LessThan1920
-        ? "18px"
-        : screenGreaterThan1024LessThan1280
-        ? "16px"
-        : screenGreaterThan768LessThan1024
-        ? "15px"
-        : "14px",
+          ? "18px"
+          : screenGreaterThan1024LessThan1280
+            ? "16px"
+            : screenGreaterThan768LessThan1024
+              ? "15px"
+              : "14px",
       alignSelf: "center",
       textAlign: "center",
       height:
@@ -173,9 +174,9 @@ function InputSectionCarrier() {
         screenGreaterThan1280LessThan1440
           ? "40px"
           : screenGreaterThan1440LessThan1920 ||
-            screenGreaterThan1920LessThan3840
-          ? "50px"
-          : "",
+              screenGreaterThan1920LessThan3840
+            ? "50px"
+            : "",
     },
     message_single_input: {
       // border: "solid red 2px",
@@ -183,16 +184,16 @@ function InputSectionCarrier() {
         screenLessThan430 || screenGreaterThan430LessThan768
           ? "80%"
           : screenGreaterThan768LessThan1024
-          ? "82%"
-          : screenGreaterThan1024LessThan1280
-          ? "92%"
-          : screenGreaterThan1280LessThan1440
-          ? "91%"
-          : screenGreaterThan1440LessThan1920
-          ? "91%"
-          : screenGreaterThan1920LessThan3840
-          ? "92%"
-          : "100%",
+            ? "82%"
+            : screenGreaterThan1024LessThan1280
+              ? "92%"
+              : screenGreaterThan1280LessThan1440
+                ? "91%"
+                : screenGreaterThan1440LessThan1920
+                  ? "91%"
+                  : screenGreaterThan1920LessThan3840
+                    ? "92%"
+                    : "100%",
     },
     // input_single_onactive: {
     //   border: firstNameValidated ? "solid grey 1px" : "solid red 1px",
@@ -202,27 +203,27 @@ function InputSectionCarrier() {
       left: screenLessThan430
         ? "10%"
         : screenGreaterThan430LessThan768 ||
-          screenGreaterThan768LessThan1024 ||
-          screenGreaterThan1024LessThan1280 ||
-          screenGreaterThan1280LessThan1440 ||
-          screenGreaterThan1440LessThan1920 ||
-          screenGreaterThan1920LessThan3840
-        ? "20%"
-        : "15%",
+            screenGreaterThan768LessThan1024 ||
+            screenGreaterThan1024LessThan1280 ||
+            screenGreaterThan1280LessThan1440 ||
+            screenGreaterThan1440LessThan1920 ||
+            screenGreaterThan1920LessThan3840
+          ? "20%"
+          : "15%",
       top: 0,
       // border: "solid red 2px",
       width: screenLessThan430
         ? "80%"
         : screenGreaterThan430LessThan768
-        ? "60%"
-        : screenGreaterThan768LessThan1024
-        ? "60%"
-        : screenGreaterThan1024LessThan1280 ||
-          screenGreaterThan1280LessThan1440 ||
-          screenGreaterThan1440LessThan1920 ||
-          screenGreaterThan1920LessThan3840
-        ? "60%"
-        : "",
+          ? "60%"
+          : screenGreaterThan768LessThan1024
+            ? "60%"
+            : screenGreaterThan1024LessThan1280 ||
+                screenGreaterThan1280LessThan1440 ||
+                screenGreaterThan1440LessThan1920 ||
+                screenGreaterThan1920LessThan3840
+              ? "60%"
+              : "",
     },
   };
 
@@ -271,7 +272,7 @@ function InputSectionCarrier() {
     let formatted = "";
     if (digits.length > 6) {
       formatted = `(${digits.slice(0, 3)}) ${digits.slice(3, 6)} ${digits.slice(
-        6
+        6,
       )}`;
     } else if (digits.length > 3) {
       formatted = `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
@@ -306,7 +307,7 @@ function InputSectionCarrier() {
           process.env.NEXT_PUBLIC_SERVICE_ID,
           process.env.NEXT_PUBLIC_TEMPLATE_ID_02,
           e.target,
-          process.env.NEXT_PUBLIC_PUBLIC_KEY
+          process.env.NEXT_PUBLIC_PUBLIC_KEY,
         )
         .then(
           (result) => {
@@ -314,7 +315,7 @@ function InputSectionCarrier() {
           },
           (error) => {
             setErrorMessageSend(true);
-          }
+          },
         );
 
       e.target.reset();
@@ -343,7 +344,7 @@ function InputSectionCarrier() {
     } else {
       setSendButtonDisable(true);
     }
-  });
+  }, [firstName, lastName, email, phoneNumber, message]);
   return (
     <Box sx={styles.contact_and_input}>
       {errorMessageSend !== null && (
