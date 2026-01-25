@@ -24,25 +24,25 @@ function Navbar() {
   const isWideScreen = useMediaQuery("(min-width: 1921px)");
 
   const screenLessThan430 = useMediaQuery(
-    "(min-width: 100px) and (max-width: 430px)"
+    "(min-width: 100px) and (max-width: 430px)",
   );
   const screenGreaterThan430LessThan768 = useMediaQuery(
-    "(min-width: 431px) and (max-width: 768px)"
+    "(min-width: 431px) and (max-width: 768px)",
   );
   const screenGreaterThan768LessThan1024 = useMediaQuery(
-    "(min-width: 769px) and (max-width: 1024px)"
+    "(min-width: 769px) and (max-width: 1024px)",
   );
   const screenGreaterThan1024LessThan1280 = useMediaQuery(
-    "(min-width: 1025px) and (max-width: 1280px)"
+    "(min-width: 1025px) and (max-width: 1280px)",
   );
   const screenGreaterThan1280LessThan1440 = useMediaQuery(
-    "(min-width: 1281px) and (max-width: 1440px)"
+    "(min-width: 1281px) and (max-width: 1440px)",
   );
   const screenGreaterThan1440LessThan1920 = useMediaQuery(
-    "(min-width: 1441px) and (max-width: 1920px)"
+    "(min-width: 1441px) and (max-width: 1920px)",
   );
   const screenGreaterThan1920LessThan3840 = useMediaQuery(
-    "(min-width: 1921px) and (max-width: 3840px)"
+    "(min-width: 1921px) and (max-width: 3840px)",
   );
 
   const MotionMenuItem = motion(MenuItem);
@@ -64,7 +64,7 @@ function Navbar() {
       zIndex: 1100,
     },
     logo_img: {
-      backgroundImage: `url("/images/logo.PNG")`,
+      backgroundImage: `url("https://www.cbtransportationcanada.com/logo.png")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: "60px",
@@ -115,8 +115,8 @@ function Navbar() {
       width: screenLessThan430
         ? "94vw"
         : screenGreaterThan430LessThan768
-        ? "98vw"
-        : "",
+          ? "98vw"
+          : "",
       height: "40vh",
       padding: "2rem 1rem",
       transform: openSideNavBar ? "translateX(0)" : "translateX(100%)",
@@ -218,16 +218,16 @@ function Navbar() {
                         fontSize: screenLessThan430
                           ? "14px"
                           : screenGreaterThan430LessThan768
-                          ? "15px"
-                          : screenGreaterThan768LessThan1024
-                          ? "15.5px"
-                          : screenGreaterThan1024LessThan1280
-                          ? "16px"
-                          : screenGreaterThan1280LessThan1440
-                          ? "16.5px"
-                          : screenGreaterThan1440LessThan1920
-                          ? "17px"
-                          : "18px",
+                            ? "15px"
+                            : screenGreaterThan768LessThan1024
+                              ? "15.5px"
+                              : screenGreaterThan1024LessThan1280
+                                ? "16px"
+                                : screenGreaterThan1280LessThan1440
+                                  ? "16.5px"
+                                  : screenGreaterThan1440LessThan1920
+                                    ? "17px"
+                                    : "18px",
                         fontWeight: "bold",
                       }}
                       whileTap={{
@@ -348,7 +348,7 @@ function Navbar() {
                     onClick={() => {
                       handleClose();
                       handleSelectCurrentLink(
-                        "certificate_and_accrediation_page"
+                        "certificate_and_accrediation_page",
                       );
                     }}
                   >
