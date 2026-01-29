@@ -65,7 +65,7 @@ function Navbar() {
       zIndex: 1100,
     },
     logo_img: {
-      backgroundImage: `url("https://www.cbtransportationcanada.com/logo.png")`,
+      backgroundImage: `url("https://www.cbtransportationcanada.com/icon.png")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: "60px",
@@ -173,7 +173,7 @@ function Navbar() {
         <Link to="home_page" duration={500} smooth={true}>
           <Button sx={styles.logo_box_parent}>
             <Image
-              src="/logo_test.png" // local image from public
+              src="/icon.png" // local image from public
               alt="Logo"
               width={60} // width in pixels
               height={60} // height in pixels

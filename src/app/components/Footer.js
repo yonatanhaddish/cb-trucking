@@ -103,7 +103,7 @@ function Footer() {
       margin: "0 auto",
     },
     logo_box: {
-      backgroundImage: `url("/logo_test.png")`,
+      backgroundImage: `url("/icon.png")`,
       //   border: "solid red 2px",
       backgroundSize: "cover",
       backgroundPosition: "center",
