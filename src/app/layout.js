@@ -9,6 +9,9 @@ export const metadata = {
   title: "CB Transportation | Refrigerated & Dry Van Trucking Toronto",
   description:
     "Reliable FTL & LTL trucking services in Toronto & GTA. Specializing in temperature-controlled reefers, storage trailer rentals, and logistics solutions.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -41,7 +41,7 @@ function NavbarCarrier() {
       marginLeft: isMobile ? "15px" : "25px",
     },
     logo_img: {
-      backgroundImage: `url("/images/logo.PNG")`,
+      backgroundImage: `url("/logo_test.png")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: "60px",
