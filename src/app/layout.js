@@ -2,9 +2,11 @@ import "./globals.css";
 import "@fontsource/oswald";
 
 export const metadata = {
-  // 1. IMPROVED TITLE: Includes keywords like "Refrigerated" and "Toronto"
+  metadataBase: new URL("https://www.cbtransportationcanada.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: "CB Transportation | Refrigerated & Dry Van Trucking Toronto",
-  // 2. IMPROVED DESCRIPTION: This is the text people see under your link on Google
   description:
     "Reliable FTL & LTL trucking services in Toronto & GTA. Specializing in temperature-controlled reefers, storage trailer rentals, and logistics solutions.",
 };
@@ -15,7 +17,7 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "TruckingCompany",
     name: "CB Transportation",
-    image: "https://www.cbtransportationcanada.com/images/logo.png", // Ensure this path is correct for your specific logo image
+    image: "https://www.cbtransportationcanada.com/images/logo.png",
     url: "https://www.cbtransportationcanada.com",
     telephone: "+1-416-919-3149",
     email: "cb@cbtransportation.org",
