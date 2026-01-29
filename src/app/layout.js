@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "TruckingCompany",
     name: "CB Transportation",
-    image: "https://www.cbtransportationcanada.com/images/logo.png",
+    image: "https://www.cbtransportationcanada.com/icon.png",
     url: "https://www.cbtransportationcanada.com",
     telephone: "+1-416-919-3149",
     email: "cb@cbtransportation.org",
