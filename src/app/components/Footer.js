@@ -7,25 +7,25 @@ import { Box, Typography, useMediaQuery, Button } from "@mui/material";
 import { motion } from "framer-motion";
 function Footer() {
   const screenLessThan430 = useMediaQuery(
-    "(min-width: 100px) and (max-width: 430px)"
+    "(min-width: 100px) and (max-width: 430px)",
   );
   const screenGreaterThan430LessThan768 = useMediaQuery(
-    "(min-width: 431px) and (max-width: 768px)"
+    "(min-width: 431px) and (max-width: 768px)",
   );
   const screenGreaterThan768LessThan1024 = useMediaQuery(
-    "(min-width: 769px) and (max-width: 1024px)"
+    "(min-width: 769px) and (max-width: 1024px)",
   );
   const screenGreaterThan1024LessThan1280 = useMediaQuery(
-    "(min-width: 1025px) and (max-width: 1280px)"
+    "(min-width: 1025px) and (max-width: 1280px)",
   );
   const screenGreaterThan1280LessThan1440 = useMediaQuery(
-    "(min-width: 1281px) and (max-width: 1440px)"
+    "(min-width: 1281px) and (max-width: 1440px)",
   );
   const screenGreaterThan1440LessThan1920 = useMediaQuery(
-    "(min-width: 1441px) and (max-width: 1920px)"
+    "(min-width: 1441px) and (max-width: 1920px)",
   );
   const screenGreaterThan1920LessThan3840 = useMediaQuery(
-    "(min-width: 1921px) and (max-width: 3840px)"
+    "(min-width: 1921px) and (max-width: 3840px)",
   );
 
   const MotionButton = motion(Button);
@@ -59,13 +59,13 @@ function Footer() {
         screenLessThan430 || screenGreaterThan430LessThan768
           ? "40px"
           : screenGreaterThan768LessThan1024 ||
-            screenGreaterThan1024LessThan1280 ||
-            screenGreaterThan1280LessThan1440 ||
-            screenGreaterThan1440LessThan1920
-          ? "60px"
-          : screenGreaterThan1920LessThan3840
-          ? "100px"
-          : "",
+              screenGreaterThan1024LessThan1280 ||
+              screenGreaterThan1280LessThan1440 ||
+              screenGreaterThan1440LessThan1920
+            ? "60px"
+            : screenGreaterThan1920LessThan3840
+              ? "100px"
+              : "",
     },
     nav_links_parent: {
       // border: "solid green 2px",
@@ -79,13 +79,13 @@ function Footer() {
       gap: screenGreaterThan768LessThan1024
         ? "80px"
         : screenGreaterThan1024LessThan1280 ||
-          screenGreaterThan1280LessThan1440 ||
-          screenGreaterThan1440LessThan1920 ||
-          screenGreaterThan1920LessThan3840
-        ? "100px"
-        : screenLessThan430
-        ? "50px"
-        : "",
+            screenGreaterThan1280LessThan1440 ||
+            screenGreaterThan1440LessThan1920 ||
+            screenGreaterThan1920LessThan3840
+          ? "100px"
+          : screenLessThan430
+            ? "50px"
+            : "",
       marginTop:
         screenLessThan430 ||
         screenGreaterThan430LessThan768 ||
@@ -98,37 +98,37 @@ function Footer() {
       width: screenLessThan430
         ? "85%"
         : screenGreaterThan430LessThan768
-        ? "80%"
-        : "100%",
+          ? "80%"
+          : "100%",
       margin: "0 auto",
     },
     logo_box: {
-      backgroundImage: `url("/images/logo.PNG")`,
+      backgroundImage: `url("/logo_test")`,
       //   border: "solid red 2px",
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: screenGreaterThan768LessThan1024
         ? "120px"
         : screenGreaterThan1024LessThan1280 ||
-          screenGreaterThan1280LessThan1440 ||
-          screenGreaterThan1440LessThan1920
-        ? "120px"
-        : screenGreaterThan1920LessThan3840
-        ? "160px"
-        : screenLessThan430 || screenGreaterThan430LessThan768
-        ? "140px"
-        : "50px",
+            screenGreaterThan1280LessThan1440 ||
+            screenGreaterThan1440LessThan1920
+          ? "120px"
+          : screenGreaterThan1920LessThan3840
+            ? "160px"
+            : screenLessThan430 || screenGreaterThan430LessThan768
+              ? "140px"
+              : "50px",
       width: screenGreaterThan768LessThan1024
         ? "200px"
         : screenGreaterThan1024LessThan1280 ||
-          screenGreaterThan1280LessThan1440 ||
-          screenGreaterThan1440LessThan1920
-        ? "160px"
-        : screenGreaterThan1920LessThan3840
-        ? "200px"
-        : screenLessThan430 || screenGreaterThan430LessThan768
-        ? "200px"
-        : "50px",
+            screenGreaterThan1280LessThan1440 ||
+            screenGreaterThan1440LessThan1920
+          ? "160px"
+          : screenGreaterThan1920LessThan3840
+            ? "200px"
+            : screenLessThan430 || screenGreaterThan430LessThan768
+              ? "200px"
+              : "50px",
     },
     typo_name_heading: {
       // border: "solid green 2px",
@@ -137,35 +137,35 @@ function Footer() {
         screenLessThan430 || screenGreaterThan430LessThan768
           ? "30px"
           : screenGreaterThan768LessThan1024 ||
-            screenGreaterThan1024LessThan1280 ||
-            screenGreaterThan1440LessThan1920
-          ? "28px"
-          : screenGreaterThan1920LessThan3840
-          ? "40px"
-          : screenGreaterThan1280LessThan1440
-          ? "26px"
-          : "1.4rem",
+              screenGreaterThan1024LessThan1280 ||
+              screenGreaterThan1440LessThan1920
+            ? "28px"
+            : screenGreaterThan1920LessThan3840
+              ? "40px"
+              : screenGreaterThan1280LessThan1440
+                ? "26px"
+                : "1.4rem",
       width: screenLessThan430
         ? "80%"
         : screenGreaterThan430LessThan768
-        ? "45%"
-        : screenGreaterThan1024LessThan1280
-        ? "100%"
-        : screenGreaterThan1280LessThan1440
-        ? "100%"
-        : screenGreaterThan1440LessThan1920
-        ? "100%"
-        : screenGreaterThan1920LessThan3840
-        ? "100%"
-        : "100%",
+          ? "45%"
+          : screenGreaterThan1024LessThan1280
+            ? "100%"
+            : screenGreaterThan1280LessThan1440
+              ? "100%"
+              : screenGreaterThan1440LessThan1920
+                ? "100%"
+                : screenGreaterThan1920LessThan3840
+                  ? "100%"
+                  : "100%",
       textAlign: "center",
     },
     typo_address: {
       width: screenLessThan430
         ? "80%"
         : screenGreaterThan430LessThan768
-        ? "78%"
-        : "100%",
+          ? "78%"
+          : "100%",
       margin: "0 auto",
       // border: "solid green 2px",
     },
@@ -175,18 +175,18 @@ function Footer() {
       fontSize: screenLessThan430
         ? "0.875rem"
         : screenGreaterThan430LessThan768
-        ? "0.9375rem"
-        : screenGreaterThan768LessThan1024
-        ? "1rem"
-        : screenGreaterThan1024LessThan1280
-        ? "1.0625rem"
-        : screenGreaterThan1280LessThan1440
-        ? "1.125rem"
-        : screenGreaterThan1440LessThan1920
-        ? "1.125rem"
-        : screenGreaterThan1920LessThan3840
-        ? "1.25rem"
-        : "1rem",
+          ? "0.9375rem"
+          : screenGreaterThan768LessThan1024
+            ? "1rem"
+            : screenGreaterThan1024LessThan1280
+              ? "1.0625rem"
+              : screenGreaterThan1280LessThan1440
+                ? "1.125rem"
+                : screenGreaterThan1440LessThan1920
+                  ? "1.125rem"
+                  : screenGreaterThan1920LessThan3840
+                    ? "1.25rem"
+                    : "1rem",
     },
     button_single: {
       color: "#d9d9d9",
@@ -195,18 +195,18 @@ function Footer() {
       fontSize: screenLessThan430
         ? "0.75rem"
         : screenGreaterThan430LessThan768
-        ? "0.8125rem"
-        : screenGreaterThan768LessThan1024
-        ? "0.875rem"
-        : screenGreaterThan1024LessThan1280
-        ? "0.9375rem"
-        : screenGreaterThan1280LessThan1440
-        ? "0.9375rem"
-        : screenGreaterThan1440LessThan1920
-        ? "1rem"
-        : screenGreaterThan1920LessThan3840
-        ? "1.0625rem"
-        : "1rem",
+          ? "0.8125rem"
+          : screenGreaterThan768LessThan1024
+            ? "0.875rem"
+            : screenGreaterThan1024LessThan1280
+              ? "0.9375rem"
+              : screenGreaterThan1280LessThan1440
+                ? "0.9375rem"
+                : screenGreaterThan1440LessThan1920
+                  ? "1rem"
+                  : screenGreaterThan1920LessThan3840
+                    ? "1.0625rem"
+                    : "1rem",
       alignSelf: "center",
       textAlign: "center",
     },
@@ -230,18 +230,18 @@ function Footer() {
       fontSize: screenLessThan430
         ? "0.9rem"
         : screenGreaterThan430LessThan768
-        ? "0.95rem"
-        : screenGreaterThan768LessThan1024
-        ? "1rem"
-        : screenGreaterThan1024LessThan1280
-        ? "1.05rem"
-        : screenGreaterThan1280LessThan1440
-        ? "1.1rem"
-        : screenGreaterThan1440LessThan1920
-        ? "1.15rem"
-        : screenGreaterThan1920LessThan3840
-        ? "1.2rem"
-        : "1rem",
+          ? "0.95rem"
+          : screenGreaterThan768LessThan1024
+            ? "1rem"
+            : screenGreaterThan1024LessThan1280
+              ? "1.05rem"
+              : screenGreaterThan1280LessThan1440
+                ? "1.1rem"
+                : screenGreaterThan1440LessThan1920
+                  ? "1.15rem"
+                  : screenGreaterThan1920LessThan3840
+                    ? "1.2rem"
+                    : "1rem",
       borderBottom: "solid #c23237 2px",
     },
     onhover_effect: {

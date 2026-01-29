@@ -104,7 +104,7 @@ function Navbar() {
       cursor: "pointer",
     },
     typo_logo: {
-      fontSize: "20px",
+      fontSize: "18px",
       color: "#fff",
       fontWeight: 600,
     },
@@ -173,7 +173,7 @@ function Navbar() {
         <Link to="home_page" duration={500} smooth={true}>
           <Button sx={styles.logo_box_parent}>
             <Image
-              src="/logo.png" // local image from public
+              src="/logo_test.png" // local image from public
               alt="Logo"
               width={60} // width in pixels
               height={60} // height in pixels
